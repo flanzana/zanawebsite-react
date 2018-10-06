@@ -2,29 +2,27 @@ import React, { Component } from 'react';
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "./theme/globalStyle";
 import Header from "./components/Header.js";
+import AboutMe from "./components/AboutMe.js";
+import Skills from "./components/Skills.js";
+import Projects from "./components/Projects.js";
 
 const Wrapper = styled.div`
-  text-align: center;
+	text-align: center;
 `;
 
-const Main = styled.div`
-  color: ${props => props.theme.dark};
-  background-color: ${props => props.theme.white};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const MainTitle = styled.h1`
-  font-weight: 400;
-  color: ${props => props.theme.secondary}
+const MainContent = styled.div`
+	color: ${props => props.theme.dark};
+	background-color: ${props => props.theme.primary};
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 `;
 
 const Footer = styled.div`
 	background-color: ${props => props.theme.primary};
 	color: ${props => props.theme.white};
-	height: 36px;
+	height: 100px;
 	display: flex;
 	align-items: center;
 
@@ -35,26 +33,27 @@ const Footer = styled.div`
 `;
 
 class App extends Component {
-  state = {
-    theme: theme
-  };
+	state = {
+		theme: theme
+	};
 
-  render() {
-    return (
-      <ThemeProvider theme={this.state.theme}>
-        <Wrapper>
-          <Header/>
-          <Main>
-            <MainTitle>Under construction</MainTitle>
-            <p>Under construction</p>
-          </Main>
-          <Footer>
-            <p>Coded and designed with ❤ by Žana Flander. © 2018</p>
-          </Footer>
-        </Wrapper>
-      </ThemeProvider>
-    );
-  }
+	render() {
+		return (
+			<ThemeProvider theme={this.state.theme}>
+				<Wrapper>
+					<Header/>
+					<MainContent>
+						<AboutMe/>
+						<Skills/>
+						<Projects/>
+					</MainContent>
+					<Footer>
+						<p>Coded and designed with ❤ by Žana Flander. © 2018</p>
+					</Footer>
+				</Wrapper>
+			</ThemeProvider>
+		);
+	}
 }
 
 export default App;

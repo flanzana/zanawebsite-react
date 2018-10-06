@@ -17,9 +17,7 @@ const HeaderDiv = styled.div`
 	h1 {
 		color: ${props => props.theme.white};
 		font-size: calc(18px + 10vmin);
-		font-weight: 900;
 		padding: 0 10px;
-		text-transform: uppercase;
 	}
 `;
 
