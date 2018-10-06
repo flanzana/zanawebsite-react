@@ -1,24 +1,10 @@
 import React, { Component } from 'react';
-import styled, { keyframes, ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { theme } from "./theme/globalStyle";
+import Header from "./components/Header.js";
 
 const Wrapper = styled.div`
   text-align: center;
-`;
-
-const Header = styled.div`
-  height: 100vh;
-  color: ${props => props.theme.white};
-  background-color: ${props => props.theme.primary};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(16px + 2vmin);
-`;
-
-const HeaderTitle = styled.h1`
-  font-weight: 900;
 `;
 
 const Main = styled.div`
@@ -44,9 +30,7 @@ class App extends Component {
     return (
       <ThemeProvider theme={this.state.theme}>
         <Wrapper>
-          <Header>
-            <HeaderTitle>Žana Flander</HeaderTitle>
-          </Header>
+          <Header/>
           <Main>
             <MainTitle>Under construction</MainTitle>
             <p>Under construction</p>
