@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import styled, { ThemeProvider } from "styled-components";
-import { theme } from "./theme/globalStyle";
-import Header from "./components/Header.js";
-import AboutMe from "./components/AboutMe.js";
-import Skills from "./components/Skills.js";
-import Projects from "./components/Projects.js";
+import styled, { ThemeProvider } from 'styled-components';
+import { theme } from './theme/globalStyle';
+import Header from './components/Header.js';
+import AboutMe from './components/AboutMe.js';
+import Skills from './components/Skills.js';
+import Projects from './components/Projects.js';
+import { skills, projects } from './data/data.js';
 
 const Wrapper = styled.div`
 	text-align: center;
@@ -34,18 +35,22 @@ const Footer = styled.div`
 
 class App extends Component {
 	state = {
-		theme: theme
+		theme: theme,
+		skills: skills,
+		projects: projects
 	};
 
 	render() {
+		const { theme, skills, projects } = this.state;
+
 		return (
-			<ThemeProvider theme={this.state.theme}>
+			<ThemeProvider theme={theme}>
 				<Wrapper>
 					<Header/>
 					<MainContent>
 						<AboutMe/>
-						<Skills/>
-						<Projects/>
+						<Skills skills={skills} />
+						<Projects projects={projects} />
 					</MainContent>
 					<Footer>
 						<p>Coded and designed with ❤ by Žana Flander. © 2018</p>
