@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from "styled-components";
+import styled from 'styled-components';
 import { MainSection, MainTitle } from '../theme/globalStyle';
 import SkillBullets from './SkillBullets.js';
 
@@ -51,7 +51,6 @@ const SkillItem = styled.li`
 class Skills extends Component {
     render() {
         const { skills } = this.props;
-        console.log(skills);
 
         return(
             <MainSection bgw>
@@ -60,8 +59,8 @@ class Skills extends Component {
                     <div className='skl'>
                         <SkillTitle>Languages</SkillTitle>
                         <SkillList>
-                            {skills.language.map(lang => (
-                                <SkillItem>
+                            {skills.language.map((lang, index) => (
+                                <SkillItem key={index}>
                                     <span className='skill-name'>{lang.name}</span>
                                     <span className='skill-level lng'>{lang.level}</span>
                                 </SkillItem>
@@ -71,8 +70,8 @@ class Skills extends Component {
                     <div className='skl'>
                         <SkillTitle>Engineering</SkillTitle>
                         <SkillList>
-                            {skills.engineering.map(eng => (
-                                <SkillItem>
+                            {skills.engineering.map((eng, index) => (
+                                <SkillItem key={index}>
                                     <span className='skill-name'>{eng.name}</span>
                                     <SkillBullets level={eng.level} />
                                 </SkillItem>
@@ -82,8 +81,8 @@ class Skills extends Component {
                     <div className='skl'>
                         <SkillTitle>Web development</SkillTitle>
                         <SkillList>
-                            {skills.webdev.map(dev => (
-                                <SkillItem>
+                            {skills.webdev.map((dev, index) => (
+                                <SkillItem key={index}>
                                     <span className='skill-name'>{dev.name}</span>
                                     <SkillBullets level={dev.level} />
                                 </SkillItem>
@@ -93,8 +92,8 @@ class Skills extends Component {
                     <div className='skl'>
                         <SkillTitle>Design</SkillTitle>
                         <SkillList>
-                            {skills.design.map(des => (
-                                <SkillItem>
+                            {skills.design.map((des, index) => (
+                                <SkillItem key={index}>
                                     <span className='skill-name'>{des.name}</span>
                                     <SkillBullets level={des.level} />
                                 </SkillItem>
