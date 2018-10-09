@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
+import CVfile from '../data/Flander-Zana-CV.pdf';
 
 const rotate360 = keyframes`
   from {transform: rotate(0deg);}
@@ -25,8 +26,6 @@ const ContactDiv = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-	width: 300px;
 `;
 
 const ContactButton = styled.a`
@@ -36,7 +35,7 @@ const ContactButton = styled.a`
     background-color: ${props => props.theme.white};
 	color: ${props => props.theme.primary};
 	border-radius: 50%;
-    margin: 0 auto;
+    margin: 0 calc(8px + 2vmin);
     padding: calc(5px + 1vmin);
     display: flex;
     justify-content: center;
@@ -76,7 +75,7 @@ class Header extends Component {
                     <ContactButton href="mailto:zana.flander@gmail.com" target="_blank" rel="noopener noreferrer">
                         <i className="fa fa-envelope"></i>
                     </ContactButton>
-                    <ContactButton href="%PUBLIC_URL%/Flander-Zana-CV.pdf" target="_blank" rel="noopener noreferrer">
+                    <ContactButton href={CVfile} target="_blank" rel="noopener noreferrer">
                         <i className="fa fa-file-text"></i>
                     </ContactButton>
                 </ContactDiv>
