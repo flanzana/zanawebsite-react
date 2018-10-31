@@ -16,27 +16,23 @@ self.__precacheManifest = [
     "url": "/static/media/project-almeria.aa6f8766.png"
   },
   {
-    "revision": "91aa585e67bcd0eb5c329f5d9ed68839",
-    "url": "/static/media/Flander-Zana-CV.91aa585e.pdf"
-  },
-  {
     "revision": "229c360febb4351a89df",
     "url": "/static/js/runtime~main.229c360f.js"
   },
   {
-    "revision": "3a829eaa99c2703c8d21",
-    "url": "/static/js/main.3a829eaa.chunk.js"
+    "revision": "70320b60b84b37224223",
+    "url": "/static/js/main.70320b60.chunk.js"
   },
   {
-    "revision": "76477dc70e5287f20010",
-    "url": "/static/js/1.76477dc7.chunk.js"
+    "revision": "4e9a8881eb2f9a8631c2",
+    "url": "/static/js/1.4e9a8881.chunk.js"
   },
   {
-    "revision": "3a829eaa99c2703c8d21",
-    "url": "/static/css/main.58f739df.chunk.css"
+    "revision": "70320b60b84b37224223",
+    "url": "/static/css/main.765ad448.chunk.css"
   },
   {
-    "revision": "13a06d6d19b446f17bb7889d388b19cf",
+    "revision": "12b65629ed1a3c50ae3011e39c5ccee2",
     "url": "/index.html"
   }
 ];
