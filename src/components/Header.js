@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
-import CVfile from '../data/Flander-Zana-CV.pdf';
+//import CVfile from '../data/Flander-Zana-CV.pdf';
 
 const rotate360 = keyframes`
   from {transform: rotate(0deg);}
@@ -75,9 +75,9 @@ class Header extends Component {
                     <ContactButton href="mailto:zana.flander@gmail.com" target="_blank" rel="noopener noreferrer">
                         <i className="fa fa-envelope"></i>
                     </ContactButton>
-                    <ContactButton href={CVfile} target="_blank" rel="noopener noreferrer">
+                    {/*<ContactButton href={CVfile} target="_blank" rel="noopener noreferrer">
                         <i className="fa fa-file-text"></i>
-                    </ContactButton>
+        </ContactButton>*/}
                 </ContactDiv>
 				<ArrowDown className="fa fa-angle-double-down" aria-hidden="true" />
             </HeaderDiv>
