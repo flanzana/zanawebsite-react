@@ -48,62 +48,56 @@ const SkillItem = styled.li`
     }
 `;
 
-class Skills extends Component {
-    render() {
-        const { skills } = this.props;
-
-        return(
-            <MainSection bgw>
-                <MainTitle>Skills</MainTitle>
-                <SkillSection>
-                    <div className='skl'>
-                        <SkillTitle>Languages</SkillTitle>
-                        <SkillList>
-                            {skills.language.map((lang, index) => (
-                                <SkillItem key={index}>
-                                    <span className='skill-name'>{lang.name}</span>
-                                    <span className='skill-level lng'>{lang.level}</span>
-                                </SkillItem>
-                            ))}
-                        </SkillList>
-                    </div>
-                    <div className='skl'>
-                        <SkillTitle>Engineering</SkillTitle>
-                        <SkillList>
-                            {skills.engineering.map((eng, index) => (
-                                <SkillItem key={index}>
-                                    <span className='skill-name'>{eng.name}</span>
-                                    <SkillBullets level={eng.level} />
-                                </SkillItem>
-                            ))}
-                        </SkillList>
-                    </div>
-                    <div className='skl'>
-                        <SkillTitle>Web development</SkillTitle>
-                        <SkillList>
-                            {skills.webdev.map((dev, index) => (
-                                <SkillItem key={index}>
-                                    <span className='skill-name'>{dev.name}</span>
-                                    <SkillBullets level={dev.level} />
-                                </SkillItem>
-                            ))}
-                        </SkillList>
-                    </div>
-                    <div className='skl'>
-                        <SkillTitle>Design</SkillTitle>
-                        <SkillList>
-                            {skills.design.map((des, index) => (
-                                <SkillItem key={index}>
-                                    <span className='skill-name'>{des.name}</span>
-                                    <SkillBullets level={des.level} />
-                                </SkillItem>
-                            ))}
-                        </SkillList>
-                    </div>
-                </SkillSection>
-            </MainSection>
-        )
-    }
-}
+const Skills = ({ skills }) => (
+    <MainSection bgw>
+        <MainTitle>Skills</MainTitle>
+        <SkillSection>
+            <div className='skl'>
+                <SkillTitle>Languages</SkillTitle>
+                <SkillList>
+                    {skills.language.map((lang, index) => (
+                        <SkillItem key={index}>
+                            <span className='skill-name'>{lang.name}</span>
+                            <span className='skill-level lng'>{lang.level}</span>
+                        </SkillItem>
+                    ))}
+                </SkillList>
+            </div>
+            <div className='skl'>
+                <SkillTitle>Engineering</SkillTitle>
+                <SkillList>
+                    {skills.engineering.map((eng, index) => (
+                        <SkillItem key={index}>
+                            <span className='skill-name'>{eng.name}</span>
+                            <SkillBullets level={eng.level} />
+                        </SkillItem>
+                    ))}
+                </SkillList>
+            </div>
+            <div className='skl'>
+                <SkillTitle>Web development</SkillTitle>
+                <SkillList>
+                    {skills.webdev.map((dev, index) => (
+                        <SkillItem key={index}>
+                            <span className='skill-name'>{dev.name}</span>
+                            <SkillBullets level={dev.level} />
+                        </SkillItem>
+                    ))}
+                </SkillList>
+            </div>
+            <div className='skl'>
+                <SkillTitle>Design</SkillTitle>
+                <SkillList>
+                    {skills.design.map((des, index) => (
+                        <SkillItem key={index}>
+                            <span className='skill-name'>{des.name}</span>
+                            <SkillBullets level={des.level} />
+                        </SkillItem>
+                    ))}
+                </SkillList>
+            </div>
+        </SkillSection>
+    </MainSection>
+)
 
 export default Skills;

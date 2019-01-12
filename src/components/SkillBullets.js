@@ -20,50 +20,44 @@ const Bullets = styled.span`
     }
 `;
 
-class SkillBullets extends Component {
-    render() {
-        const { level } = this.props;
-
-        return(
-            <Bullets>
-                {(level === 5) && (<div>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                </div>)}
-                {(level === 4) && (<div>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle unfill" aria-hidden="true"></i>
-                </div>)}
-                {(level === 3) && (<div>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle unfill" aria-hidden="true"></i>
-                    <i className="fa fa-circle unfill" aria-hidden="true"></i>
-                </div>)}
-                {(level === 2) && (<div>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle unfill" aria-hidden="true"></i>
-                    <i className="fa fa-circle unfill" aria-hidden="true"></i>
-                    <i className="fa fa-circle unfill" aria-hidden="true"></i>
-                </div>)}
-                {(level === 1) && (<div>
-                    <i className="fa fa-circle fill" aria-hidden="true"></i>
-                    <i className="fa fa-circle unfill" aria-hidden="true"></i>
-                    <i className="fa fa-circle unfill" aria-hidden="true"></i>
-                    <i className="fa fa-circle unfill" aria-hidden="true"></i>
-                    <i className="fa fa-circle unfill" aria-hidden="true"></i>
-                </div>)}
-            </Bullets>
-        )
-    }
-}
+const SkillBullets = ({ level }) => (
+    <Bullets>
+        {(level === 5) && (<div>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+        </div>)}
+        {(level === 4) && (<div>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle unfill" aria-hidden="true"></i>
+        </div>)}
+        {(level === 3) && (<div>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle unfill" aria-hidden="true"></i>
+            <i className="fa fa-circle unfill" aria-hidden="true"></i>
+        </div>)}
+        {(level === 2) && (<div>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle unfill" aria-hidden="true"></i>
+            <i className="fa fa-circle unfill" aria-hidden="true"></i>
+            <i className="fa fa-circle unfill" aria-hidden="true"></i>
+        </div>)}
+        {(level === 1) && (<div>
+            <i className="fa fa-circle fill" aria-hidden="true"></i>
+            <i className="fa fa-circle unfill" aria-hidden="true"></i>
+            <i className="fa fa-circle unfill" aria-hidden="true"></i>
+            <i className="fa fa-circle unfill" aria-hidden="true"></i>
+            <i className="fa fa-circle unfill" aria-hidden="true"></i>
+        </div>)}
+    </Bullets>
+)
 
 export default SkillBullets;
