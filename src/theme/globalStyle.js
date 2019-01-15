@@ -44,7 +44,7 @@ export const MainSection = styled.div`
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	padding: 50px 0;
+	padding: 65px 0 50px 0;
 
 	${props =>
 		props.bgl &&

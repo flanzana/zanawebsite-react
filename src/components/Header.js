@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import ContactButtons from './ContactButtons.js';
 import gplay from '../theme/gplay.png';
 
-const HeaderDiv = styled.div`
+const HeaderWrapper = styled.div`
     height: ${window.innerHeight}px;
     width: 100%;
     background-color: ${props => props.theme.primary};
@@ -20,19 +20,19 @@ const HeaderDiv = styled.div`
 	}
 `;
 
-const ArrowDown = styled.div`
+/* const ArrowDown = styled.div`
 	position: absolute;
 	bottom: 5px;
 	color: ${props => props.theme.white};
 	font-size: 23px;
-`;
+`; */
 
-const Header = () => (
-    <HeaderDiv>
+const Header = ({ isNavbarFixed }) =>  (
+    <HeaderWrapper id="header" isNavbarFixed={isNavbarFixed}>
         <h1>Žana Flander</h1>
         <ContactButtons size="24px" />
-        <ArrowDown className="fa fa-angle-double-down" aria-hidden="true" />
-    </HeaderDiv>
+        {/* <ArrowDown className="fa fa-angle-double-down" aria-hidden="true" /> */}
+    </HeaderWrapper>
 )
 
 export default Header;

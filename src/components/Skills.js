@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { MainSection, MainTitle } from '../theme/globalStyle';
 import SkillBullets from './SkillBullets.js';
@@ -49,7 +49,7 @@ const SkillItem = styled.li`
 `;
 
 const Skills = ({ skills }) => (
-    <MainSection bgw>
+    <MainSection bgw id="skills">
         <MainTitle>Skills</MainTitle>
         <SkillSection>
             <div className='skl'>

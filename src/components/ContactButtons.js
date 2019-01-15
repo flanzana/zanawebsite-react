@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 //import CVfile from '../data/Flander-Zana-CV.pdf';
 
@@ -7,7 +7,7 @@ const rotate360 = keyframes`
   to {transform: rotate(360deg);}
 `;
 
-const ContactDiv = styled.div`
+const ContactsWrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -39,7 +39,7 @@ const ContactButton = styled.a`
 `;
 
 const ContactButtons = (props) => (
-    <ContactDiv>
+    <ContactsWrapper>
         <ContactButton href="https://www.linkedin.com/in/zanaflander" target="_blank" rel="noopener noreferrer" size={props.size}>
             <i className="fa fa-linkedin"></i>
         </ContactButton>
@@ -52,7 +52,7 @@ const ContactButtons = (props) => (
         {/*<ContactButton href={CVfile} target="_blank" rel="noopener noreferrer" size={props.size}>
             <i className="fa fa-file-text"></i>
 </ContactButton>*/}
-    </ContactDiv>
+    </ContactsWrapper>
 )
     
 

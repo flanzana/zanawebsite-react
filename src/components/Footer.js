@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import ContactButtons from './ContactButtons.js';
 
-const FooterDiv = styled.div`
+const FooterWrapper = styled.div`
 	background-color: ${props => props.theme.primary};
 	color: ${props => props.theme.white};
 	height: calc(100px + 2vmin);
@@ -19,10 +19,10 @@ const FooterDiv = styled.div`
 `;
 
 const Footer = () => (
-    <FooterDiv>
+    <FooterWrapper id="contact">
         <ContactButtons size="16px" />
         <p>Coded and designed with ❤ by Žana Flander. © 2019</p>
-    </FooterDiv>
+    </FooterWrapper>
 )
 
 export default Footer;

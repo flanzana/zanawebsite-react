@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { MainSection, MainTitle } from '../theme/globalStyle';
 import styled from 'styled-components';
 import imgsah from '../data/img/project-chess.png';
@@ -6,7 +6,7 @@ import imgmemory from '../data/img/project-memory.png';
 import imgarcade from '../data/img/project-arcade.png';
 import imgalmeria from '../data/img/project-almeria.png';
 
-const ProjectsDiv = styled.div`
+const ProjectsWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -30,9 +30,9 @@ const ProjectItem = styled.a`
 `;
 
 const Projects = ({ projects }) => (
-    <MainSection bgl>
+    <MainSection bgl id="projects">
         <MainTitle>Projects</MainTitle>
-        <ProjectsDiv>
+        <ProjectsWrapper>
             {projects.map((project, index) => (
                 <ProjectItem key={index} href={project.url} target='_blank' rel="noopener noreferrer">
                     <p className='project-name'>{project.name}</p>
@@ -43,7 +43,7 @@ const Projects = ({ projects }) => (
                     {(project.name==='Website of chess club Braslovče') && (<img className='project-img' src={imgsah} alt={project.name} width='180'/>)}
                 </ProjectItem>
             ))}
-        </ProjectsDiv>
+        </ProjectsWrapper>
     </MainSection>
 )
 
