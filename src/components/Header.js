@@ -14,8 +14,10 @@ const HeaderWrapper = styled.div`
     justify-content: center;
 
 	h1 {
-		color: ${props => props.theme.white};
-		font-size: calc(18px + 10vmin);
+        color: ${props => props.theme.white};
+        text-transform: uppercase;
+        font-size: calc(18px + 10vmin);
+        letter-spacing: 0.1em;
 		padding: 0 10px;
 	}
 `;

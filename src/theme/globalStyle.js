@@ -24,13 +24,13 @@ injectGlobal`
 	h1 {
 		font-family: Coda, cursive;
 		font-weight: 900;
-		text-transform: uppercase;
 		text-align: center;
 	}
 `;
 
 export const MainTitle = styled.h1`
 	color: ${props => props.theme.primary};
+	text-transform: uppercase;
 	font-size: 2em;
 	margin-top: 0;
 	line-height: 1.75em;

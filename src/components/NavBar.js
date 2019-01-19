@@ -27,11 +27,12 @@ const NavBarWrapper = styled.div`
     box-shadow: 0 3px 8px rgba(0,0,0,0.25);
 
     &.fixed {
-        position: fixed; 
+        position: fixed;
     }
 
 	h1 {
-		color: ${props => props.theme.white};
+        color: ${props => props.theme.white};
+        letter-spacing: 0.1em;
 		font-size: 30px;
         margin: 0;
 	}
@@ -57,7 +58,7 @@ const NavBarWrapper = styled.div`
     a {
         color: ${props => props.theme.white};
         text-decoration: none;
-        
+
         &:hover {
             color: ${props => props.theme.secondary};
         }
