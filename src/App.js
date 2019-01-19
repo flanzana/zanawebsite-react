@@ -29,11 +29,9 @@ class App extends Component {
 		super(props);
 		this.state = {
 			theme: theme,
-			skills: skills,
-			projects: projects,
 			isNavbarFixed: false,
 			scrollFromTop: 0,
-			width: window.innerWidth,
+			windowWidth: window.innerWidth,
 			shouldShowMenu: false,
 		};
 	}
@@ -60,7 +58,7 @@ class App extends Component {
 	};
 
 	handleWindowSizeChange = () => {
-		this.setState({ width: window.innerWidth });
+		this.setState({ windowWidth: window.innerWidth });
 	};
 
 	toggleMenu = () => {
@@ -69,14 +67,14 @@ class App extends Component {
 	}
 
 	render() {
-		const { theme, skills, projects, isNavbarFixed, width, shouldShowMenu } = this.state;
+		const { theme, isNavbarFixed, windowWidth, shouldShowMenu } = this.state;
 
 		return (
 			<ThemeProvider theme={theme}>
 				<Wrapper>
 					<Header isNavbarFixed={isNavbarFixed} />
-					<NavBar isNavbarFixed={isNavbarFixed} width={width} toggleMenu={this.toggleMenu} />
-					{(width < 700) && shouldShowMenu && <SideBar isNavbarFixed={isNavbarFixed} />}
+					<NavBar isNavbarFixed={isNavbarFixed} width={windowWidth} toggleMenu={this.toggleMenu} />
+					{(windowWidth < 700) && shouldShowMenu && <SideBar isNavbarFixed={isNavbarFixed} />}
 					<MainContentWrapper>
 						<AboutMe />
 						<Skills skills={skills} />
