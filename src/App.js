@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { theme } from './theme/globalStyle';
+import { themePurple, themeBlue, themeGreen, themeOrange, themeRed, themeDark } from './theme/globalStyle';
 import Header from './components/Header.js';
+import ColorChanger from './components/ColorChanger.js';
 import NavBar from './components/NavBar.js';
 import SideBar from './components/SideBar.js';
 import AboutMe from './components/AboutMe.js';
@@ -16,7 +17,6 @@ const Wrapper = styled.div`
 
 const MainContentWrapper = styled.div`
 	color: ${props => props.theme.dark};
-	background-color: ${props => props.theme.primary};
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -28,7 +28,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			theme: theme,
+			theme: themePurple,
 			isNavbarFixed: false,
 			scrollFromTop: 0,
 			windowWidth: window.innerWidth,
@@ -42,7 +42,7 @@ class App extends Component {
 	}
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll);
-		window.addEventListener('resize', this.handleWindowSizeChange);
+		window.removeEventListener('resize', this.handleWindowSizeChange);
 	}
 
 	handleScroll = () => {
@@ -61,6 +61,32 @@ class App extends Component {
 		this.setState({ windowWidth: window.innerWidth });
 	};
 
+	handleColorChange = (event) => {
+		let clickedTheme = event.target.getAttribute('name');
+		switch(clickedTheme) {
+			case "themeRed":
+				this.setState({ theme: themeRed });
+				break
+			case "themeOrange":
+				this.setState({ theme: themeOrange });
+				break
+			case "themeGreen":
+				this.setState({ theme: themeGreen });
+				break
+			case "themeBlue":
+				this.setState({ theme: themeBlue });
+				break
+			case "themePurple":
+				this.setState({ theme: themePurple });
+				break
+			case "themeDark":
+				this.setState({ theme: themeDark });
+				break
+			default:
+				this.setState({ theme: themePurple });
+		}
+	}
+
 	toggleMenu = () => {
 		const menuShow = this.state.shouldShowMenu;
 		this.setState({ shouldShowMenu: !menuShow });
@@ -78,6 +104,7 @@ class App extends Component {
 					<MainContentWrapper>
 						<AboutMe />
 						<Skills skills={skills} />
+						<ColorChanger handleColorChange={this.handleColorChange} />
 						<Projects projects={projects} />
 					</MainContentWrapper>
 					<Footer />
