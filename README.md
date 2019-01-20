@@ -10,3 +10,4 @@ I have created my website from scratch by using React. Website is not finished y
 
 ## Sources
 - Icons from [Font Awesome](https://fontawesome.com/v4.7.0/icons/)
+- Background image from [Subtle patterns](https://www.toptal.com/designers/subtlepatterns/?s=gplay)
