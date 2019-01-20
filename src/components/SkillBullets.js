@@ -4,7 +4,8 @@ import styled from 'styled-components';
 const Bullets = styled.span`
     .fa-circle {
         font-size: 0.9em;
-        padding: 0 4px;
+        padding: 0 3px;
+        transition: all 0.3s ease-out;
     }
 
     .fill {

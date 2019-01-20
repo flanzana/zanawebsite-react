@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 const movesidebar = keyframes`
     0% {
-        height: 70px;
+        height: 30px;
     }
     100% {
         height: 204px;
@@ -11,6 +11,7 @@ const movesidebar = keyframes`
 `;
 
 const SideBarWrapper = styled.div`
+    background-color: ${props => props.theme.primary};
     margin-top: 70px;
     width: 200px;
     list-style: none;
@@ -28,7 +29,6 @@ const SideBarWrapper = styled.div`
     }
 
     li {
-        background-color: ${props => props.theme.primary};
         padding: 16px;
         cursor: pointer;
 

@@ -41,6 +41,18 @@ const SkillItem = styled.li`
 
     &:hover {
         background-color: ${props => props.theme.light};
+
+        span {
+            font-weight: bold;
+        }
+
+        .fa-circle {
+            padding: 0 4px;
+        }
+
+        .fa-circle:last-of-type {
+            padding-right: 0;
+        }
     }
 
     .lng {

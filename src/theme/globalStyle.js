@@ -63,6 +63,7 @@ injectGlobal`
 		margin: 0;
 		font-family: Roboto, sans-serif;
 		min-width: 320px;
+		cursor: default;
 	}
 
 	h1 {
