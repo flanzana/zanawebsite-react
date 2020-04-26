@@ -10,8 +10,8 @@ const ButtonWrapper = styled.a`
     width: calc(${props => props.size} + 2vmin);
 	height: calc(${props => props.size} + 2vmin);
 	font-size: calc(${props => props.size} + 2vmin);
-    background-color: ${props => props.theme.white};
-	color: ${props => props.theme.primary};
+    background-color: ${props => props.theme.buttonBackground};
+	color: ${props => props.theme.buttonText};
 	border-radius: 50%;
     padding: calc(${props => props.size}/3 + 0.5vmin);
     display: flex;

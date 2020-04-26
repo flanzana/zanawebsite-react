@@ -1,12 +1,36 @@
-import styled, { injectGlobal, css } from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 
-export const themePurple = {
-	primary: '#4a266a',
-	secondary: '#61c0bf',
-	secondaryLight: '#dbf0f0',
-	white: '#ffffff',
-	light: '#f6f6f6',
-	dark: '#5c5c5c'
+// color palette
+const PRIMARY_NORMAL = '#4f3b78'
+const PRIMARY_LIGHT = '#927fbf'
+const SECONDARY_NORMAL = '#61c0bf'
+const INK_NORMAL = '#363b4e'
+const CLOUD_NORMAL = '#eff2f5'
+const CLOUD_DARK = '#e8edf1'
+
+const commonColors = {
+	backgroundPrimary: PRIMARY_NORMAL,
+	backgroundPrimaryHover: PRIMARY_LIGHT,
+	buttonBackground: CLOUD_NORMAL,
+	buttonText: PRIMARY_NORMAL,
+	textSecondary: SECONDARY_NORMAL,
+	textWhite: CLOUD_NORMAL,
+}
+
+export const themeLightMode = {
+	type: "light",
+	backgroundNormal: CLOUD_NORMAL,
+	textNormal: INK_NORMAL,
+	textPrimary: PRIMARY_NORMAL,
+	...commonColors,
+};
+
+export const themeDarkMode = {
+	type: "dark",
+	backgroundNormal: INK_NORMAL,
+	textNormal: CLOUD_DARK,
+	textPrimary: PRIMARY_LIGHT,
+	...commonColors,
 };
 
 injectGlobal`
@@ -29,12 +53,12 @@ injectGlobal`
 `;
 
 export const MainTitle = styled.h1`
-	color: ${props => props.theme.primary};
+	color: ${props => props.theme.textPrimary};
 	text-transform: uppercase;
 	font-size: 2em;
 	margin-top: 0;
 	line-height: 1.75em;
-	border-bottom: 1px solid #b7b7b7;
+	border-bottom: 1px solid ${props => props.theme.textNormal};
 	width: 280px;
 `;
 
@@ -45,15 +69,5 @@ export const MainSection = styled.div`
 	justify-content: center;
 	width: 100%;
 	padding: 65px 0 50px 0;
-
-	${props =>
-		props.bgl &&
-		css`
-			background-color: ${props => props.theme.light};
-	`};
-	${props =>
-		props.bgw &&
-		css`
-			background-color: ${props => props.theme.white};
-	`};
+	background-color: ${props => props.theme.backgroundNormal};
 `;

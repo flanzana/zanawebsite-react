@@ -20,7 +20,7 @@ const SkillTitle = styled.h2`
     font-family: Coda, cursive;
     font-size: 1.2em;
     font-weight: 900;
-    color: ${props => props.theme.primary};
+    color: ${props => props.theme.textPrimary};
     text-align: center;
     margin-top: 0;
 `;
@@ -40,8 +40,6 @@ const SkillItem = styled.li`
     justify-content: space-between;
 
     &:hover {
-        background-color: ${props => props.theme.light};
-
         span {
             font-weight: bold;
         }
@@ -56,12 +54,13 @@ const SkillItem = styled.li`
     }
 
     .lng {
-        color: ${props => props.theme.secondary};
+        color: ${props => props.theme.textSecondary};
+        font-weight: bold;
     }
 `;
 
 const Skills = ({ skills }) => (
-    <MainSection bgw id="skills">
+    <MainSection id="skills">
         <MainTitle>Skills</MainTitle>
         <SkillSection>
             <div className='skl'>

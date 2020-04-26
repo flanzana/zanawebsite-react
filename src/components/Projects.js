@@ -16,7 +16,7 @@ const ProjectItem = styled.a`
     padding: 10px;
     margin: 10px;
     text-decoration: none;
-    color: ${props => props.theme.dark};
+    color: ${props => props.theme.textNormal};
 
     .project-name {
         text-decoration: none;
@@ -25,12 +25,12 @@ const ProjectItem = styled.a`
     }
 
     &:hover {
-        color: ${props => props.theme.secondary};
+        color: ${props => props.theme.textSecondary};
     }
 `;
 
 const Projects = ({ projects }) => (
-    <MainSection bgl id="projects">
+    <MainSection id="projects">
         <MainTitle>Projects</MainTitle>
         <ProjectsWrapper>
             {projects.map((project, index) => (

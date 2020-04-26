@@ -4,8 +4,8 @@ import ContactButton from './ContactButton.js';
 // import CVfile from '../data/Flander-Zana-CV.pdf';
 
 const FooterWrapper = styled.div`
-	background-color: ${props => props.theme.primary};
-	color: ${props => props.theme.white};
+	background-color: ${props => props.theme.backgroundPrimary};
+	color: ${props => props.theme.textWhite};
 	height: calc(120px + 2vmin);
 	display: flex;
 	flex-direction: column;

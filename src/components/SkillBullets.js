@@ -9,11 +9,12 @@ const Bullets = styled.span`
     }
 
     .fill {
-        color: ${props => props.theme.secondary};
+        color: ${props => props.theme.textSecondary};
     }
 
     .unfill {
-        color: ${props => props.theme.secondaryLight};
+        color: ${props => props.theme.textSecondary};
+        opacity: 0.2;
     }
 
     .fa-circle:last-of-type {

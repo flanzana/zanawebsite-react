@@ -6,7 +6,7 @@ import gplay from '../theme/gplay.png';
 const HeaderWrapper = styled.div`
     height: 100vh;
     width: 100%;
-    background-color: ${props => props.theme.primary};
+    background-color: ${props => props.theme.backgroundPrimary};
     background-image: url(${gplay});
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@ const HeaderWrapper = styled.div`
     justify-content: center;
 
 	h1 {
-        color: ${props => props.theme.white};
+        color: ${props => props.theme.textWhite};
         text-transform: uppercase;
         font-size: calc(18px + 10vmin);
         letter-spacing: 0.1em;
@@ -33,7 +33,7 @@ const ContactButtonsWrapper = styled.div`
 /* const ArrowDown = styled.div`
 	position: absolute;
 	bottom: 5px;
-	color: ${props => props.theme.white};
+	color: ${props => props.theme.textWhite};
 	font-size: 23px;
 `; */
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { themePurple } from './theme/globalStyle';
+import { themeDarkMode, themeLightMode } from './theme/globalStyle';
 import Header from './components/Header.js';
 import NavBar from './components/NavBar.js';
 import SideBar from './components/SideBar.js';
@@ -8,6 +8,7 @@ import AboutMe from './components/AboutMe.js';
 import Skills from './components/Skills.js';
 import Projects from './components/Projects.js';
 import Footer from './components/Footer.js';
+import ToggleThemeButton from "./components/ToggleThemeButton";
 import { skills, projects } from './data/data.js';
 
 const Wrapper = styled.div`
@@ -15,7 +16,7 @@ const Wrapper = styled.div`
 `;
 
 const MainContentWrapper = styled.div`
-	color: ${props => props.theme.dark};
+	color: ${props => props.theme.textNormal};
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -27,8 +28,9 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			theme: themePurple,
+			theme: themeLightMode,
 			isNavbarFixed: false,
+			isToggleThemeModeVisible: false,
 			scrollFromTop: 0,
 			windowWidth: window.innerWidth,
 			shouldShowMenu: false,
@@ -45,14 +47,20 @@ class App extends Component {
 	}
 
 	handleScroll = () => {
-		let headerheight = document.getElementById('header').clientHeight;
+		let headerHeight = document.getElementById('header').clientHeight;
+		let navbarHeight = document.getElementById('navbar').clientHeight;
 		this.setState({ scrollFromTop: window.scrollY });
 
-		if ((this.state.scrollFromTop) > headerheight) {
+		if ((this.state.scrollFromTop) > headerHeight) {
 			this.setState({ isNavbarFixed: true });
-		}
-		else {
+		} else {
 			this.setState({ isNavbarFixed: false });
+		}
+
+		if ((this.state.scrollFromTop) > navbarHeight) {
+			this.setState({ isToggleThemeModeVisible: true });
+		} else {
+			this.setState({ isToggleThemeModeVisible: false });
 		}
 	};
 
@@ -65,8 +73,14 @@ class App extends Component {
 		this.setState({ shouldShowMenu: !menuShow });
 	}
 
+	toggleThemeMode = () => {
+		const isCurrentDarkMode = this.state.theme === themeDarkMode;
+		this.setState({ theme: isCurrentDarkMode ? themeLightMode : themeDarkMode });
+		this.setState({ shouldShowMenu: false });
+	}
+
 	render() {
-		const { theme, isNavbarFixed, windowWidth, shouldShowMenu } = this.state;
+		const { theme, isNavbarFixed, isToggleThemeModeVisible, windowWidth, shouldShowMenu } = this.state;
 
 		return (
 			<ThemeProvider theme={theme}>
@@ -80,6 +94,9 @@ class App extends Component {
 						<Projects projects={projects} />
 					</MainContentWrapper>
 					<Footer />
+					{isToggleThemeModeVisible && (
+						<ToggleThemeButton onClick={this.toggleThemeMode} isCurrentDarkMode={theme.type === "dark"} />
+					)}
 				</Wrapper>
 			</ThemeProvider>
 		);

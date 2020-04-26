@@ -11,7 +11,7 @@ const movesidebar = keyframes`
 `;
 
 const SideBarWrapper = styled.div`
-    background-color: ${props => props.theme.primary};
+    background-color: ${props => props.theme.backgroundPrimary};
     margin-top: 70px;
     width: 200px;
     list-style: none;
@@ -33,12 +33,12 @@ const SideBarWrapper = styled.div`
         cursor: pointer;
 
         &:hover {
-            background-color: ${props => props.theme.secondary};
+            background-color: ${props => props.theme.backgroundPrimaryHover};
         }
     }
 
     a {
-        color: ${props => props.theme.white};
+        color: ${props => props.theme.textWhite};
         text-decoration: none;
         display: block;
         width: 100%;

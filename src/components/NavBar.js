@@ -13,7 +13,7 @@ const movenavbar = keyframes`
 const NavBarWrapper = styled.div`
     height: 70px;
     width: calc(100% - 40px);
-    background-color: ${props => props.theme.primary};
+    background-color: ${props => props.theme.backgroundPrimary};
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -31,7 +31,7 @@ const NavBarWrapper = styled.div`
     }
 
 	h1 {
-        color: ${props => props.theme.white};
+        color: ${props => props.theme.textWhite};
         letter-spacing: 0.1em;
 		font-size: 30px;
         margin: 0;
@@ -56,18 +56,18 @@ const NavBarWrapper = styled.div`
     }
 
     a {
-        color: ${props => props.theme.white};
+        color: ${props => props.theme.textWhite};
         text-decoration: none;
 
         &:hover {
-            color: ${props => props.theme.secondary};
+            color: ${props => props.theme.textSecondary};
         }
     }
 `;
 
 const StyledHamburgerIcon = styled.button`
-    color: ${props => props.theme.white};
-    background-color: ${props => props.theme.primary};
+    color: ${props => props.theme.textWhite};
+    background-color: ${props => props.theme.backgroundPrimary};
     border: none;
     font-size: 30px;
     cursor: pointer;
