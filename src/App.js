@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { themePurple, themeBlue, themeGreen, themeOrange, themeRed, themeDark } from './theme/globalStyle';
+import { themePurple } from './theme/globalStyle';
 import Header from './components/Header.js';
-import ColorChanger from './components/ColorChanger.js';
 import NavBar from './components/NavBar.js';
 import SideBar from './components/SideBar.js';
 import AboutMe from './components/AboutMe.js';
@@ -61,32 +60,6 @@ class App extends Component {
 		this.setState({ windowWidth: window.innerWidth });
 	};
 
-	handleColorChange = (event) => {
-		let clickedTheme = event.target.getAttribute('name');
-		switch(clickedTheme) {
-			case "themeRed":
-				this.setState({ theme: themeRed });
-				break
-			case "themeOrange":
-				this.setState({ theme: themeOrange });
-				break
-			case "themeGreen":
-				this.setState({ theme: themeGreen });
-				break
-			case "themeBlue":
-				this.setState({ theme: themeBlue });
-				break
-			case "themePurple":
-				this.setState({ theme: themePurple });
-				break
-			case "themeDark":
-				this.setState({ theme: themeDark });
-				break
-			default:
-				this.setState({ theme: themePurple });
-		}
-	}
-
 	toggleMenu = () => {
 		const menuShow = this.state.shouldShowMenu;
 		this.setState({ shouldShowMenu: !menuShow });
@@ -104,7 +77,6 @@ class App extends Component {
 					<MainContentWrapper>
 						<AboutMe />
 						<Skills skills={skills} />
-						<ColorChanger handleColorChange={this.handleColorChange} />
 						<Projects projects={projects} />
 					</MainContentWrapper>
 					<Footer />

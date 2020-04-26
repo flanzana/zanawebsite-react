@@ -9,51 +9,6 @@ export const themePurple = {
 	dark: '#5c5c5c'
 };
 
-export const themeGreen = {
-	primary: '#186A3B',
-	secondary: '#61c0bf',
-	secondaryLight: '#dbf0f0',
-	white: '#ffffff',
-	light: '#f6f6f6',
-	dark: '#5c5c5c'
-};
-
-export const themeBlue = {
-	primary: '#1B4F72',
-	secondary: '#61c0bf',
-	secondaryLight: '#dbf0f0',
-	white: '#ffffff',
-	light: '#f6f6f6',
-	dark: '#5c5c5c'
-};
-
-export const themeRed = {
-	primary: '#B22222',
-	secondary: '#61c0bf',
-	secondaryLight: '#dbf0f0',
-	white: '#ffffff',
-	light: '#f6f6f6',
-	dark: '#5c5c5c'
-};
-
-export const themeOrange = {
-	primary: '#A04000',
-	secondary: '#61c0bf',
-	secondaryLight: '#dbf0f0',
-	white: '#ffffff',
-	light: '#f6f6f6',
-	dark: '#5c5c5c'
-};
-
-export const themeDark = {
-	primary: '#283747',
-	secondary: '#61c0bf',
-	secondaryLight: '#dbf0f0',
-	white: '#ffffff',
-	light: '#f6f6f6',
-	dark: '#5c5c5c'
-};
-
 injectGlobal`
 	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto:400,900|Coda');
 	@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css');
