@@ -7,14 +7,20 @@ const SECONDARY_NORMAL = '#61c0bf'
 const INK_NORMAL = '#363b4e'
 const CLOUD_NORMAL = '#eff2f5'
 const CLOUD_DARK = '#e8edf1'
+const SHADOW_COLOR_DARK = 'rgba(0, 0, 0, 0.3)'
+const SHADOW_COLOR_DARKER = 'rgba(0, 0, 0, 0.6)'
 
 const commonColors = {
 	backgroundPrimary: PRIMARY_NORMAL,
 	backgroundPrimaryHover: PRIMARY_LIGHT,
 	buttonBackground: CLOUD_NORMAL,
+	buttonBackgroundHover: SECONDARY_NORMAL,
 	buttonText: PRIMARY_NORMAL,
+	buttonTextHover: CLOUD_NORMAL,
 	textSecondary: SECONDARY_NORMAL,
 	textWhite: CLOUD_NORMAL,
+	navbarBoxShadow: SHADOW_COLOR_DARK,
+	buttonBoxShadow: SHADOW_COLOR_DARKER,
 }
 
 export const themeLightMode = {

@@ -24,7 +24,7 @@ const NavBarWrapper = styled.div`
     margin-bottom: -70px;
     top: 0;
     padding: 0 20px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    box-shadow: 0 3px 8px ${props => props.theme.navbarBoxShadow};
 
     &.fixed {
         position: fixed;

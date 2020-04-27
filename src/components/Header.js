@@ -41,8 +41,8 @@ const Header = ({ isNavbarFixed }) =>  (
     <HeaderWrapper id="header" isNavbarFixed={isNavbarFixed}>
         <h1>Žana Flander</h1>
         <ContactButtonsWrapper>
-            <ContactButton iconName="fa fa-linkedin" href="https://www.linkedin.com/in/zanaflander" size="24px" />
-            <ContactButton iconName="fa fa-github" href="https://github.com/flanzana" size="24px" />
+            <ContactButton iconName="fa fa-linkedin" href="https://www.linkedin.com/in/zanaflander" size="24px" ariaLabel="LinkedIn" />
+            <ContactButton iconName="fa fa-github" href="https://github.com/flanzana" size="24px" ariaLabel="GitHub" />
         </ContactButtonsWrapper>
         {/* <ArrowDown className="fa fa-angle-double-down" aria-hidden="true" /> */}
     </HeaderWrapper>
