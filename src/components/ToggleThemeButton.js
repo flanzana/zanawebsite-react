@@ -24,9 +24,9 @@ const ButtonWrapper = styled.a`
 	}
 `;
 
-const ToggleThemeButton = (props) => (
-  <ButtonWrapper onClick={props.onClick} size="10px" tabIndex="1" aria-label={`Switch to ${props.isCurrentDarkMode ? "light" : "dark"} mode`}>
-    <i className={props.isCurrentDarkMode ? "fa fa-sun-o" : "fa fa-moon-o"} aria-hidden="true" />
+const ToggleThemeButton = ({ onClick, isCurrentDarkMode }) => (
+  <ButtonWrapper onClick={onClick} size="10px" tabIndex="1" aria-label={`Switch to ${isCurrentDarkMode ? "light" : "dark"} mode`}>
+    <i className={isCurrentDarkMode ? "fa fa-sun-o" : "fa fa-moon-o"} aria-hidden="true" />
   </ButtonWrapper>
 )
 

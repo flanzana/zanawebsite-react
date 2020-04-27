@@ -25,9 +25,9 @@ const ButtonWrapper = styled.a`
 	}
 `;
 
-const ContactButton = (props) => (
-    <ButtonWrapper href={props.href} target="_blank" rel="noopener noreferrer" size={props.size}>
-        <i className={props.iconName} aria-hidden="true"></i>
+const ContactButton = ({ href, iconName, size }) => (
+    <ButtonWrapper href={href} target="_blank" rel="noopener noreferrer" size={size}>
+        <i className={iconName} aria-hidden="true"></i>
     </ButtonWrapper>
 )
 
