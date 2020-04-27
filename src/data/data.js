@@ -11,19 +11,19 @@ export const skills = {
 	webdev: [
 		{name: 'CSS',
 		    level: 5},
+		{name: 'Cypress',
+			level: 4},
 		{name: 'Git',
 		    level: 3},
 		{name: 'HTML',
 		    level: 5},
 		{name: 'JavaScript',
-		    level: 3},
-		{name: 'Python',
-		    level: 1},
+		    level: 4},
+		{name: 'Jest',
+			level: 4},
 		{name: 'ReactJS',
             level: 4},
         {name: 'Redux',
-		    level: 1},
-		{name: 'SQL',
 		    level: 2},
     ],
 
@@ -52,6 +52,11 @@ export const skills = {
 };
 
 export const projects = [
+	{
+		name: 'Travel packing list',
+		img: './img/project-travel-list.png',
+		url: 'https://flanzana.github.io/travel-packing-list'
+	},
 	{
 		name: 'Almería map',
 		img: './img/project-almeria.png',

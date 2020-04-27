@@ -39,7 +39,7 @@ const Footer = () => (
 			  <ContactButton iconName="fa fa-twitter" href="https://twitter.com/flanzana" size="16px" ariaLabel="Twitter" />
 			  <ContactButton iconName="fa fa-envelope" href="mailto:zana.flander@gmail.com" size="16px" ariaLabel="E-mail" />
 		  </ContactButtonsWrapper>
-      <p>Coded and designed with ❤ by Žana Flander. © 2019</p>
+      <p>Coded and designed with ❤ by Žana Flander. © 2020</p>
     </FooterWrapper>
 )
 
