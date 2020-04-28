@@ -1,4 +1,9 @@
-export const skills = {
+import imgmemory from '../data/img/project-memory.png';
+import imgarcade from '../data/img/project-arcade.png';
+import imgalmeria from '../data/img/project-almeria.png';
+import imgtravellist from '../data/img/project-travel-list.png';
+
+export const SKILLS = {
 	language: [
 		{name: 'Slovenian',
 		    level: 'Native'},
@@ -51,27 +56,23 @@ export const skills = {
 
 };
 
-export const projects = [
+export const PROJECTS = [
 	{
 		name: 'Travel packing list',
-		img: './img/project-travel-list.png',
+		img: imgtravellist,
 		url: 'https://flanzana.github.io/travel-packing-list'
 	},
 	{
 		name: 'Almería map',
-		img: './img/project-almeria.png',
+		img: imgalmeria,
         url: 'https://flanzana.github.io/almeria-map'
 	},{
 		name: 'Arcade game',
-		img: './img/project-arcade.png',
+		img: imgarcade,
 		url: 'https://flanzana.github.io/arcade-game'
 	},{
 		name: 'Memory game',
-		img: './img/project-memory.png',
+		img: imgmemory,
         url: 'https://flanzana.github.io/memory-game-zana'
-	},{
-		name: 'Website of chess club Braslovče',
-		img: './img/project-chess.png',
-		url: 'http://sah-braslovce.weebly.com'
 	}
 ];

@@ -9,7 +9,7 @@ import Skills from './components/Skills.js';
 import Projects from './components/Projects.js';
 import Footer from './components/Footer.js';
 import ToggleThemeButton from "./components/ToggleThemeButton";
-import { skills, projects } from './data/data.js';
+import { SKILLS, PROJECTS } from './data/data.js';
 
 const Wrapper = styled.div`
 	text-align: center;
@@ -90,8 +90,8 @@ class App extends Component {
 					{(windowWidth < 700) && shouldShowMenu && <SideBar isNavbarFixed={isNavbarFixed} />}
 					<MainContentWrapper>
 						<AboutMe />
-						<Skills skills={skills} />
-						<Projects projects={projects} />
+						<Skills skills={SKILLS} />
+						<Projects projects={PROJECTS} />
 					</MainContentWrapper>
 					<Footer />
 					{isToggleThemeModeVisible && (
