@@ -6,7 +6,7 @@ const StyledToggleThemeButton = styled.a`
 	height: calc(${props => props.size} + 2vmin);
 	font-size: calc(${props => props.size} + 2vmin);
 	color: ${props => props.theme.textWhite};
-	background-color: ${props => props.theme.backgroundPrimaryHover};
+	background-color: ${props => props.theme.buttonToggleBackground};
 	border-radius: 50%;
   padding: calc(${props => props.size}/3 + 0.5vmin);
   display: flex;
@@ -22,13 +22,13 @@ const StyledToggleThemeButton = styled.a`
 	box-shadow: 0 1px 3px 0 ${props => props.theme.buttonBoxShadow};
 
 	&:hover {
-		background-color: ${props => props.theme.textSecondary};
+		background-color: ${props => props.theme.buttonBackgroundHover};
 		transition: .4s;
 		box-shadow: 0 4px 8px 0 ${props => props.theme.buttonBoxShadow};
 	}
 	
 	&:active {
-		background-color: ${props => props.theme.textSecondary};
+		background-color: ${props => props.theme.buttonBackgroundHover};
 		transition: .2s;
 		box-shadow: 0 2px 4px 0 ${props => props.theme.buttonBoxShadow};
 	}

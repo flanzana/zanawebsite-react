@@ -28,21 +28,23 @@ const SideBarWrapper = styled.div`
         top: 0;
     }
 
-    li {
-        padding: 16px;
-        cursor: pointer;
-
-        &:hover {
-            background-color: ${props => props.theme.backgroundPrimaryHover};
-        }
-    }
-
     a {
         color: ${props => props.theme.textWhite};
         text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: -0.05em;
         display: block;
         width: 100%;
         height: 100%;
+        padding: 16px 0;
+        cursor: pointer;
+        transition: .4s;
+        cursor: pointer;
+        transition: .4s;
+        
+        &:hover {
+            background-color: ${props => props.theme.backgroundPrimaryHover};
+        }
     }
 
 `

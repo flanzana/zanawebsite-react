@@ -44,6 +44,7 @@ const ArrowDown = styled.a`
 	font-size: 28px;
 	animation: ${bounce} 1.5s ease infinite;
 	text-decoration: none;
+	cursor: pointer;
 `;
 
 const Header = ({ isNavbarFixed, scrollFromTop, onArrowClick }) =>  (
