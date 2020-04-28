@@ -3,6 +3,7 @@ import { injectGlobal } from 'styled-components';
 // color palette
 const PRIMARY_NORMAL = '#4f3b78'
 const PRIMARY_LIGHT = '#927fbf'
+// const PRIMARY_LIGHTER = '#c4bbf0'
 const SECONDARY_NORMAL = '#61c0bf'
 const INK_LIGHT = '#505568'
 const INK_NORMAL = '#363b4e'

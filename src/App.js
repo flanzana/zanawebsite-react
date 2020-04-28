@@ -79,13 +79,17 @@ class App extends Component {
 		this.setState({ shouldShowMenu: false });
 	}
 
+	onArrowClick = () => {
+		document.getElementById('navbar').scrollIntoView({ behavior: "smooth" });
+	}
+
 	render() {
-		const { theme, isNavbarFixed, isToggleThemeModeVisible, windowWidth, shouldShowMenu } = this.state;
+		const { theme, isNavbarFixed, isToggleThemeModeVisible, windowWidth, shouldShowMenu, scrollFromTop } = this.state;
 
 		return (
 			<ThemeProvider theme={theme}>
 				<Wrapper>
-					<Header isNavbarFixed={isNavbarFixed} />
+					<Header isNavbarFixed={isNavbarFixed} scrollFromTop={scrollFromTop} onArrowClick={this.onArrowClick} />
 					<NavBar isNavbarFixed={isNavbarFixed} width={windowWidth} toggleMenu={this.toggleMenu} />
 					{(windowWidth < 700) && shouldShowMenu && <SideBar isNavbarFixed={isNavbarFixed} />}
 					<MainContentWrapper>
