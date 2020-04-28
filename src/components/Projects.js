@@ -1,6 +1,6 @@
 import React from 'react';
-import { MainSection, MainTitle } from '../theme/globalStyle';
 import styled from 'styled-components';
+import SectionLayout from "./SectionLayout";
 
 const ProjectsWrapper = styled.div`
     display: flex;
@@ -39,8 +39,7 @@ const ProjectItem = styled.a`
 `;
 
 const Projects = ({ projects }) => (
-    <MainSection id="projects">
-        <MainTitle>Projects</MainTitle>
+    <SectionLayout id="projects" title="Projects">
         <ProjectsWrapper>
             {projects.map((project, index) => (
                 <ProjectItem key={index} href={project.url} target='_blank' rel="noopener noreferrer">
@@ -49,7 +48,7 @@ const Projects = ({ projects }) => (
                 </ProjectItem>
             ))}
         </ProjectsWrapper>
-    </MainSection>
+    </SectionLayout>
 )
 
 export default Projects;

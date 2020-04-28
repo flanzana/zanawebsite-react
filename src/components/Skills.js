@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MainSection, MainTitle } from '../theme/globalStyle';
 import SkillBullets from './SkillBullets.js';
+import SectionLayout from "./SectionLayout";
 
 const SkillSection = styled.div`
     width: calc(100vw - 40px);
@@ -60,8 +60,7 @@ const SkillItem = styled.li`
 `;
 
 const Skills = ({ skills }) => (
-    <MainSection id="skills">
-        <MainTitle>Skills</MainTitle>
+    <SectionLayout id="skills" title="Skills">
         <SkillSection>
             <div className='skl'>
                 <SkillTitle>Languages</SkillTitle>
@@ -108,7 +107,7 @@ const Skills = ({ skills }) => (
                 </SkillList>
             </div>
         </SkillSection>
-    </MainSection>
+    </SectionLayout>
 )
 
 export default Skills;
