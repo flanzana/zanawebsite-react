@@ -45,6 +45,8 @@ export const themeDarkMode = {
   ...commonColors,
 }
 
+export const NAVBAR_HEIGHT = 70 // px
+
 injectGlobal`
 	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto:400,900|Coda');
 	@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css');
@@ -55,6 +57,7 @@ injectGlobal`
 		font-family: Roboto, sans-serif;
 		min-width: 320px;
 		cursor: default;
+		text-align: center;
 	}
 
 	h1 {

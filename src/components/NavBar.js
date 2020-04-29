@@ -1,17 +1,18 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import styled, { keyframes } from "styled-components"
+import { NAVBAR_HEIGHT } from "../theme/globalStyle"
 
 const movenavbar = keyframes`
     0% {
         height: 0;
     }
     100% {
-        height: 70px;
+        height: ${NAVBAR_HEIGHT}px;
     }
 `
 
 const NavBarWrapper = styled.div`
-  height: 70px;
+  height: ${NAVBAR_HEIGHT}px;
   width: calc(100% - 20px);
   background-color: ${props => props.theme.backgroundPrimary};
   display: flex;
@@ -21,7 +22,7 @@ const NavBarWrapper = styled.div`
   z-index: 900;
   position: relative;
   animation: ${movenavbar} 0.3s ease-out 1;
-  margin-bottom: -70px;
+  margin-bottom: -${NAVBAR_HEIGHT}px;
   top: 0;
   padding-left: 20px;
   box-shadow: 0 3px 8px ${props => props.theme.navbarBoxShadow};
@@ -80,12 +81,12 @@ const NavItem = ({ href, title }) => (
   </li>
 )
 
-const NavBar = ({ isNavbarFixed, width, toggleMenu }) => (
+const NavBar = ({ isNavbarFixed, shouldShowHamburgerIcon, toggleSideBar }, ref) => (
   <NavBarWrapper id="navbar" className={isNavbarFixed ? "fixed" : ""}>
-    <h1>Žana Flander</h1>
+    <h1 ref={ref}>Žana Flander</h1>
 
-    {width < 700 ? (
-      <StyledHamburgerIcon id="hamburger-icon" onClick={toggleMenu}>
+    {shouldShowHamburgerIcon ? (
+      <StyledHamburgerIcon id="hamburger-icon" onClick={toggleSideBar}>
         <i className="fa fa-bars" aria-hidden="true" />
       </StyledHamburgerIcon>
     ) : (
@@ -99,4 +100,4 @@ const NavBar = ({ isNavbarFixed, width, toggleMenu }) => (
   </NavBarWrapper>
 )
 
-export default NavBar
+export default forwardRef(NavBar)

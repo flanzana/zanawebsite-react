@@ -47,8 +47,8 @@ const ArrowDown = styled.a`
   cursor: pointer;
 `
 
-const Header = ({ isNavbarFixed, scrollFromTop, onArrowClick }) => (
-  <HeaderWrapper id="header" isNavbarFixed={isNavbarFixed}>
+const Header = ({ isArrowVisible, onArrowClick }) => (
+  <HeaderWrapper id="header">
     <h1>Žana Flander</h1>
     <ContactButtonsWrapper>
       <ContactButton
@@ -64,7 +64,7 @@ const Header = ({ isNavbarFixed, scrollFromTop, onArrowClick }) => (
         ariaLabel="GitHub"
       />
     </ContactButtonsWrapper>
-    {scrollFromTop < 40 && (
+    {isArrowVisible && (
       <ArrowDown
         className="fa fa-angle-double-down"
         onClick={onArrowClick}

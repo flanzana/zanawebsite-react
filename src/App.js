@@ -1,6 +1,6 @@
-import React, { Component } from "react"
+import React, { useState, useRef } from "react"
 import styled, { ThemeProvider } from "styled-components"
-import { themeDarkMode, themeLightMode } from "./theme/globalStyle"
+import { NAVBAR_HEIGHT, themeDarkMode, themeLightMode } from "./theme/globalStyle"
 import Header from "./components/Header.js"
 import NavBar from "./components/NavBar.js"
 import SideBar from "./components/SideBar.js"
@@ -10,10 +10,8 @@ import Projects from "./components/Projects.js"
 import Footer from "./components/Footer.js"
 import ToggleThemeButton from "./components/ToggleThemeButton"
 import { SKILLS, PROJECTS } from "./data/data.js"
-
-const Wrapper = styled.div`
-  text-align: center;
-`
+import useWindowSize from "./helpers/useWindowSize"
+import useWindowScrollYPosition from "./helpers/useWindowScrollYPosition"
 
 const MainContentWrapper = styled.div`
   color: ${props => props.theme.textNormal};
@@ -21,103 +19,56 @@ const MainContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: ${props => (props.isNavbarFixed ? 0 : "70px")};
+  margin-top: ${props => (props.isNavbarFixed ? 0 : `${NAVBAR_HEIGHT}px`)};
 `
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      theme: themeLightMode,
-      isNavbarFixed: false,
-      isToggleThemeModeVisible: false,
-      scrollFromTop: 0,
-      windowWidth: window.innerWidth,
-      shouldShowMenu: false,
-    }
+const App = () => {
+  const windowSize = useWindowSize()
+  const windowScrollYPosition = useWindowScrollYPosition()
+  const [theme, setTheme] = useState(themeLightMode)
+  const [shouldShowSideBar, setShouldShowSideBar] = useState(false)
+  const navBarRef = useRef(null)
+
+  const shouldShowHamburgerIcon = windowSize.width < 700
+  const isToggleThemeModeVisible = windowScrollYPosition > NAVBAR_HEIGHT
+  const isNavbarFixed = windowScrollYPosition > windowSize.height
+  const isArrowVisible = windowScrollYPosition < 40
+  const isCurrentDarkMode = theme.type === "dark"
+
+  const toggleSideBar = () => {
+    setShouldShowSideBar(!shouldShowSideBar)
+  }
+  const toggleThemeMode = () => {
+    setTheme(isCurrentDarkMode ? themeLightMode : themeDarkMode)
+    setShouldShowSideBar(false)
+  }
+  const scrollIntoNavBar = () => {
+    navBarRef.current.scrollIntoView({ behavior: "smooth" })
   }
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll, false)
-    window.addEventListener("resize", this.handleWindowSizeChange, false)
-  }
-  UNSAFE_componentWillMount() {
-    window.removeEventListener("scroll", this.handleScroll, false)
-    window.removeEventListener("resize", this.handleWindowSizeChange, false)
-  }
-
-  handleScroll = () => {
-    let headerHeight = document.getElementById("header").clientHeight
-    let navbarHeight = document.getElementById("navbar").clientHeight
-    this.setState({ scrollFromTop: window.scrollY })
-
-    if (this.state.scrollFromTop > headerHeight) {
-      this.setState({ isNavbarFixed: true })
-    } else {
-      this.setState({ isNavbarFixed: false })
-    }
-
-    if (this.state.scrollFromTop > navbarHeight) {
-      this.setState({ isToggleThemeModeVisible: true })
-    } else {
-      this.setState({ isToggleThemeModeVisible: false })
-    }
-  }
-
-  handleWindowSizeChange = () => {
-    this.setState({ windowWidth: window.innerWidth })
-  }
-
-  toggleMenu = () => {
-    this.setState({ shouldShowMenu: !this.state.shouldShowMenu })
-  }
-
-  toggleThemeMode = () => {
-    const isCurrentDarkMode = this.state.theme === themeDarkMode
-    this.setState({ theme: isCurrentDarkMode ? themeLightMode : themeDarkMode })
-    this.setState({ shouldShowMenu: false })
-  }
-
-  onArrowClick = () => {
-    document.getElementById("navbar").scrollIntoView({ behavior: "smooth" })
-  }
-
-  render() {
-    const {
-      theme,
-      isNavbarFixed,
-      isToggleThemeModeVisible,
-      windowWidth,
-      shouldShowMenu,
-      scrollFromTop,
-    } = this.state
-
-    return (
-      <ThemeProvider theme={theme}>
-        <Wrapper>
-          <Header
-            isNavbarFixed={isNavbarFixed}
-            scrollFromTop={scrollFromTop}
-            onArrowClick={this.onArrowClick}
-          />
-          <NavBar isNavbarFixed={isNavbarFixed} width={windowWidth} toggleMenu={this.toggleMenu} />
-          {windowWidth < 700 && shouldShowMenu && <SideBar isNavbarFixed={isNavbarFixed} />}
-          <MainContentWrapper>
-            <AboutMe />
-            <Skills skills={SKILLS} />
-            <Projects projects={PROJECTS} />
-          </MainContentWrapper>
-          <Footer />
-          {isToggleThemeModeVisible && (
-            <ToggleThemeButton
-              onClick={this.toggleThemeMode}
-              isCurrentDarkMode={theme.type === "dark"}
-            />
-          )}
-        </Wrapper>
-      </ThemeProvider>
-    )
-  }
+  return (
+    <ThemeProvider theme={theme}>
+      <>
+        <Header isArrowVisible={isArrowVisible} onArrowClick={scrollIntoNavBar} />
+        <NavBar
+          isNavbarFixed={isNavbarFixed}
+          shouldShowHamburgerIcon={shouldShowHamburgerIcon}
+          toggleSideBar={toggleSideBar}
+          ref={navBarRef}
+        />
+        {shouldShowHamburgerIcon && shouldShowSideBar && <SideBar isNavbarFixed={isNavbarFixed} />}
+        <MainContentWrapper>
+          <AboutMe />
+          <Skills skills={SKILLS} />
+          <Projects projects={PROJECTS} />
+        </MainContentWrapper>
+        <Footer />
+        {isToggleThemeModeVisible && (
+          <ToggleThemeButton onClick={toggleThemeMode} isCurrentDarkMode={isCurrentDarkMode} />
+        )}
+      </>
+    </ThemeProvider>
+  )
 }
 
 export default App

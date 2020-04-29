@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
+import { NAVBAR_HEIGHT } from "../theme/globalStyle"
 
 const movesidebar = keyframes`
     0% {
@@ -12,7 +13,7 @@ const movesidebar = keyframes`
 
 const SideBarWrapper = styled.div`
   background-color: ${props => props.theme.backgroundPrimary};
-  margin-top: 70px;
+  margin-top: ${NAVBAR_HEIGHT}px;
   width: 200px;
   list-style: none;
   position: absolute;
