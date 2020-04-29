@@ -1,31 +1,31 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 
 const StyledTitle = styled.h1`
-	color: ${props => props.theme.textPrimary};
-	text-transform: uppercase;
-	font-size: 2em;
-	margin-top: 0;
-	line-height: 1.75em;
-	border-bottom: 1px solid ${props => props.theme.textNormal};
-	width: 280px;
-`;
+  color: ${props => props.theme.textPrimary};
+  text-transform: uppercase;
+  font-size: 2em;
+  margin-top: 0;
+  line-height: 1.75em;
+  border-bottom: 1px solid ${props => props.theme.textNormal};
+  width: 280px;
+`
 
 const StyledSection = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	padding: 65px 0 50px 0;
-	background-color: ${props => props.theme.backgroundNormal};
-`;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 65px 0 50px 0;
+  background-color: ${props => props.theme.backgroundNormal};
+`
 
 const SectionLayout = ({ id, title, children }) => (
-    <StyledSection id={id}>
-      <StyledTitle>{title}</StyledTitle>
-      {children}
-    </StyledSection>
+  <StyledSection id={id}>
+    <StyledTitle>{title}</StyledTitle>
+    {children}
+  </StyledSection>
 )
 
-export default SectionLayout;
+export default SectionLayout
