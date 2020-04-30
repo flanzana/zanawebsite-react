@@ -1,17 +1,26 @@
 {
-  "main.css": "/static/css/main.58f739df.chunk.css",
-  "main.js": "/static/js/main.7a36998d.chunk.js",
-  "main.js.map": "/static/js/main.7a36998d.chunk.js.map",
-  "static/js/1.83392244.chunk.js": "/static/js/1.83392244.chunk.js",
-  "static/js/1.83392244.chunk.js.map": "/static/js/1.83392244.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/project-chess.png": "/static/media/project-chess.11eaf0a5.png",
-  "static/media/project-arcade.png": "/static/media/project-arcade.327ed76c.png",
-  "static/media/project-almeria.png": "/static/media/project-almeria.aa6f8766.png",
-  "static/media/project-memory.png": "/static/media/project-memory.57272889.png",
-  "static/css/main.58f739df.chunk.css.map": "/static/css/main.58f739df.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.2a9ca99cab5ce23b19b272e43f9fbaea.js": "/precache-manifest.2a9ca99cab5ce23b19b272e43f9fbaea.js",
-  "service-worker.js": "/service-worker.js"
+  "files": {
+    "main.css": "/static/css/main.7d319162.chunk.css",
+    "main.js": "/static/js/main.4e9746bf.chunk.js",
+    "main.js.map": "/static/js/main.4e9746bf.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7069cdd1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7069cdd1.js.map",
+    "static/js/2.32d31e73.chunk.js": "/static/js/2.32d31e73.chunk.js",
+    "static/js/2.32d31e73.chunk.js.map": "/static/js/2.32d31e73.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.46672200a741440970909fd9ffca9667.js": "/precache-manifest.46672200a741440970909fd9ffca9667.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.7d319162.chunk.css.map": "/static/css/main.7d319162.chunk.css.map",
+    "static/js/2.32d31e73.chunk.js.LICENSE.txt": "/static/js/2.32d31e73.chunk.js.LICENSE.txt",
+    "static/media/project-almeria.png": "/static/media/project-almeria.aa6f8766.png",
+    "static/media/project-arcade.png": "/static/media/project-arcade.327ed76c.png",
+    "static/media/project-memory.png": "/static/media/project-memory.57272889.png",
+    "static/media/project-travel-list.png": "/static/media/project-travel-list.dbd628c2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7069cdd1.js",
+    "static/js/2.32d31e73.chunk.js",
+    "static/css/main.7d319162.chunk.css",
+    "static/js/main.4e9746bf.chunk.js"
+  ]
 }
