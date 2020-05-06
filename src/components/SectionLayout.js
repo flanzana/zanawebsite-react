@@ -18,7 +18,6 @@ const StyledSection = styled.div`
   justify-content: center;
   width: 100%;
   padding: 65px 0 50px 0;
-  background-color: ${props => props.theme.backgroundNormal};
 `
 
 const SectionLayout = ({ id, title, children }) => (

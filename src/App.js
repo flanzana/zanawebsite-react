@@ -20,6 +20,7 @@ const MainContentWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: ${props => (props.isNavbarFixed ? 0 : `${NAVBAR_HEIGHT}px`)};
+  background-color: ${props => props.theme.backgroundNormal};
 `
 
 const App = () => {
