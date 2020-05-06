@@ -55,7 +55,7 @@ const NavBarWrapper = styled.div`
     text-transform: uppercase;
     letter-spacing: -0.05em;
     height: 100%;
-    padding: 0 15px;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     transition: 0.4s;
@@ -94,7 +94,6 @@ const NavBar = ({ isNavbarFixed, shouldShowHamburgerIcon, toggleSideBar }, ref) 
         <NavItem href="#aboutme" title="About me" />
         <NavItem href="#skills" title="Skills" />
         <NavItem href="#projects" title="Projects" />
-        <NavItem href="#contact" title="Contact" />
       </ul>
     )}
   </NavBarWrapper>

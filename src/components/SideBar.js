@@ -7,7 +7,7 @@ const movesidebar = keyframes`
         height: 30px;
     }
     100% {
-        height: 204px;
+        height: 153px;
     }
 `
 
@@ -60,7 +60,6 @@ const SideBar = ({ isNavbarFixed }) => (
     <NavItem href="#aboutme" title="About me" />
     <NavItem href="#skills" title="Skills" />
     <NavItem href="#projects" title="Projects" />
-    <NavItem href="#contact" title="Contact" />
   </SideBarWrapper>
 )
 
