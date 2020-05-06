@@ -2,6 +2,7 @@ import imgmemory from "../data/img/project-memory.png"
 import imgarcade from "../data/img/project-arcade.png"
 import imgalmeria from "../data/img/project-almeria.png"
 import imgtravellist from "../data/img/project-travel-list.png"
+import imgzana from "../data/img/project-zana.png"
 
 export const SKILLS = {
   language: [
@@ -19,6 +20,7 @@ export const SKILLS = {
     { name: "Jest", level: 4 },
     { name: "ReactJS", level: 4 },
     { name: "Redux", level: 2 },
+    { name: "TypeScript", level: 2 },
   ],
 
   design: [
@@ -31,7 +33,6 @@ export const SKILLS = {
     { name: "AutoCAD", level: 3 },
     { name: "MATLAB", level: 3 },
     { name: "OCAD", level: 5 },
-    { name: "QGIS", level: 4 },
     { name: "SketchUp", level: 2 },
   ],
 }
@@ -41,6 +42,11 @@ export const PROJECTS = [
     name: "Travel packing list",
     img: imgtravellist,
     url: "https://flanzana.github.io/travel-packing-list",
+  },
+  {
+    name: "Personal website",
+    img: imgzana,
+    url: "https://flanzana.github.io",
   },
   {
     name: "Almería map",

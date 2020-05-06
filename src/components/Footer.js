@@ -59,7 +59,7 @@ const Footer = () => (
         ariaLabel="E-mail"
       />
     </ContactButtonsWrapper>
-    <p>Coded and designed with ❤ by Žana Flander. © 2020</p>
+    <p>Coded and designed with ❤ by Žana Flander. © 2018-2020</p>
   </FooterWrapper>
 )
 
