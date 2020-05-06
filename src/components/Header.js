@@ -1,7 +1,9 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
+import Particles from "react-particles-js"
 import ContactButton from "./ContactButton.js"
-import gplay from "../theme/gplay.png"
+import { PARTICLES_PARAMS_DESKTOP, PARTICLES_PARAMS_MOBILE } from "../consts"
+import useWindowSize from "../helpers/useWindowSize"
 
 const bounce = keyframes`
   0%   { transform: translateY(0); }
@@ -9,11 +11,17 @@ const bounce = keyframes`
   100% { transform: translateY(0); }
 `
 
-const HeaderWrapper = styled.div`
+const StyledHeader = styled.div`
   height: 100vh;
   width: 100%;
+  position: relative; // because of Particles
   background-color: ${props => props.theme.backgroundPrimary};
-  background-image: url(${gplay});
+`
+
+const HeaderWrapper = styled.div`
+  position: absolute; // because of Particles
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,31 +55,41 @@ const ArrowDown = styled.a`
   cursor: pointer;
 `
 
-const Header = ({ isArrowVisible, onArrowClick }) => (
-  <HeaderWrapper id="header">
-    <h1>Žana Flander</h1>
-    <ContactButtonsWrapper>
-      <ContactButton
-        iconName="fa fa-linkedin"
-        href="https://www.linkedin.com/in/zanaflander"
-        size="24px"
-        ariaLabel="LinkedIn"
+const Header = ({ isArrowVisible, onArrowClick }) => {
+  const isMobile = useWindowSize().width < 700
+  return (
+    <StyledHeader>
+      <HeaderWrapper id="header">
+        <h1>Žana Flander</h1>
+        <ContactButtonsWrapper>
+          <ContactButton
+            iconName="fa fa-linkedin"
+            href="https://www.linkedin.com/in/zanaflander"
+            size="24px"
+            ariaLabel="LinkedIn"
+          />
+          <ContactButton
+            iconName="fa fa-github"
+            href="https://github.com/flanzana"
+            size="24px"
+            ariaLabel="GitHub"
+          />
+        </ContactButtonsWrapper>
+        {isArrowVisible && (
+          <ArrowDown
+            className="fa fa-angle-double-down"
+            onClick={onArrowClick}
+            aria-label="Scroll to content"
+          />
+        )}
+      </HeaderWrapper>
+      <Particles
+        width="100%"
+        height="100vh"
+        params={isMobile ? PARTICLES_PARAMS_MOBILE : PARTICLES_PARAMS_DESKTOP}
       />
-      <ContactButton
-        iconName="fa fa-github"
-        href="https://github.com/flanzana"
-        size="24px"
-        ariaLabel="GitHub"
-      />
-    </ContactButtonsWrapper>
-    {isArrowVisible && (
-      <ArrowDown
-        className="fa fa-angle-double-down"
-        onClick={onArrowClick}
-        aria-label="Scroll to content"
-      />
-    )}
-  </HeaderWrapper>
-)
+    </StyledHeader>
+  )
+}
 
 export default Header

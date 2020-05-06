@@ -1,7 +1,7 @@
 # Žana Flander website
 
 ## Introduction
-I have created my website from scratch by using React. Website is not finished yet.
+I have created my website from scratch by using React. Website is not finished yet, because I am always adding new features or editing a style of the page.
 
 ## How I built the project
 - I built the project from scratch with [`create-react-app`](https://github.com/facebook/create-react-app).
@@ -10,4 +10,4 @@ I have created my website from scratch by using React. Website is not finished y
 
 ## Sources
 - Icons from [Font Awesome](https://fontawesome.com/v4.7.0/icons/)
-- Background image from [Subtle patterns](https://www.toptal.com/designers/subtlepatterns/?s=gplay)
+- Header animation from [react-particles-js](https://github.com/Wufe/react-particles-js)
