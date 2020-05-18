@@ -1,6 +1,9 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import Particles from "react-particles-js"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
 import ContactButton from "./ContactButton.js"
 import { PARTICLES_PARAMS_DESKTOP, PARTICLES_PARAMS_MOBILE } from "../consts"
 import useWindowSize from "../helpers/useWindowSize"
@@ -49,7 +52,7 @@ const ArrowDown = styled.a`
   position: absolute;
   bottom: 5px;
   color: ${props => props.theme.textWhite};
-  font-size: 28px;
+  font-size: 22px;
   animation: ${bounce} 1.5s ease infinite;
   text-decoration: none;
   cursor: pointer;
@@ -63,24 +66,22 @@ const Header = ({ isArrowVisible, onArrowClick }) => {
         <h1>Žana Flander</h1>
         <ContactButtonsWrapper>
           <ContactButton
-            iconName="fa fa-linkedin"
+            iconName={faLinkedinIn}
             href="https://www.linkedin.com/in/zanaflander"
             size="24px"
             ariaLabel="LinkedIn"
           />
           <ContactButton
-            iconName="fa fa-github"
+            iconName={faGithub}
             href="https://github.com/flanzana"
             size="24px"
             ariaLabel="GitHub"
           />
         </ContactButtonsWrapper>
         {isArrowVisible && (
-          <ArrowDown
-            className="fa fa-angle-double-down"
-            onClick={onArrowClick}
-            aria-label="Scroll to content"
-          />
+          <ArrowDown onClick={onArrowClick} aria-label="Scroll to content">
+            <FontAwesomeIcon icon={faArrowDown} aria-hidden="true" />
+          </ArrowDown>
         )}
       </HeaderWrapper>
       <Particles

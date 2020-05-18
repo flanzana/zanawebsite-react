@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import { faGithub, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import ContactButton from "./ContactButton.js"
 
 const FooterWrapper = styled.div`
@@ -35,25 +37,25 @@ const Footer = () => (
   <FooterWrapper id="contact">
     <ContactButtonsWrapper>
       <ContactButton
-        iconName="fa fa-linkedin"
+        iconName={faLinkedinIn}
         href="https://www.linkedin.com/in/zanaflander"
         size="16px"
         ariaLabel="LinkedIn"
       />
       <ContactButton
-        iconName="fa fa-github"
+        iconName={faGithub}
         href="https://github.com/flanzana"
         size="16px"
         ariaLabel="GitHub"
       />
       <ContactButton
-        iconName="fa fa-twitter"
+        iconName={faTwitter}
         href="https://twitter.com/flanzana"
         size="16px"
         ariaLabel="Twitter"
       />
       <ContactButton
-        iconName="fa fa-envelope"
+        iconName={faEnvelope}
         href="mailto:zana.flander@gmail.com"
         size="16px"
         ariaLabel="E-mail"

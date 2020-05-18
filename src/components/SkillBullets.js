@@ -1,75 +1,75 @@
 import React from "react"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCircle } from "@fortawesome/free-solid-svg-icons"
 
-const Bullets = styled.span`
-  .fa-circle {
-    font-size: 0.9em;
-    padding: 0 3px;
-    transition: all 0.3s ease-out;
-  }
+const Circle = styled(FontAwesomeIcon)`
+  font-size: 0.8em;
+  padding: 0 2.5px;
+  transition: all 0.3s ease-out;
 
-  .fill {
+  &.full {
     color: ${props => props.theme.textSecondary};
   }
 
-  .unfill {
+  &.empty {
     color: ${props => props.theme.textSecondary};
     opacity: 0.2;
   }
 
-  .fa-circle:last-of-type {
+  &:last-of-type {
     padding-right: 0;
   }
 `
 
 const SkillBullets = ({ level }) => (
-  <Bullets>
+  <span aria-label={`${level}/5`}>
     {level === 5 && (
-      <div>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-      </div>
+      <>
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+      </>
     )}
     {level === 4 && (
-      <div>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle unfill" aria-hidden="true"></i>
-      </div>
+      <>
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="empty" aria-hidden="true" />
+      </>
     )}
     {level === 3 && (
-      <div>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle unfill" aria-hidden="true"></i>
-        <i className="fa fa-circle unfill" aria-hidden="true"></i>
-      </div>
+      <>
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="empty" aria-hidden="true" />
+        <Circle icon={faCircle} className="empty" aria-hidden="true" />
+      </>
     )}
     {level === 2 && (
-      <div>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle unfill" aria-hidden="true"></i>
-        <i className="fa fa-circle unfill" aria-hidden="true"></i>
-        <i className="fa fa-circle unfill" aria-hidden="true"></i>
-      </div>
+      <>
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="empty" aria-hidden="true" />
+        <Circle icon={faCircle} className="empty" aria-hidden="true" />
+        <Circle icon={faCircle} className="empty" aria-hidden="true" />
+      </>
     )}
     {level === 1 && (
-      <div>
-        <i className="fa fa-circle fill" aria-hidden="true"></i>
-        <i className="fa fa-circle unfill" aria-hidden="true"></i>
-        <i className="fa fa-circle unfill" aria-hidden="true"></i>
-        <i className="fa fa-circle unfill" aria-hidden="true"></i>
-        <i className="fa fa-circle unfill" aria-hidden="true"></i>
-      </div>
+      <>
+        <Circle icon={faCircle} className="full" aria-hidden="true" />
+        <Circle icon={faCircle} className="empty" aria-hidden="true" />
+        <Circle icon={faCircle} className="empty" aria-hidden="true" />
+        <Circle icon={faCircle} className="empty" aria-hidden="true" />
+        <Circle icon={faCircle} className="empty" aria-hidden="true" />
+      </>
     )}
-  </Bullets>
+  </span>
 )
 
 export default SkillBullets

@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const StyledContactButton = styled.a`
   width: calc(${props => props.size} + 2vmin);
@@ -40,7 +41,7 @@ const ContactButton = ({ href, iconName, size, ariaLabel }) => (
     size={size}
     aria-label={ariaLabel}
   >
-    <i className={iconName} aria-hidden="true" />
+    <FontAwesomeIcon icon={iconName} aria-hidden="true" />
   </StyledContactButton>
 )
 

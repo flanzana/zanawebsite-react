@@ -26,7 +26,7 @@ const SkillTitle = styled.h2`
 `
 
 const SkillList = styled.ul`
-  width: 230px;
+  width: 225px;
   font-size: 0.95em;
   list-style: none;
   margin: 0;
@@ -44,11 +44,11 @@ const SkillItem = styled.li`
       font-weight: bold;
     }
 
-    .fa-circle {
-      padding: 0 4px;
+    svg {
+      padding: 0 3.5px;
     }
 
-    .fa-circle:last-of-type {
+    svg:last-of-type {
       padding-right: 0;
     }
   }

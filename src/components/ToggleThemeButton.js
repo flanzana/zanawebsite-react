@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
 
 const StyledToggleThemeButton = styled.a`
   width: calc(${props => props.size} + 2vmin);
@@ -42,7 +44,7 @@ const ToggleThemeButton = ({ onClick, isCurrentDarkMode }) => (
     tabIndex="0"
     aria-label={`Switch to ${isCurrentDarkMode ? "light" : "dark"} mode`}
   >
-    <i className="fa fa-adjust" aria-hidden="true" />
+    <FontAwesomeIcon icon={isCurrentDarkMode ? faSun : faMoon} aria-hidden="true" />
   </StyledToggleThemeButton>
 )
 
