@@ -1,7 +1,9 @@
+// @flow
 import React from "react"
 import styled from "styled-components"
 import SkillBullets from "./SkillBullets.js"
 import SectionLayout from "./SectionLayout"
+import type { SkillsType } from "../data/data"
 
 const SkillSection = styled.div`
   width: calc(100vw - 40px);
@@ -59,7 +61,11 @@ const SkillItem = styled.li`
   }
 `
 
-const Skills = ({ skills }) => (
+type Props = {
+  skills: SkillsType,
+}
+
+const Skills = ({ skills }: Props) => (
   <SectionLayout id="skills" title="Skills">
     <SkillSection>
       <div className="skl">

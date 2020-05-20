@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -33,7 +34,14 @@ const StyledContactButton = styled.a`
   }
 `
 
-const ContactButton = ({ href, iconName, size, ariaLabel }) => (
+type Props = {
+  href: string,
+  iconName: string,
+  size: string,
+  ariaLabel: string,
+}
+
+const ContactButton = ({ href, iconName, size, ariaLabel }: Props) => (
   <StyledContactButton
     href={href}
     target="_blank"

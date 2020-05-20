@@ -1,3 +1,4 @@
+// @flow
 import React, { useState, useRef } from "react"
 import styled, { ThemeProvider } from "styled-components"
 import { NAVBAR_HEIGHT, themeDarkMode, themeLightMode } from "./theme/globalStyle"
@@ -28,7 +29,7 @@ const App = () => {
   const windowScrollYPosition = useWindowScrollYPosition()
   const [theme, setTheme] = useState(themeLightMode)
   const [shouldShowSideBar, setShouldShowSideBar] = useState(false)
-  const navBarRef = useRef(null)
+  const navBarRef = useRef<null | HTMLElement>(null)
 
   const shouldShowHamburgerIcon = windowSize.width < 700
   const isToggleThemeModeVisible = windowScrollYPosition > NAVBAR_HEIGHT
@@ -44,7 +45,7 @@ const App = () => {
     setShouldShowSideBar(false)
   }
   const scrollIntoNavBar = () => {
-    navBarRef.current.scrollIntoView({ behavior: "smooth" })
+    navBarRef.current && navBarRef.current.scrollIntoView({ behavior: "smooth" })
   }
 
   return (

@@ -1,3 +1,5 @@
+// @flow
+
 export const PARTICLES_PARAMS_DESKTOP = {
   particles: {
     number: {

@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -36,7 +37,12 @@ const StyledToggleThemeButton = styled.a`
   }
 `
 
-const ToggleThemeButton = ({ onClick, isCurrentDarkMode }) => (
+type Props = {
+  onClick: () => void,
+  isCurrentDarkMode: boolean,
+}
+
+const ToggleThemeButton = ({ onClick, isCurrentDarkMode }: Props) => (
   <StyledToggleThemeButton
     onClick={onClick}
     onKeyPress={onClick}

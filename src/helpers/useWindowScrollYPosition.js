@@ -1,19 +1,14 @@
+// @flow
 import { useState, useEffect } from "react"
 
 function useWindowScrollYPosition() {
-  const isClient = typeof window === "object"
-
   function getPosition() {
-    return isClient ? window.scrollY : undefined
+    return window.scrollY
   }
 
   const [windowScrollYPosition, setWindowScrollYPosition] = useState(getPosition)
 
   useEffect(() => {
-    if (!isClient) {
-      return false
-    }
-
     function handleScroll() {
       setWindowScrollYPosition(getPosition())
     }

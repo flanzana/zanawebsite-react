@@ -1,8 +1,28 @@
+// @flow
 import imgmemory from "../data/img/project-memory.png"
 import imgarcade from "../data/img/project-arcade.png"
 import imgalmeria from "../data/img/project-almeria.png"
 import imgtravellist from "../data/img/project-travel-list.png"
 import imgzana from "../data/img/project-zana.png"
+
+export type LevelType = 1 | 2 | 3 | 4 | 5
+
+type LanguageSkill = {|
+  name: string,
+  level: string,
+|}
+
+type OtherSkill = {|
+  name: string,
+  level: LevelType,
+|}
+
+export type SkillsType = {|
+  language: Array<LanguageSkill>,
+  webdev: Array<OtherSkill>,
+  design: Array<OtherSkill>,
+  engineering: Array<OtherSkill>,
+|}
 
 export const SKILLS = {
   language: [
@@ -36,6 +56,14 @@ export const SKILLS = {
     { name: "SketchUp", level: 2 },
   ],
 }
+
+type Project = {|
+  name: string,
+  img: string,
+  url: string,
+|}
+
+export type ProjectsType = Array<Project>
 
 export const PROJECTS = [
   {

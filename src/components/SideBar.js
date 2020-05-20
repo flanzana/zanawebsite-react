@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import { NAVBAR_HEIGHT } from "../theme/globalStyle"
@@ -49,13 +50,22 @@ const SideBarWrapper = styled.div`
   }
 `
 
-const NavItem = ({ href, title }) => (
+type Props = {
+  isNavbarFixed: boolean,
+}
+
+type NavItemProps = {
+  href: string,
+  title: string,
+}
+
+const NavItem = ({ href, title }: NavItemProps) => (
   <li>
     <a href={href}>{title}</a>
   </li>
 )
 
-const SideBar = ({ isNavbarFixed }) => (
+const SideBar = ({ isNavbarFixed }: Props) => (
   <SideBarWrapper id="sidebar" className={isNavbarFixed ? "fixed" : ""}>
     <NavItem href="#aboutme" title="About me" />
     <NavItem href="#skills" title="Skills" />

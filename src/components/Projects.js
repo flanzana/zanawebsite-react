@@ -1,6 +1,8 @@
+// @flow
 import React from "react"
 import styled from "styled-components"
 import SectionLayout from "./SectionLayout"
+import type { ProjectsType } from "../data/data"
 
 const ProjectsWrapper = styled.div`
   display: flex;
@@ -38,7 +40,11 @@ const ProjectItem = styled.a`
   }
 `
 
-const Projects = ({ projects }) => (
+type Props = {
+  projects: ProjectsType,
+}
+
+const Projects = ({ projects }: Props) => (
   <SectionLayout id="projects" title="Projects">
     <ProjectsWrapper>
       {projects.map(project => (

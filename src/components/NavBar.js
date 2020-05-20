@@ -1,3 +1,4 @@
+// @flow
 import React, { forwardRef } from "react"
 import styled, { keyframes } from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -77,13 +78,24 @@ const StyledHamburgerIcon = styled.button`
   margin-right: 20px;
 `
 
-const NavItem = ({ href, title }) => (
+type Props = {
+  isNavbarFixed: boolean,
+  shouldShowHamburgerIcon: boolean,
+  toggleSideBar: () => void,
+}
+
+type NavItemProps = {
+  href: string,
+  title: string,
+}
+
+const NavItem = ({ href, title }: NavItemProps) => (
   <li>
     <a href={href}>{title}</a>
   </li>
 )
 
-const NavBar = ({ isNavbarFixed, shouldShowHamburgerIcon, toggleSideBar }, ref) => (
+const NavBar = ({ isNavbarFixed, shouldShowHamburgerIcon, toggleSideBar }: Props, ref) => (
   <NavBarWrapper id="navbar" className={isNavbarFixed ? "fixed" : ""}>
     <h1 ref={ref}>Žana Flander</h1>
 
@@ -101,4 +113,4 @@ const NavBar = ({ isNavbarFixed, shouldShowHamburgerIcon, toggleSideBar }, ref) 
   </NavBarWrapper>
 )
 
-export default forwardRef(NavBar)
+export default forwardRef<Props, HTMLElement>(NavBar)

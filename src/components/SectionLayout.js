@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import styled from "styled-components"
 
@@ -20,7 +21,13 @@ const StyledSection = styled.div`
   padding: 65px 0 50px 0;
 `
 
-const SectionLayout = ({ id, title, children }) => (
+type Props = {
+  id: string,
+  title: string,
+  children: React$Node,
+}
+
+const SectionLayout = ({ id, title, children }: Props) => (
   <StyledSection id={id}>
     <StyledTitle>{title}</StyledTitle>
     {children}

@@ -1,7 +1,9 @@
+// @flow
 import React from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
+import type { LevelType } from "../data/data"
 
 const Circle = styled(FontAwesomeIcon)`
   font-size: 0.8em;
@@ -22,7 +24,11 @@ const Circle = styled(FontAwesomeIcon)`
   }
 `
 
-const SkillBullets = ({ level }) => (
+type Props = {
+  level: LevelType,
+}
+
+const SkillBullets = ({ level }: Props) => (
   <span aria-label={`${level}/5`}>
     {level === 5 && (
       <>

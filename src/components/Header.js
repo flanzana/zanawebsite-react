@@ -1,3 +1,4 @@
+// @flow
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import Particles from "react-particles-js"
@@ -58,7 +59,12 @@ const ArrowDown = styled.a`
   cursor: pointer;
 `
 
-const Header = ({ isArrowVisible, onArrowClick }) => {
+type Props = {
+  isArrowVisible: boolean,
+  onArrowClick: () => void,
+}
+
+const Header = ({ isArrowVisible, onArrowClick }: Props) => {
   const isMobile = useWindowSize().width < 700
   return (
     <StyledHeader>
