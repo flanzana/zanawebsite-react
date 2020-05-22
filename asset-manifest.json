@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.141d21d5.chunk.js",
-    "main.js.map": "/static/js/main.141d21d5.chunk.js.map",
+    "main.js": "/static/js/main.2a3f8e9b.chunk.js",
+    "main.js.map": "/static/js/main.2a3f8e9b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7069cdd1.js",
     "runtime-main.js.map": "/static/js/runtime-main.7069cdd1.js.map",
     "static/js/2.d4f69ba0.chunk.js": "/static/js/2.d4f69ba0.chunk.js",
     "static/js/2.d4f69ba0.chunk.js.map": "/static/js/2.d4f69ba0.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.19bd0a11c6a251d12b72da719c3d0ca7.js": "/precache-manifest.19bd0a11c6a251d12b72da719c3d0ca7.js",
+    "precache-manifest.ce663eada49db50a4a96aa70948e4b19.js": "/precache-manifest.ce663eada49db50a4a96aa70948e4b19.js",
     "service-worker.js": "/service-worker.js",
     "static/js/2.d4f69ba0.chunk.js.LICENSE.txt": "/static/js/2.d4f69ba0.chunk.js.LICENSE.txt",
     "static/media/project-almeria.png": "/static/media/project-almeria.aa6f8766.png",
@@ -19,6 +19,6 @@
   "entrypoints": [
     "static/js/runtime-main.7069cdd1.js",
     "static/js/2.d4f69ba0.chunk.js",
-    "static/js/main.141d21d5.chunk.js"
+    "static/js/main.2a3f8e9b.chunk.js"
   ]
 }
