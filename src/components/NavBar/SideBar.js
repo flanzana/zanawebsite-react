@@ -1,7 +1,7 @@
 // @flow
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { NAVBAR_HEIGHT } from "../../theme/globalStyle"
+import { NAVBAR_HEIGHT } from "../../consts"
 
 const movesidebar = keyframes`
     0% {

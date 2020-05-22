@@ -1,5 +1,7 @@
 // @flow
 
+export const NAVBAR_HEIGHT = 70 // px
+
 export const PARTICLES_PARAMS_DESKTOP = {
   particles: {
     number: {

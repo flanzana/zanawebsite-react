@@ -1,5 +1,4 @@
 // @flow
-import { injectGlobal } from "styled-components"
 
 // color palette
 const PRIMARY_NORMAL = "#4f3b78"
@@ -36,7 +35,6 @@ export const themeLightMode = {
   textPrimary: PRIMARY_NORMAL,
   ...commonColors,
 }
-
 export const themeDarkMode = {
   type: "dark",
   backgroundNormal: INK_NORMAL,
@@ -45,24 +43,3 @@ export const themeDarkMode = {
   textPrimary: PRIMARY_LIGHT,
   ...commonColors,
 }
-
-export const NAVBAR_HEIGHT = 70 // px
-
-injectGlobal`
-	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto:400,900|Coda');
-
-	body {
-		padding: 0;
-		margin: 0;
-		font-family: Roboto, sans-serif;
-		min-width: 320px;
-		cursor: default;
-		text-align: center;
-	}
-
-	h1 {
-		font-family: Coda, cursive;
-		font-weight: 900;
-		text-align: center;
-	}
-`

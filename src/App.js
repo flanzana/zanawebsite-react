@@ -1,7 +1,6 @@
 // @flow
 import React, { useState, useRef } from "react"
 import styled, { ThemeProvider } from "styled-components"
-import { NAVBAR_HEIGHT, themeDarkMode, themeLightMode } from "./theme/globalStyle"
 import Header from "./components/Header/Header.js"
 import NavBar from "./components/NavBar/NavBar.js"
 import SideBar from "./components/NavBar/SideBar.js"
@@ -13,6 +12,9 @@ import ToggleThemeButton from "./components/common/ToggleThemeButton"
 import data from "./data/data.js"
 import useWindowSize from "./helpers/useWindowSize"
 import useWindowScrollYPosition from "./helpers/useWindowScrollYPosition"
+import GlobalStyle from "./theme/GlobalStyle"
+import { themeDarkMode, themeLightMode } from "./theme/consts"
+import { NAVBAR_HEIGHT } from "./consts"
 
 const MainContentWrapper = styled.div`
   color: ${props => props.theme.textNormal};
@@ -51,6 +53,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <>
+        <GlobalStyle />
         <Header isArrowVisible={isArrowVisible} onArrowClick={scrollIntoNavBar} />
         <NavBar
           isNavbarFixed={isNavbarFixed}

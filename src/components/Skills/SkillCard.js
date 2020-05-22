@@ -9,11 +9,8 @@ const StyledSkillCard = styled.div`
 `
 
 const StyledSkillTitle = styled.h2`
-  font-family: Coda, cursive;
   font-size: 1.2em;
-  font-weight: 900;
   color: ${props => props.theme.textPrimary};
-  text-align: center;
   margin-top: 0;
 `
 
