@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircle } from "@fortawesome/free-solid-svg-icons"
-import type { LevelType } from "../data/data"
+import type { LevelType } from "../../types"
 
 const Circle = styled(FontAwesomeIcon)`
   font-size: 0.8em;
@@ -24,9 +24,9 @@ const Circle = styled(FontAwesomeIcon)`
   }
 `
 
-type Props = {
+type Props = {|
   level: LevelType,
-}
+|}
 
 const SkillBullets = ({ level }: Props) => (
   <span aria-label={`${level}/5`}>

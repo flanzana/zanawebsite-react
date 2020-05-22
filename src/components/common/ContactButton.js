@@ -34,12 +34,12 @@ const StyledContactButton = styled.a`
   }
 `
 
-type Props = {
+type Props = {|
   href: string,
   iconName: string,
   size: string,
   ariaLabel: string,
-}
+|}
 
 const ContactButton = ({ href, iconName, size, ariaLabel }: Props) => (
   <StyledContactButton

@@ -2,15 +2,15 @@
 import React, { useState, useRef } from "react"
 import styled, { ThemeProvider } from "styled-components"
 import { NAVBAR_HEIGHT, themeDarkMode, themeLightMode } from "./theme/globalStyle"
-import Header from "./components/Header.js"
-import NavBar from "./components/NavBar.js"
-import SideBar from "./components/SideBar.js"
-import AboutMe from "./components/AboutMe.js"
-import Skills from "./components/Skills.js"
-import Projects from "./components/Projects.js"
-import Footer from "./components/Footer.js"
-import ToggleThemeButton from "./components/ToggleThemeButton"
-import { SKILLS, PROJECTS } from "./data/data.js"
+import Header from "./components/Header/Header.js"
+import NavBar from "./components/NavBar/NavBar.js"
+import SideBar from "./components/NavBar/SideBar.js"
+import AboutMe from "./components/AboutMe/AboutMe.js"
+import Skills from "./components/Skills/Skills.js"
+import Projects from "./components/Projects/Projects.js"
+import Footer from "./components/Footer/Footer.js"
+import ToggleThemeButton from "./components/common/ToggleThemeButton"
+import data from "./data/data.js"
 import useWindowSize from "./helpers/useWindowSize"
 import useWindowScrollYPosition from "./helpers/useWindowScrollYPosition"
 
@@ -61,8 +61,8 @@ const App = () => {
         {shouldShowHamburgerIcon && shouldShowSideBar && <SideBar isNavbarFixed={isNavbarFixed} />}
         <MainContentWrapper>
           <AboutMe />
-          <Skills skills={SKILLS} />
-          <Projects projects={PROJECTS} />
+          <Skills skills={data.skills} />
+          <Projects projects={data.projects} />
         </MainContentWrapper>
         <Footer />
         {isToggleThemeModeVisible && (

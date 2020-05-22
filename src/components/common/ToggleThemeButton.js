@@ -37,10 +37,10 @@ const StyledToggleThemeButton = styled.a`
   }
 `
 
-type Props = {
+type Props = {|
   onClick: () => void,
   isCurrentDarkMode: boolean,
-}
+|}
 
 const ToggleThemeButton = ({ onClick, isCurrentDarkMode }: Props) => (
   <StyledToggleThemeButton

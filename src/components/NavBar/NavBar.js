@@ -3,7 +3,7 @@ import React, { forwardRef } from "react"
 import styled, { keyframes } from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
-import { NAVBAR_HEIGHT } from "../theme/globalStyle"
+import { NAVBAR_HEIGHT } from "../../theme/globalStyle"
 
 const movenavbar = keyframes`
     0% {
@@ -78,16 +78,16 @@ const StyledHamburgerIcon = styled.button`
   margin-right: 20px;
 `
 
-type Props = {
+type Props = {|
   isNavbarFixed: boolean,
   shouldShowHamburgerIcon: boolean,
   toggleSideBar: () => void,
-}
+|}
 
-type NavItemProps = {
+type NavItemProps = {|
   href: string,
   title: string,
-}
+|}
 
 const NavItem = ({ href, title }: NavItemProps) => (
   <li>

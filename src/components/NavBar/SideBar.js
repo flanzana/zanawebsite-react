@@ -1,7 +1,7 @@
 // @flow
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { NAVBAR_HEIGHT } from "../theme/globalStyle"
+import { NAVBAR_HEIGHT } from "../../theme/globalStyle"
 
 const movesidebar = keyframes`
     0% {
@@ -50,14 +50,14 @@ const SideBarWrapper = styled.div`
   }
 `
 
-type Props = {
+type Props = {|
   isNavbarFixed: boolean,
-}
+|}
 
-type NavItemProps = {
+type NavItemProps = {|
   href: string,
   title: string,
-}
+|}
 
 const NavItem = ({ href, title }: NavItemProps) => (
   <li>

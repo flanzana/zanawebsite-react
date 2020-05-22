@@ -1,17 +1,21 @@
 // @flow
 import React from "react"
 import styled from "styled-components"
-import SectionLayout from "./SectionLayout"
+import SectionLayout from "../common/SectionLayout"
 
 const AboutMeWrapper = styled.div`
-  max-width: 900px;
+  max-width: 800px;
   padding: 0 50px;
+`
 
-  a {
-    color: ${props => props.theme.textPrimary};
-  }
+const StyledText = styled.p`
+  line-height: 1.5em;
+`
 
-  a:hover {
+const StyledTextLink = styled.a`
+  color: ${props => props.theme.textPrimary};
+
+  &:hover {
     color: ${props => props.theme.textSecondary};
   }
 `
@@ -19,16 +23,20 @@ const AboutMeWrapper = styled.div`
 const AboutMe = () => (
   <SectionLayout id="aboutme" title="About me">
     <AboutMeWrapper>
-      <p>
+      <StyledText>
         Hi! My name is Žana Flander and I am passionate about frontend web development and web
         design. I have gained expertise in frontend web development, cartography, GIS and land
         surveying. My full work experience and education can be seen on{" "}
-        <a href="https://www.linkedin.com/in/zanaflander" target="_blank" rel="noopener noreferrer">
+        <StyledTextLink
+          href="https://www.linkedin.com/in/zanaflander"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           my LinkedIn profile
-        </a>
+        </StyledTextLink>
         . I am fluent in English, Slovenian and Spanish. My hobbies are yoga, volleyball and chess.
         I am always eager to learn and engage in new things.
-      </p>
+      </StyledText>
     </AboutMeWrapper>
   </SectionLayout>
 )

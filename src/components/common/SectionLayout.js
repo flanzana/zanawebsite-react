@@ -21,11 +21,11 @@ const StyledSection = styled.div`
   padding: 65px 0 50px 0;
 `
 
-type Props = {
+type Props = {|
   id: string,
   title: string,
   children: React$Node,
-}
+|}
 
 const SectionLayout = ({ id, title, children }: Props) => (
   <StyledSection id={id}>
