@@ -124,8 +124,10 @@ const Button = ({ type, href, onClick, iconName, size = "normal", ariaLabel }: P
     type={type}
     href={href}
     onClick={onClick}
+    onKeyPress={onClick}
     target="_blank"
     rel="noopener noreferrer"
+    tabIndex="0"
     size={size}
     aria-label={ariaLabel}
   >
