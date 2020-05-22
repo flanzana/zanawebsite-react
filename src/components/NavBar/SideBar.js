@@ -43,8 +43,10 @@ const SideBarWrapper = styled.div`
     transition: 0.4s;
     cursor: pointer;
     transition: 0.4s;
+    outline: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: ${props => props.theme.backgroundPrimaryHover};
     }
   }

@@ -23,8 +23,10 @@ const StyledToggleThemeButton = styled.a`
   z-index: 1;
   transition: 0.4s;
   box-shadow: 0 1px 3px 0 ${props => props.theme.buttonBoxShadow};
+  outline: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: ${props => props.theme.buttonBackgroundHover};
     transition: 0.4s;
     box-shadow: 0 4px 8px 0 ${props => props.theme.buttonBoxShadow};

@@ -14,8 +14,16 @@ const StyledText = styled.p`
 
 const StyledTextLink = styled.a`
   color: ${props => props.theme.textPrimary};
+  outline: none;
 
   &:hover {
+    color: ${props => props.theme.textSecondary};
+  }
+
+  &:active,
+  &:focus {
+    background-color: ${props => props.theme.backgroundNormalHover};
+    border-radius: 4px;
     color: ${props => props.theme.textSecondary};
   }
 `

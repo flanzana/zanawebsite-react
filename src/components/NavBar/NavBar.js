@@ -62,8 +62,10 @@ const NavBarWrapper = styled.div`
     display: flex;
     align-items: center;
     transition: 0.4s;
+    outline: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: ${props => props.theme.backgroundPrimaryHover};
     }
   }
@@ -73,9 +75,17 @@ const StyledHamburgerIcon = styled.button`
   color: ${props => props.theme.textWhite};
   background-color: ${props => props.theme.backgroundPrimary};
   border: none;
+  border-radius: 5px;
   font-size: 30px;
   cursor: pointer;
   margin-right: 20px;
+  outline: none;
+
+  &:active,
+  &:focus {
+    background-color: ${props => props.theme.buttonBackgroundHover};
+    transition: 0.4s;
+  }
 `
 
 type Props = {|

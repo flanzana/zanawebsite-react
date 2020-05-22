@@ -11,15 +11,17 @@ const StyledProjectCard = styled.a`
   border-radius: 10px;
   transition: 0.4s;
   box-shadow: 0 2px 4px 0 ${props => props.theme.projectBoxShadow};
+  outline: none;
 
   img {
     width: 180px;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     transition: 0.4s;
     background-color: ${props => props.theme.backgroundNormalHover};
-    box-shadow: 0 4px 12px 0 ${props => props.theme.projectBoxShadow};
+    box-shadow: 0 6px 14px 0 ${props => props.theme.projectBoxShadow};
   }
 
   &:active {

@@ -18,8 +18,10 @@ const StyledContactButton = styled.a`
   cursor: pointer;
   transition: 0.4s;
   box-shadow: 0 2px 4px 0 ${props => props.theme.buttonBoxShadow};
+  outline: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     transition: 0.4s;
     background-color: ${props => props.theme.buttonBackgroundHover};
     color: ${props => props.theme.buttonTextHover};
