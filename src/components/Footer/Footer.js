@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import { faGithub, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
-import ContactButton from "../common/ContactButton.js"
+import Button from "../common/Button"
 
 const FooterWrapper = styled.div`
   background-color: ${props => props.theme.backgroundPrimary};
@@ -37,28 +37,28 @@ const ContactButtonsWrapper = styled.div`
 const Footer = () => (
   <FooterWrapper id="contact">
     <ContactButtonsWrapper>
-      <ContactButton
+      <Button
         iconName={faLinkedinIn}
         href="https://www.linkedin.com/in/zanaflander"
-        size="16px"
+        type="contact"
         ariaLabel="LinkedIn"
       />
-      <ContactButton
+      <Button
         iconName={faGithub}
         href="https://github.com/flanzana"
-        size="16px"
+        type="contact"
         ariaLabel="GitHub"
       />
-      <ContactButton
+      <Button
         iconName={faTwitter}
         href="https://twitter.com/flanzana"
-        size="16px"
+        type="contact"
         ariaLabel="Twitter"
       />
-      <ContactButton
+      <Button
         iconName={faEnvelope}
         href="mailto:zana.flander@gmail.com"
-        size="16px"
+        type="contact"
         ariaLabel="E-mail"
       />
     </ContactButtonsWrapper>

@@ -8,13 +8,14 @@ import AboutMe from "./components/AboutMe/AboutMe.js"
 import Skills from "./components/Skills/Skills.js"
 import Projects from "./components/Projects/Projects.js"
 import Footer from "./components/Footer/Footer.js"
-import ToggleThemeButton from "./components/common/ToggleThemeButton"
+import Button from "./components/common/Button"
 import data from "./data/data.js"
 import useWindowSize from "./helpers/useWindowSize"
 import useWindowScrollYPosition from "./helpers/useWindowScrollYPosition"
 import GlobalStyle from "./theme/GlobalStyle"
 import { themeDarkMode, themeLightMode } from "./theme/consts"
 import { NAVBAR_HEIGHT } from "./consts"
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
 
 const MainContentWrapper = styled.div`
   color: ${props => props.theme.textNormal};
@@ -69,7 +70,13 @@ const App = () => {
         </MainContentWrapper>
         <Footer />
         {isToggleThemeModeVisible && (
-          <ToggleThemeButton onClick={toggleThemeMode} isCurrentDarkMode={isCurrentDarkMode} />
+          <Button
+            type="theme"
+            size="small"
+            onClick={toggleThemeMode}
+            iconName={isCurrentDarkMode ? faSun : faMoon}
+            ariaLabel={`Switch to ${isCurrentDarkMode ? "light" : "dark"} mode`}
+          />
         )}
       </>
     </ThemeProvider>

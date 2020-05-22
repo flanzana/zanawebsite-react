@@ -5,7 +5,7 @@ import Particles from "react-particles-js"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
-import ContactButton from "../common/ContactButton.js"
+import Button from "../common/Button"
 import { PARTICLES_PARAMS_DESKTOP, PARTICLES_PARAMS_MOBILE } from "../../consts"
 import useWindowSize from "../../helpers/useWindowSize"
 
@@ -72,16 +72,18 @@ const Header = ({ isArrowVisible, onArrowClick }: Props) => {
       <HeaderWrapper id="header">
         <h1>Žana Flander</h1>
         <ContactButtonsWrapper>
-          <ContactButton
+          <Button
             iconName={faLinkedinIn}
             href="https://www.linkedin.com/in/zanaflander"
-            size="24px"
+            size="large"
+            type="contact"
             ariaLabel="LinkedIn"
           />
-          <ContactButton
+          <Button
             iconName={faGithub}
             href="https://github.com/flanzana"
-            size="24px"
+            size="large"
+            type="contact"
             ariaLabel="GitHub"
           />
         </ContactButtonsWrapper>

@@ -1,0 +1,136 @@
+// @flow
+import React from "react"
+import styled, { css } from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { themeDarkMode, themeLightMode } from "../../theme/consts"
+
+type ButtonType = "contact" | "theme"
+type ButtonSize = "small" | "normal" | "large"
+type Theme = typeof themeDarkMode | typeof themeLightMode
+type ButtonStyle =
+  | "backgroundButton"
+  | "backgroundButtonHover"
+  | "textButton"
+  | "textButtonHover"
+  | "boxShadowButton"
+  | "boxShadowButtonHover"
+  | "boxShadowButtonActive"
+
+const getButtonSizes = (name: "fontSize" | "buttonSize" | "buttonPadding", size: ButtonSize) => {
+  const tokens = {
+    fontSize: {
+      small: "calc(10px + 2vmin)",
+      normal: "calc(16px + 2vmin)",
+      large: "calc(24px + 2vmin)",
+    },
+    buttonSize: {
+      small: "calc(10px + 2vmin)",
+      normal: "calc(16px + 2vmin)",
+      large: "calc(24px + 2vmin)",
+    },
+    buttonPadding: {
+      small: "calc(10px / 3 + 0.5vmin)",
+      normal: "calc(16px / 3 + 0.5vmin)",
+      large: "calc(24px / 3 + 0.5vmin)",
+    },
+  }
+  return tokens[name][size]
+}
+
+const getButtonStyles = (name: ButtonStyle, type: ButtonType, theme: Theme) => {
+  const tokens = {
+    backgroundButton: {
+      contact: theme.buttonBackground,
+      theme: theme.buttonToggleBackground,
+    },
+    backgroundButtonHover: {
+      contact: theme.buttonBackgroundHover,
+      theme: theme.buttonBackgroundHover,
+    },
+    boxShadowButton: {
+      contact: `0 2px 4px 0 ${theme.buttonBoxShadow}`,
+      theme: `0 1px 3px 0 ${theme.buttonBoxShadow}`,
+    },
+    boxShadowButtonHover: {
+      contact: `0 4px 12px 0 ${theme.buttonBoxShadow}`,
+      theme: `0 4px 8px 0 ${theme.buttonBoxShadow}`,
+    },
+    boxShadowButtonActive: {
+      contact: `0 2px 6px 0 ${theme.buttonBoxShadow}`,
+      theme: `0 2px 8px 0 ${theme.buttonBoxShadow}`,
+    },
+    textButton: {
+      contact: theme.buttonText,
+      theme: theme.textWhite,
+    },
+    textButtonHover: {
+      contact: theme.buttonTextHover,
+      theme: theme.textWhite,
+    },
+  }
+  return tokens[name][type]
+}
+
+const StyledButton = styled.a`
+  width: ${props => getButtonSizes("buttonSize", props.size)};
+  height: ${props => getButtonSizes("buttonSize", props.size)};
+  font-size: ${props => getButtonSizes("fontSize", props.size)};
+  color: ${props => getButtonStyles("textButton", props.type, props.theme)};
+  background-color: ${props => getButtonStyles("backgroundButton", props.type, props.theme)};
+  border-radius: 50%;
+  padding: ${props => getButtonSizes("buttonPadding", props.size)};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: ${props => getButtonStyles("boxShadowButton", props.type, props.theme)};
+  outline: none;
+  ${props =>
+    props.type === "theme" &&
+    css`
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      z-index: 1;
+    `};
+
+  &:hover,
+  &:focus {
+    transition: 0.4s;
+    background-color: ${props => getButtonStyles("backgroundButtonHover", props.type, props.theme)};
+    color: ${props => getButtonStyles("textButtonHover", props.type, props.theme)};
+    box-shadow: ${props => getButtonStyles("boxShadowButtonHover", props.type, props.theme)};
+  }
+
+  &:active {
+    transition: 0.2s;
+    box-shadow: ${props => getButtonStyles("boxShadowButtonActive", props.type, props.theme)};
+  }
+`
+
+type Props = {
+  type: ButtonType,
+  href?: string,
+  onClick?: () => void,
+  iconName: string,
+  size?: ButtonSize,
+  ariaLabel: string,
+}
+
+const Button = ({ type, href, onClick, iconName, size = "normal", ariaLabel }: Props) => (
+  <StyledButton
+    type={type}
+    href={href}
+    onClick={onClick}
+    target="_blank"
+    rel="noopener noreferrer"
+    size={size}
+    aria-label={ariaLabel}
+  >
+    <FontAwesomeIcon icon={iconName} aria-hidden="true" />
+  </StyledButton>
+)
+
+export default Button
