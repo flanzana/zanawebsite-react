@@ -1,24 +1,28 @@
-// @flow
 import React, { useState, useRef } from "react"
 import styled, { ThemeProvider } from "styled-components"
-import Header from "./components/Header/Header.js"
-import NavBar from "./components/NavBar/NavBar.js"
-import SideBar from "./components/NavBar/SideBar.js"
-import AboutMe from "./components/AboutMe/AboutMe.js"
-import Skills from "./components/Skills/Skills.js"
-import Projects from "./components/Projects/Projects.js"
-import Footer from "./components/Footer/Footer.js"
+import Header from "./components/Header/Header"
+import NavBar from "./components/NavBar/NavBar"
+import SideBar from "./components/NavBar/SideBar"
+import AboutMe from "./components/AboutMe/AboutMe"
+import Skills from "./components/Skills/Skills"
+import Projects from "./components/Projects/Projects"
+import Footer from "./components/Footer/Footer"
 import Button from "./components/common/Button"
-import data from "./data/data.js"
-import useWindowSize from "./helpers/useWindowSize"
-import useWindowScrollYPosition from "./helpers/useWindowScrollYPosition"
+import data from "./data/data"
+import { useWindowSize, useWindowScrollYPosition } from "./helpers/customHooks"
 import GlobalStyle from "./theme/GlobalStyle"
-import { themeDarkMode, themeLightMode } from "./theme/consts"
+import { THEME_DARK_MODE, THEME_LIGHT_MODE } from "./theme/consts"
 import { NAVBAR_HEIGHT } from "./consts"
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
+import { ThemeType } from "./types"
+
+type StyledProps = {
+  theme: ThemeType
+  isNavbarFixed: boolean
+}
 
 const MainContentWrapper = styled.div`
-  color: ${props => props.theme.textNormal};
+  color: ${(props: StyledProps) => props.theme.textNormal};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,12 +31,12 @@ const MainContentWrapper = styled.div`
   background-color: ${props => props.theme.backgroundNormal};
 `
 
-const App = () => {
+const App: React.FC = () => {
   const windowSize = useWindowSize()
   const windowScrollYPosition = useWindowScrollYPosition()
-  const [theme, setTheme] = useState(themeLightMode)
+  const [theme, setTheme] = useState(THEME_LIGHT_MODE)
   const [shouldShowSideBar, setShouldShowSideBar] = useState(false)
-  const navBarRef = useRef<null | HTMLElement>(null)
+  const navBarRef = useRef<HTMLHeadingElement>(null)
 
   const shouldShowHamburgerIcon = windowSize.width < 700
   const isToggleThemeModeVisible = windowScrollYPosition > NAVBAR_HEIGHT
@@ -44,7 +48,7 @@ const App = () => {
     setShouldShowSideBar(!shouldShowSideBar)
   }
   const toggleThemeMode = () => {
-    setTheme(isCurrentDarkMode ? themeLightMode : themeDarkMode)
+    setTheme(isCurrentDarkMode ? THEME_LIGHT_MODE : THEME_DARK_MODE)
     setShouldShowSideBar(false)
   }
   const scrollIntoNavBar = () => {
@@ -63,7 +67,7 @@ const App = () => {
           ref={navBarRef}
         />
         {shouldShowHamburgerIcon && shouldShowSideBar && <SideBar isNavbarFixed={isNavbarFixed} />}
-        <MainContentWrapper>
+        <MainContentWrapper isNavbarFixed={isNavbarFixed}>
           <AboutMe />
           <Skills skills={data.skills} />
           <Projects projects={data.projects} />

@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import { NAVBAR_HEIGHT } from "../../consts"
@@ -52,14 +51,14 @@ const SideBarWrapper = styled.div`
   }
 `
 
-type Props = {|
-  isNavbarFixed: boolean,
-|}
+type Props = {
+  isNavbarFixed: boolean
+}
 
-type NavItemProps = {|
-  href: string,
-  title: string,
-|}
+type NavItemProps = {
+  href: string
+  title: string
+}
 
 const NavItem = ({ href, title }: NavItemProps) => (
   <li>
@@ -67,7 +66,7 @@ const NavItem = ({ href, title }: NavItemProps) => (
   </li>
 )
 
-const SideBar = ({ isNavbarFixed }: Props) => (
+const SideBar: React.FC<Props> = ({ isNavbarFixed }: Props) => (
   <SideBarWrapper id="sidebar" className={isNavbarFixed ? "fixed" : ""}>
     <NavItem href="#aboutme" title="About me" />
     <NavItem href="#skills" title="Skills" />

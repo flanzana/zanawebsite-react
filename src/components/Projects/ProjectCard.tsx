@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import styled from "styled-components"
 
@@ -38,13 +37,13 @@ const StyledHeading = styled.span`
   font-size: 13px;
 `
 
-type Props = {|
-  name: string,
-  img: React$Element<"img">,
-  url: string,
-|}
+type Props = {
+  name: string
+  img: React.ReactElement
+  url: string
+}
 
-const ProjectCard = ({ name, img, url }: Props) => (
+const ProjectCard: React.FC<Props> = ({ name, img, url }: Props) => (
   <StyledProjectCard href={url} target="_blank" rel="noopener noreferrer">
     {img}
     <StyledHeading>{name}</StyledHeading>

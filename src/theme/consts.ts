@@ -1,5 +1,3 @@
-// @flow
-
 // color palette
 const PRIMARY_NORMAL = "#4f3b78"
 const PRIMARY_LIGHT = "#927fbf"
@@ -12,7 +10,7 @@ const CLOUD_DARK = "#e8edf1"
 const SHADOW_COLOR_DARK = "rgba(0, 0, 0, 0.3)"
 const SHADOW_COLOR_DARKER = "rgba(0, 0, 0, 0.6)"
 
-const commonColors = {
+const COMMON_COLORS = {
   backgroundPrimary: PRIMARY_NORMAL,
   backgroundPrimaryHover: SECONDARY_NORMAL,
   buttonBackground: CLOUD_NORMAL,
@@ -27,19 +25,19 @@ const commonColors = {
   projectBoxShadow: SHADOW_COLOR_DARK,
 }
 
-export const themeLightMode = {
+export const THEME_LIGHT_MODE = {
   type: "light",
   backgroundNormal: CLOUD_NORMAL,
   backgroundNormalHover: CLOUD_DARK,
   textNormal: INK_NORMAL,
   textPrimary: PRIMARY_NORMAL,
-  ...commonColors,
+  ...COMMON_COLORS,
 }
-export const themeDarkMode = {
+export const THEME_DARK_MODE = {
   type: "dark",
   backgroundNormal: INK_NORMAL,
   backgroundNormalHover: INK_LIGHT,
   textNormal: CLOUD_DARK,
   textPrimary: PRIMARY_LIGHT,
-  ...commonColors,
+  ...COMMON_COLORS,
 }

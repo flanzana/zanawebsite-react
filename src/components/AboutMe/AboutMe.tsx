@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import styled from "styled-components"
 import SectionLayout from "../common/SectionLayout"
@@ -28,7 +27,7 @@ const StyledTextLink = styled.a`
   }
 `
 
-const AboutMe = () => (
+const AboutMe: React.FC = () => (
   <SectionLayout id="aboutme" title="About me">
     <AboutMeWrapper>
       <StyledText>

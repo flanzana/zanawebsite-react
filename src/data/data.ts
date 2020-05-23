@@ -1,4 +1,3 @@
-// @flow
 import imgmemory from "../data/img/project-memory.png"
 import imgarcade from "../data/img/project-arcade.png"
 import imgalmeria from "../data/img/project-almeria.png"

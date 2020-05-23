@@ -1,9 +1,8 @@
-// @flow
 import React from "react"
 import styled from "styled-components"
 import SectionLayout from "../common/SectionLayout"
 import ProjectCard from "./ProjectCard"
-import type { ProjectsType } from "../../types"
+import type { ProjectsType, ProjectType } from "../../types"
 
 const ProjectsWrapper = styled.div`
   display: flex;
@@ -11,14 +10,14 @@ const ProjectsWrapper = styled.div`
   justify-content: center;
 `
 
-type Props = {|
-  projects: ProjectsType,
-|}
+type Props = {
+  projects: ProjectsType
+}
 
-const Projects = ({ projects }: Props) => (
+const Projects: React.FC<Props> = ({ projects }: Props) => (
   <SectionLayout id="projects" title="Projects">
     <ProjectsWrapper>
-      {projects.map(project => (
+      {projects.map((project: ProjectType) => (
         <ProjectCard
           key={project.name}
           name={project.name}

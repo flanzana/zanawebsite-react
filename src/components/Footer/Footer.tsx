@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import styled from "styled-components"
 import { faGithub, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons"
@@ -34,7 +33,7 @@ const ContactButtonsWrapper = styled.div`
   }
 `
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <FooterWrapper id="contact">
     <ContactButtonsWrapper>
       <Button

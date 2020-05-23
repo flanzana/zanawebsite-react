@@ -1,8 +1,8 @@
-// @flow
+import { IParticlesParams, OutMode, MoveDirection } from "react-particles-js"
 
 export const NAVBAR_HEIGHT = 70 // px
 
-export const PARTICLES_PARAMS_DESKTOP = {
+export const PARTICLES_PARAMS_DESKTOP: IParticlesParams = {
   particles: {
     number: {
       value: 400,
@@ -24,13 +24,13 @@ export const PARTICLES_PARAMS_DESKTOP = {
     move: {
       random: true,
       speed: 0.5,
-      direction: "bottom",
-      out_mode: "out",
+      direction: MoveDirection.bottom,
+      out_mode: OutMode.out,
     },
   },
 }
 
-export const PARTICLES_PARAMS_MOBILE = {
+export const PARTICLES_PARAMS_MOBILE: IParticlesParams = {
   particles: {
     number: {
       value: 100,
@@ -52,8 +52,8 @@ export const PARTICLES_PARAMS_MOBILE = {
     move: {
       random: true,
       speed: 0.3,
-      direction: "bottom",
-      out_mode: "out",
+      direction: MoveDirection.bottom,
+      out_mode: OutMode.out,
     },
   },
 }

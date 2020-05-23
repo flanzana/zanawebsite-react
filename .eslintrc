@@ -6,12 +6,12 @@
     "jest": true
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:flowtype/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
@@ -20,7 +20,7 @@
     }
   },
   "plugins": [
-    "flowtype",
+    "@typescript-eslint",
     "prettier",
     "react",
     "react-hooks"
@@ -31,14 +31,6 @@
     }
   },
   "rules": {
-    "flowtype/require-valid-file-annotation": [
-      2,
-      "always", {
-        "annotationStyle": "line"
-      }
-    ],
-    "flowtype/no-types-missing-file-annotation": 2,
-    "flowtype/no-weak-types": 2,
     "prettier/prettier": "error",
     "prefer-destructuring": "error",
     "react/destructuring-assignment": "error",

@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import Particles from "react-particles-js"
@@ -7,7 +6,7 @@ import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
 import Button from "../common/Button"
 import { PARTICLES_PARAMS_DESKTOP, PARTICLES_PARAMS_MOBILE } from "../../consts"
-import useWindowSize from "../../helpers/useWindowSize"
+import { useWindowSize } from "../../helpers/customHooks"
 
 const bounce = keyframes`
   0%   { transform: translateY(0); }
@@ -60,12 +59,12 @@ const ArrowDown = styled.a`
   outline: none;
 `
 
-type Props = {|
-  isArrowVisible: boolean,
-  onArrowClick: () => void,
-|}
+type Props = {
+  isArrowVisible: boolean
+  onArrowClick: () => void
+}
 
-const Header = ({ isArrowVisible, onArrowClick }: Props) => {
+const Header: React.FC<Props> = ({ isArrowVisible, onArrowClick }: Props) => {
   const isMobile = useWindowSize().width < 700
   return (
     <StyledHeader>

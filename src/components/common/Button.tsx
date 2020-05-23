@@ -1,12 +1,11 @@
-// @flow
 import React from "react"
 import styled, { css } from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { themeDarkMode, themeLightMode } from "../../theme/consts"
+import { IconDefinition } from "@fortawesome/fontawesome-common-types"
+import { ThemeType } from "../../types"
 
 type ButtonType = "contact" | "theme"
 type ButtonSize = "small" | "normal" | "large"
-type Theme = typeof themeDarkMode | typeof themeLightMode
 type ButtonStyle =
   | "backgroundButton"
   | "backgroundButtonHover"
@@ -37,7 +36,7 @@ const getButtonSizes = (name: "fontSize" | "buttonSize" | "buttonPadding", size:
   return tokens[name][size]
 }
 
-const getButtonStyles = (name: ButtonStyle, type: ButtonType, theme: Theme) => {
+const getButtonStyles = (name: ButtonStyle, type: ButtonType, theme: ThemeType) => {
   const tokens = {
     backgroundButton: {
       contact: theme.buttonBackground,
@@ -71,8 +70,14 @@ const getButtonStyles = (name: ButtonStyle, type: ButtonType, theme: Theme) => {
   return tokens[name][type]
 }
 
+type StyledProps = {
+  type: ButtonType
+  size: ButtonSize
+  theme: ThemeType
+}
+
 const StyledButton = styled.a`
-  width: ${props => getButtonSizes("buttonSize", props.size)};
+  width: ${(props: StyledProps) => getButtonSizes("buttonSize", props.size)};
   height: ${props => getButtonSizes("buttonSize", props.size)};
   font-size: ${props => getButtonSizes("fontSize", props.size)};
   color: ${props => getButtonStyles("textButton", props.type, props.theme)};
@@ -111,15 +116,22 @@ const StyledButton = styled.a`
 `
 
 type Props = {
-  type: ButtonType,
-  href?: string,
-  onClick?: () => void,
-  iconName: string,
-  size?: ButtonSize,
-  ariaLabel: string,
+  type: ButtonType
+  href?: string
+  onClick?: () => void
+  iconName: IconDefinition
+  size?: ButtonSize
+  ariaLabel: string
 }
 
-const Button = ({ type, href, onClick, iconName, size = "normal", ariaLabel }: Props) => (
+const Button: React.FC<Props> = ({
+  type,
+  href,
+  onClick,
+  iconName,
+  size = "normal",
+  ariaLabel,
+}: Props) => (
   <StyledButton
     type={type}
     href={href}
@@ -127,7 +139,7 @@ const Button = ({ type, href, onClick, iconName, size = "normal", ariaLabel }: P
     onKeyPress={onClick}
     target="_blank"
     rel="noopener noreferrer"
-    tabIndex="0"
+    tabIndex={0}
     size={size}
     aria-label={ariaLabel}
   >

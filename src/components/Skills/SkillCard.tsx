@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import styled from "styled-components"
 import SkillBullets from "./SkillBullets"
@@ -48,12 +47,12 @@ const StyledSkillLevel = styled.span`
   font-weight: bold;
 `
 
-type Props = {|
-  title: string,
-  list: Array<SkillList>,
-|}
+type Props = {
+  title: string
+  list: SkillList[]
+}
 
-const SkillCard = ({ title, list }: Props) => (
+const SkillCard: React.FC<Props> = ({ title, list }: Props) => (
   <StyledSkillCard>
     <StyledSkillTitle>{title}</StyledSkillTitle>
     <StyledSkillList>

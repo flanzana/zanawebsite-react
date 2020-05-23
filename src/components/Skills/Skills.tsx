@@ -1,9 +1,8 @@
-// @flow
 import React from "react"
 import styled from "styled-components"
 import SectionLayout from "../common/SectionLayout"
 import SkillCard from "./SkillCard"
-import type { SkillsType } from "../../types"
+import type { SkillsType, SkillType } from "../../types"
 
 const SkillSection = styled.div`
   width: calc(100vw - 40px);
@@ -14,14 +13,14 @@ const SkillSection = styled.div`
   max-width: 1200px;
 `
 
-type Props = {|
-  skills: SkillsType,
-|}
+type Props = {
+  skills: SkillsType
+}
 
-const Skills = ({ skills }: Props) => (
+const Skills: React.FC<Props> = ({ skills }: Props) => (
   <SectionLayout id="skills" title="Skills">
     <SkillSection>
-      {skills.map(skill => (
+      {skills.map((skill: SkillType) => (
         <SkillCard key={skill.type} title={skill.title} list={skill.list} />
       ))}
     </SkillSection>

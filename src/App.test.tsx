@@ -1,4 +1,3 @@
-// eslint-disable-next-line flowtype/require-valid-file-annotation
 import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
