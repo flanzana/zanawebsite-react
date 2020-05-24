@@ -89,7 +89,7 @@ const StyledHamburgerIcon = styled.button`
 
 type Props = {
   isNavbarFixed: boolean
-  shouldShowHamburgerIcon: boolean
+  isMobile: boolean
   toggleSideBar: () => void
 }
 
@@ -105,13 +105,13 @@ const NavItem = ({ href, title }: NavItemProps) => (
 )
 
 const NavBar = (
-  { isNavbarFixed, shouldShowHamburgerIcon, toggleSideBar }: Props,
+  { isNavbarFixed, isMobile, toggleSideBar }: Props,
   ref: React.Ref<HTMLHeadingElement>,
 ) => (
   <NavBarWrapper id="navbar" className={isNavbarFixed ? "fixed" : ""}>
     <h1 ref={ref}>Žana Flander</h1>
 
-    {shouldShowHamburgerIcon ? (
+    {isMobile ? (
       <StyledHamburgerIcon id="hamburger-icon" onClick={toggleSideBar}>
         <FontAwesomeIcon icon={faBars} aria-hidden="true" />
       </StyledHamburgerIcon>

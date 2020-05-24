@@ -37,7 +37,7 @@ const App: React.FC = () => {
   const [shouldShowSideBar, setShouldShowSideBar] = useState(false)
   const navBarRef = useRef<HTMLHeadingElement>(null)
 
-  const shouldShowHamburgerIcon = windowSize.width < 700
+  const isMobile = windowSize.width < 600
   const isToggleThemeModeVisible = windowScrollYPosition > NAVBAR_HEIGHT
   const isNavbarFixed = windowScrollYPosition > windowSize.height
   const isArrowVisible = windowScrollYPosition < 40
@@ -61,15 +61,24 @@ const App: React.FC = () => {
         <Header isArrowVisible={isArrowVisible} onArrowClick={scrollIntoNavBar} />
         <NavBar
           isNavbarFixed={isNavbarFixed}
-          shouldShowHamburgerIcon={shouldShowHamburgerIcon}
+          isMobile={isMobile}
           toggleSideBar={toggleSideBar}
           ref={navBarRef}
         />
-        {shouldShowHamburgerIcon && shouldShowSideBar && <SideBar isNavbarFixed={isNavbarFixed} />}
+        {isMobile && shouldShowSideBar && <SideBar isNavbarFixed={isNavbarFixed} />}
         <MainContentWrapper>
           <AboutMe />
-          <Skills skills={data.skills} />
-          <Projects projects={data.projects} />
+          {isMobile ? (
+            <>
+              <Projects projects={data.projects} />
+              <Skills skills={data.skills} />
+            </>
+          ) : (
+            <>
+              <Skills skills={data.skills} />
+              <Projects projects={data.projects} />
+            </>
+          )}
         </MainContentWrapper>
         <Footer />
         {isToggleThemeModeVisible && (

@@ -69,8 +69,8 @@ const NavItem = ({ href, title }: NavItemProps) => (
 const SideBar: React.FC<Props> = ({ isNavbarFixed }: Props) => (
   <SideBarWrapper id="sidebar" className={isNavbarFixed ? "fixed" : ""}>
     <NavItem href="#aboutme" title="About me" />
-    <NavItem href="#skills" title="Skills" />
     <NavItem href="#projects" title="Projects" />
+    <NavItem href="#skills" title="Skills" />
   </SideBarWrapper>
 )
 
