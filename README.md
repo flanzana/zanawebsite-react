@@ -1,13 +1,16 @@
 # Žana Flander website
 
 ## Introduction
-I have created my website from scratch by using React. Website is not finished yet, because I am always adding new features or editing a style of the page.
+I have created my [personal website](https://flanzana.github.io) from scratch by using [`create-react-app`](https://github.com/facebook/create-react-app) and 
+[`styled-components`](https://www.styled-components.com/). Project was initially created in JavaScript and [Flow](https://flow.org/), 
+but later I migrated it to TypeScript.
 
-## How I built the project
-- I built the project from scratch with [`create-react-app`](https://github.com/facebook/create-react-app).
-- I used [`styled-components`](https://www.styled-components.com/) for styles.
-- Initially the project was created in JavaScript, but later I migrated it to TypeScript.
+Website is not finished yet, because I am always adding new features or editing a style of the website. :)
 
 ## Sources
-- Icons from [Font Awesome](https://fontawesome.com/v4.7.0/icons/)
+- Icons from [Font Awesome](https://fontawesome.com/)
 - Header animation from [react-particles-js](https://github.com/Wufe/react-particles-js)
+- Purple color palette from [Color Hunt](https://colorhunt.co/palette/5272)
+- Inspiration for light and dark theme mode from [`styled-components`](https://styled-components.com/docs/advanced#theming)
+- `useWindowSize()` hook from [useHooks](https://usehooks.com/useWindowSize/)
+- Inspiration for how to set common components (i.e. `<Button />` and `<TextLink />`) from [design system Orbit](https://github.com/kiwicom/orbit-components)
