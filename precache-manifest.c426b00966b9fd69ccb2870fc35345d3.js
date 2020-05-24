@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "470b0aaeed4ab45bc05fe09851d287aa",
+    "revision": "856f0789fa1dfeddcc605f70990076df",
     "url": "/index.html"
   },
   {
-    "revision": "81905fda1564ebc24448",
-    "url": "/static/js/2.6b178897.chunk.js"
+    "revision": "fd6b3e22c89e52686997",
+    "url": "/static/js/2.aaf87a91.chunk.js"
   },
   {
     "revision": "c87550333da8df8ab4c80bd1d6e9defb",
-    "url": "/static/js/2.6b178897.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.aaf87a91.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7595a80dd076562a2391",
-    "url": "/static/js/main.6e1b39a3.chunk.js"
+    "revision": "efddfbb2bfa62e90ac3d",
+    "url": "/static/js/main.11605ffb.chunk.js"
   },
   {
     "revision": "537d7c9af0b2d6e4dd92",
@@ -36,7 +36,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/project-travel-list.dbd628c2.png"
   },
   {
-    "revision": "b941c723e2439a0801fb6f6cb278b373",
-    "url": "/static/media/project-zana.b941c723.png"
+    "revision": "a4e9b0a9e50e88755ee4851be311619a",
+    "url": "/static/media/project-zana.a4e9b0a9.png"
   }
 ]);
