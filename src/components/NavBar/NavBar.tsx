@@ -36,7 +36,7 @@ const NavBarWrapper = styled.div`
   h1 {
     color: ${props => props.theme.textWhite};
     letter-spacing: 0.1em;
-    font-size: 30px;
+    font-size: 1.6em;
     margin: 0;
   }
 

@@ -1,6 +1,6 @@
 import { IParticlesParams, OutMode, MoveDirection } from "react-particles-js"
 
-export const NAVBAR_HEIGHT = 70 // px
+export const NAVBAR_HEIGHT = 60 // px
 
 export const PARTICLES_PARAMS_DESKTOP: IParticlesParams = {
   particles: {

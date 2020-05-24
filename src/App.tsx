@@ -18,7 +18,6 @@ import { ThemeType } from "./types"
 
 type StyledProps = {
   theme: ThemeType
-  isNavbarFixed: boolean
 }
 
 const MainContentWrapper = styled.div`
@@ -27,7 +26,7 @@ const MainContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: ${props => (props.isNavbarFixed ? 0 : `${NAVBAR_HEIGHT}px`)};
+  margin-top: ${NAVBAR_HEIGHT}px;
   background-color: ${props => props.theme.backgroundNormal};
 `
 
@@ -67,7 +66,7 @@ const App: React.FC = () => {
           ref={navBarRef}
         />
         {shouldShowHamburgerIcon && shouldShowSideBar && <SideBar isNavbarFixed={isNavbarFixed} />}
-        <MainContentWrapper isNavbarFixed={isNavbarFixed}>
+        <MainContentWrapper>
           <AboutMe />
           <Skills skills={data.skills} />
           <Projects projects={data.projects} />

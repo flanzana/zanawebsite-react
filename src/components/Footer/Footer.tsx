@@ -13,11 +13,23 @@ const FooterWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   padding: 20px;
+`
 
-  p {
-    font-size: 12px;
-    margin: 0 auto;
-    padding: 0 20px;
+const StyledDescription = styled.p`
+  font-size: 12px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  a {
+    color: inherit;
+    font-weight: 900;
+    outline: none;
+    transition: 0.4s;
+
+    &:hover,
+    &:focus {
+      color: ${props => props.theme.textSecondary};
+    }
   }
 `
 
@@ -61,7 +73,10 @@ const Footer: React.FC = () => (
         ariaLabel="E-mail"
       />
     </ContactButtonsWrapper>
-    <p>Coded and designed with ❤ by Žana Flander. © 2018-2020</p>
+    <StyledDescription>
+      Coded and designed with ❤ by <a href="https://flanzana.github.io">Žana Flander</a>. ©
+      2018-2020
+    </StyledDescription>
   </FooterWrapper>
 )
 
