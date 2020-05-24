@@ -38,30 +38,30 @@ const TextLinksWrapper = styled.div`
 type Props = {
   name: string
   img: React.ReactElement
-  urlDemo: string
+  urlWeb: string
   urlCode: string
 }
 
-const ProjectCard: React.FC<Props> = ({ name, img, urlDemo, urlCode }: Props) => (
+const ProjectCard: React.FC<Props> = ({ name, img, urlWeb, urlCode }: Props) => (
   <StyledProjectCard>
     <StyledHeading>{name}</StyledHeading>
     {img}
     <TextLinksWrapper>
       <TextLink
-        href={urlDemo}
+        href={urlWeb}
         iconName={faLink}
         type="secondary"
         size="small"
-        ariaLabel={`Go to ${name} demo`}
+        ariaLabel={`Go to ${name} website`}
       >
-        Demo
+        Web
       </TextLink>
       <TextLink
         href={urlCode}
         iconName={faCode}
         type="secondary"
         size="small"
-        ariaLabel={`Go to ${name} code`}
+        ariaLabel={`Go to ${name} GitHub code`}
       >
         Code
       </TextLink>
