@@ -1,7 +1,7 @@
 // color palette
 const PRIMARY_NORMAL = "#4f3b78"
 const PRIMARY_LIGHT = "#927fbf"
-// const PRIMARY_LIGHTER = '#c4bbf0'
+const PRIMARY_LIGHTER = "#c4bbf0"
 const SECONDARY_NORMAL = "#61c0bf"
 const INK_LIGHT = "#505568"
 const INK_NORMAL = "#363b4e"
@@ -31,6 +31,7 @@ export const THEME_LIGHT_MODE = {
   backgroundNormalHover: CLOUD_DARK,
   textNormal: INK_NORMAL,
   textPrimary: PRIMARY_NORMAL,
+  projectBackground: CLOUD_DARK,
   ...COMMON_COLORS,
 }
 export const THEME_DARK_MODE = {
@@ -38,6 +39,7 @@ export const THEME_DARK_MODE = {
   backgroundNormal: INK_NORMAL,
   backgroundNormalHover: INK_LIGHT,
   textNormal: CLOUD_DARK,
-  textPrimary: PRIMARY_LIGHT,
+  textPrimary: PRIMARY_LIGHTER,
+  projectBackground: INK_LIGHT,
   ...COMMON_COLORS,
 }

@@ -21,7 +21,8 @@ const Projects: React.FC<Props> = ({ projects }: Props) => (
         <ProjectCard
           key={project.name}
           name={project.name}
-          url={project.url}
+          urlDemo={project.urlDemo}
+          urlCode={project.urlCode}
           img={<img src={project.img} alt={`Screenshot of ${project.name}`} />}
         />
       ))}

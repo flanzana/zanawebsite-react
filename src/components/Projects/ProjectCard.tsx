@@ -1,52 +1,71 @@
 import React from "react"
 import styled from "styled-components"
+import TextLink from "../common/TextLink"
+import { faCode, faLink } from "@fortawesome/free-solid-svg-icons"
 
-const StyledProjectCard = styled.a`
-  width: 180px;
-  padding: 10px;
+const StyledProjectCard = styled.div`
+  width: 170px;
+  height: fit-content;
+  padding: 14px 20px;
   margin: 15px;
   text-decoration: none;
   color: ${props => props.theme.textNormal};
+  border: 0.5px solid ${props => props.theme.backgroundNormalHover};
   border-radius: 10px;
-  transition: 0.4s;
   box-shadow: 0 2px 4px 0 ${props => props.theme.projectBoxShadow};
   outline: none;
 
   img {
-    width: 180px;
-  }
-
-  &:hover,
-  &:focus {
-    transition: 0.4s;
-    background-color: ${props => props.theme.backgroundNormalHover};
-    box-shadow: 0 6px 14px 0 ${props => props.theme.projectBoxShadow};
-  }
-
-  &:active {
-    transition: 0.2s;
-    background-color: ${props => props.theme.backgroundNormalHover};
-    box-shadow: 0 2px 6px 0 ${props => props.theme.projectBoxShadow};
+    width: 170px;
+    margin: 3px 0;
   }
 `
 
-const StyledHeading = styled.span`
-  text-decoration: none;
+const StyledHeading = styled.h2`
+  color: ${props => props.theme.textPrimary};
+  font-size: 0.9em;
   text-align: center;
-  margin: 3px 0;
-  font-size: 13px;
+  margin: 0;
+`
+
+const TextLinksWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0;
 `
 
 type Props = {
   name: string
   img: React.ReactElement
-  url: string
+  urlDemo: string
+  urlCode: string
 }
 
-const ProjectCard: React.FC<Props> = ({ name, img, url }: Props) => (
-  <StyledProjectCard href={url} target="_blank" rel="noopener noreferrer">
-    {img}
+const ProjectCard: React.FC<Props> = ({ name, img, urlDemo, urlCode }: Props) => (
+  <StyledProjectCard>
     <StyledHeading>{name}</StyledHeading>
+    {img}
+    <TextLinksWrapper>
+      <TextLink
+        href={urlDemo}
+        iconName={faLink}
+        type="secondary"
+        size="small"
+        ariaLabel={`Go to ${name} demo`}
+      >
+        Demo
+      </TextLink>
+      <TextLink
+        href={urlCode}
+        iconName={faCode}
+        type="secondary"
+        size="small"
+        ariaLabel={`Go to ${name} code`}
+      >
+        Code
+      </TextLink>
+    </TextLinksWrapper>
   </StyledProjectCard>
 )
 

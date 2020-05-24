@@ -54,27 +54,32 @@ export default {
     {
       name: "Travel packing list",
       img: imgtravellist,
-      url: "https://flanzana.github.io/travel-packing-list",
+      urlDemo: "https://flanzana.github.io/travel-packing-list",
+      urlCode: "https://github.com/flanzana/travel-packing-list",
     },
     {
       name: "Personal website",
       img: imgzana,
-      url: "https://flanzana.github.io",
+      urlDemo: "https://flanzana.github.io",
+      urlCode: "https://github.com/flanzana/flanzana.github.io",
     },
     {
       name: "Almería map",
       img: imgalmeria,
-      url: "https://flanzana.github.io/almeria-map",
+      urlDemo: "https://flanzana.github.io/almeria-map",
+      urlCode: "https://github.com/flanzana/almeria-map",
     },
     {
       name: "Arcade game",
       img: imgarcade,
-      url: "https://flanzana.github.io/arcade-game",
+      urlDemo: "https://flanzana.github.io/arcade-game",
+      urlCode: "https://github.com/flanzana/arcade-game",
     },
     {
       name: "Memory game",
       img: imgmemory,
-      url: "https://flanzana.github.io/memory-game-zana",
+      urlDemo: "https://flanzana.github.io/memory-game-zana",
+      urlCode: "https://github.com/flanzana/memory-game-zana",
     },
   ],
 }

@@ -18,7 +18,8 @@ export type SkillsType = SkillType[]
 export type ProjectType = {
   name: string
   img: string
-  url: string
+  urlDemo: string
+  urlCode: string
 }
 
 export type ProjectsType = ProjectType[]
