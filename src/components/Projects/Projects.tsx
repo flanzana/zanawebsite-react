@@ -8,6 +8,15 @@ const ProjectsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1200px;
+
+  & > div {
+    margin: 15px;
+
+    @media (min-width: 768px) {
+      margin: 30px;
+    }
+  }
 `
 
 type Props = {
@@ -24,6 +33,8 @@ const Projects: React.FC<Props> = ({ projects }: Props) => (
           urlWeb={project.urlWeb}
           urlCode={project.urlCode}
           img={<img src={project.img} alt={`Screenshot of ${project.name}`} />}
+          description={project.description}
+          tech={project.tech}
         />
       ))}
     </ProjectsWrapper>

@@ -4,35 +4,48 @@ import TextLink from "../common/TextLink"
 import { faCode, faLink } from "@fortawesome/free-solid-svg-icons"
 
 const StyledProjectCard = styled.div`
-  width: 170px;
+  width: 230px;
   height: fit-content;
-  padding: 14px 20px;
-  margin: 15px;
+  padding: 20px;
   text-decoration: none;
   color: ${props => props.theme.textNormal};
   border: 0.5px solid ${props => props.theme.backgroundNormalHover};
   border-radius: 10px;
-  box-shadow: 0 2px 4px 0 ${props => props.theme.projectBoxShadow};
-  outline: none;
+  box-shadow: 1px 2px 6px 0 ${props => props.theme.projectBoxShadow};
 
   img {
     width: 170px;
-    margin: 3px 0;
+    margin: 0;
   }
+`
+
+const StyledImageLink = styled.a`
+  outline: none;
+  margin: 0;
 `
 
 const StyledHeading = styled.h2`
   color: ${props => props.theme.textPrimary};
-  font-size: 0.9em;
+  font-size: 1.1em;
   text-align: center;
-  margin: 0;
+  margin: 0 0 10px 0;
+`
+
+const StyledDescription = styled.p`
+  font-size: 0.9em;
+  margin: 10px 0;
+`
+
+const StyledTech = styled.p`
+  font-size: 0.9em;
+  margin: 10px 0;
 `
 
 const TextLinksWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 0;
+  margin: 14px 0 0 0;
 `
 
 type Props = {
@@ -40,12 +53,20 @@ type Props = {
   img: React.ReactElement
   urlWeb: string
   urlCode: string
+  description: string
+  tech: string[]
 }
 
-const ProjectCard: React.FC<Props> = ({ name, img, urlWeb, urlCode }: Props) => (
+const ProjectCard: React.FC<Props> = ({ name, img, urlWeb, urlCode, description, tech }: Props) => (
   <StyledProjectCard>
     <StyledHeading>{name}</StyledHeading>
-    {img}
+    <StyledImageLink href={urlWeb} tabIndex={-1} target="_blank" rel="noopener noreferrer">
+      {img}
+    </StyledImageLink>
+    <StyledDescription>{description}</StyledDescription>
+    <StyledTech>
+      <strong>Using:</strong> {tech.join(", ")}
+    </StyledTech>
     <TextLinksWrapper>
       <TextLink
         href={urlWeb}

@@ -20,6 +20,8 @@ export type ProjectType = {
   img: string
   urlWeb: string
   urlCode: string
+  description: string
+  tech: string[]
 }
 
 export type ProjectsType = ProjectType[]
