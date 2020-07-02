@@ -43,3 +43,13 @@ export const THEME_DARK_MODE = {
   projectBackground: INK_LIGHT,
   ...COMMON_COLORS,
 }
+
+export const MEDIA_QUERY_BREAKPOINT = {
+  TABLET: 769, // px
+  MOBILE_L: 426, // px
+}
+
+export const CSS_MEDIA_QUERY = {
+  MIN_TABLET: `(min-width: ${MEDIA_QUERY_BREAKPOINT.TABLET}px)`,
+  MIN_MOBILE_L: `(min-width: ${MEDIA_QUERY_BREAKPOINT.MOBILE_L}px)`,
+}

@@ -3,6 +3,7 @@ import styled from "styled-components"
 import SectionLayout from "../common/SectionLayout"
 import ProjectCard from "./ProjectCard"
 import type { ProjectsType, ProjectType } from "../../types"
+import { CSS_MEDIA_QUERY } from "../../theme/consts"
 
 const ProjectsWrapper = styled.div`
   display: flex;
@@ -11,10 +12,13 @@ const ProjectsWrapper = styled.div`
   max-width: 1200px;
 
   & > div {
-    margin: 15px;
+    margin: 0 15px 30px 15px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
 
-    @media (min-width: 768px) {
-      margin: 30px;
+    @media ${CSS_MEDIA_QUERY.MIN_TABLET} {
+      margin: 0 30px 60px 30px;
     }
   }
 `

@@ -35,7 +35,7 @@ const HeaderWrapper = styled.div`
     text-transform: uppercase;
     font-size: calc(18px + 10vmin);
     letter-spacing: 0.1em;
-    padding: 0 10px;
+    margin: 0.7em 30px;
     text-shadow: 0 2px 4px ${props => props.theme.buttonBoxShadow};
   }
 `

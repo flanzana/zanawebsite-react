@@ -11,7 +11,7 @@ import Button from "./components/common/Button"
 import data from "./data/data"
 import { useWindowSize, useWindowScrollYPosition } from "./helpers/customHooks"
 import GlobalStyle from "./theme/GlobalStyle"
-import { THEME_DARK_MODE, THEME_LIGHT_MODE } from "./theme/consts"
+import { MEDIA_QUERY_BREAKPOINT, THEME_DARK_MODE, THEME_LIGHT_MODE } from "./theme/consts"
 import { NAVBAR_HEIGHT } from "./consts"
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
 import { ThemeType } from "./types"
@@ -37,7 +37,7 @@ const App: React.FC = () => {
   const [shouldShowSideBar, setShouldShowSideBar] = useState(false)
   const navBarRef = useRef<HTMLHeadingElement>(null)
 
-  const isMobile = windowSize.width < 600
+  const isMobile = windowSize.width < MEDIA_QUERY_BREAKPOINT.TABLET
   const isToggleThemeModeVisible = windowScrollYPosition > NAVBAR_HEIGHT
   const isNavbarFixed = windowScrollYPosition > windowSize.height
   const isArrowVisible = windowScrollYPosition < 40

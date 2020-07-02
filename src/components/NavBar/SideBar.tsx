@@ -1,6 +1,7 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+import styled, { css, keyframes } from "styled-components"
 import { NAVBAR_HEIGHT } from "../../consts"
+import { ThemeType } from "../../types"
 
 const movesidebar = keyframes`
     0% {
@@ -10,6 +11,11 @@ const movesidebar = keyframes`
         height: 153px;
     }
 `
+
+type StyledProps = {
+  isNavbarFixed: boolean
+  theme: ThemeType
+}
 
 const SideBarWrapper = styled.div`
   background-color: ${props => props.theme.backgroundPrimary};
@@ -23,11 +29,13 @@ const SideBarWrapper = styled.div`
   justify-content: center;
   animation: ${movesidebar} 0.6s ease-out 1;
 
-  &.fixed {
-    position: fixed;
-    z-index: 800;
-    top: 0;
-  }
+  ${(props: StyledProps) =>
+    props.isNavbarFixed &&
+    css`
+      position: fixed;
+      z-index: 800;
+      top: 0;
+    `}
 
   a {
     color: ${props => props.theme.textWhite};
@@ -67,7 +75,7 @@ const NavItem = ({ href, title }: NavItemProps) => (
 )
 
 const SideBar: React.FC<Props> = ({ isNavbarFixed }: Props) => (
-  <SideBarWrapper id="sidebar" className={isNavbarFixed ? "fixed" : ""}>
+  <SideBarWrapper id="sidebar" isNavbarFixed={isNavbarFixed}>
     <NavItem href="#aboutme" title="About me" />
     <NavItem href="#projects" title="Projects" />
     <NavItem href="#skills" title="Skills" />

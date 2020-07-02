@@ -15,5 +15,10 @@ export default createGlobalStyle`
 		font-family: Coda, sans-serif;
 		font-weight: 900;
 		text-align: center;
+		margin: 0;
+	}
+
+	p {
+	  margin: 0;
 	}
 `

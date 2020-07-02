@@ -10,7 +10,7 @@ const StyledSkillCard = styled.div`
 const StyledSkillTitle = styled.h2`
   font-size: 1.2em;
   color: ${props => props.theme.textPrimary};
-  margin-top: 0;
+  margin: 0 0 0.7em 0;
 `
 
 const StyledSkillList = styled.ul`

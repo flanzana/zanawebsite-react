@@ -1,8 +1,9 @@
 import React, { forwardRef } from "react"
-import styled, { keyframes } from "styled-components"
+import styled, { css, keyframes } from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { NAVBAR_HEIGHT } from "../../consts"
+import { ThemeType } from "../../types"
 
 const movenavbar = keyframes`
     0% {
@@ -13,10 +14,15 @@ const movenavbar = keyframes`
     }
 `
 
+type StyledProps = {
+  isNavbarFixed: boolean
+  theme: ThemeType
+}
+
 const NavBarWrapper = styled.div`
   height: ${NAVBAR_HEIGHT}px;
   width: calc(100% - 20px);
-  background-color: ${props => props.theme.backgroundPrimary};
+  background-color: ${(props: StyledProps) => props.theme.backgroundPrimary};
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,12 +35,14 @@ const NavBarWrapper = styled.div`
   padding-left: 20px;
   box-shadow: 0 3px 8px ${props => props.theme.navbarBoxShadow};
 
-  &.fixed {
-    position: fixed;
-  }
+  ${(props: StyledProps) =>
+    props.isNavbarFixed &&
+    css`
+      position: fixed;
+    `}
 
   h1 {
-    color: ${props => props.theme.textWhite};
+    color: ${(props: StyledProps) => props.theme.textWhite};
     letter-spacing: 0.1em;
     font-size: 1.6em;
     margin: 0;
@@ -52,7 +60,7 @@ const NavBarWrapper = styled.div`
   }
 
   a {
-    color: ${props => props.theme.textWhite};
+    color: ${(props: StyledProps) => props.theme.textWhite};
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: -0.05em;
@@ -65,7 +73,7 @@ const NavBarWrapper = styled.div`
 
     &:hover,
     &:focus {
-      background-color: ${props => props.theme.backgroundPrimaryHover};
+      background-color: ${(props: StyledProps) => props.theme.backgroundPrimaryHover};
     }
   }
 `
@@ -108,7 +116,7 @@ const NavBar = (
   { isNavbarFixed, isMobile, toggleSideBar }: Props,
   ref: React.Ref<HTMLHeadingElement>,
 ) => (
-  <NavBarWrapper id="navbar" className={isNavbarFixed ? "fixed" : ""}>
+  <NavBarWrapper id="navbar" isNavbarFixed={isNavbarFixed}>
     <h1 ref={ref}>Žana Flander</h1>
 
     {isMobile ? (

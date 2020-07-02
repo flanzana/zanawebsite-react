@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { faGithub, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import Button from "../common/Button"
+import { CSS_MEDIA_QUERY } from "../../theme/consts"
 
 const FooterWrapper = styled.div`
   background-color: ${props => props.theme.backgroundPrimary};
@@ -38,10 +39,10 @@ const ContactButtonsWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: calc(280px + 2vmin);
+  width: 250px;
 
-  @media (max-width: 500px) {
-    width: 250px;
+  @media ${CSS_MEDIA_QUERY.MIN_MOBILE_L} {
+    width: calc(280px + 2vmin);
   }
 `
 
