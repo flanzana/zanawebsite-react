@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.js": "/static/js/main.98c9d159.chunk.js",
-    "main.js.map": "/static/js/main.98c9d159.chunk.js.map",
+    "main.js": "/static/js/main.e5aa4f86.chunk.js",
+    "main.js.map": "/static/js/main.e5aa4f86.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7069cdd1.js",
     "runtime-main.js.map": "/static/js/runtime-main.7069cdd1.js.map",
-    "static/js/2.aaf87a91.chunk.js": "/static/js/2.aaf87a91.chunk.js",
-    "static/js/2.aaf87a91.chunk.js.map": "/static/js/2.aaf87a91.chunk.js.map",
+    "static/js/2.8d6febb3.chunk.js": "/static/js/2.8d6febb3.chunk.js",
+    "static/js/2.8d6febb3.chunk.js.map": "/static/js/2.8d6febb3.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.dfa884c70536ee3051f76235830db85c.js": "/precache-manifest.dfa884c70536ee3051f76235830db85c.js",
+    "precache-manifest.ce197db17cdf1f56fbe43ed742610ba0.js": "/precache-manifest.ce197db17cdf1f56fbe43ed742610ba0.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.aaf87a91.chunk.js.LICENSE.txt": "/static/js/2.aaf87a91.chunk.js.LICENSE.txt",
+    "static/js/2.8d6febb3.chunk.js.LICENSE.txt": "/static/js/2.8d6febb3.chunk.js.LICENSE.txt",
     "static/media/project-almeria.png": "/static/media/project-almeria.aa6f8766.png",
-    "static/media/project-arcade.png": "/static/media/project-arcade.327ed76c.png",
     "static/media/project-memory.png": "/static/media/project-memory.57272889.png",
     "static/media/project-travel-list.png": "/static/media/project-travel-list.dbd628c2.png",
+    "static/media/project-workshop.png": "/static/media/project-workshop.9c7fcdee.png",
     "static/media/project-zana.png": "/static/media/project-zana.a4e9b0a9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.7069cdd1.js",
-    "static/js/2.aaf87a91.chunk.js",
-    "static/js/main.98c9d159.chunk.js"
+    "static/js/2.8d6febb3.chunk.js",
+    "static/js/main.e5aa4f86.chunk.js"
   ]
 }
