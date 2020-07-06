@@ -13,6 +13,7 @@ const SHADOW_COLOR_DARKER = "rgba(0, 0, 0, 0.6)"
 const COMMON_COLORS = {
   backgroundPrimary: PRIMARY_NORMAL,
   backgroundPrimaryHover: SECONDARY_NORMAL,
+  backgroundSideBar: PRIMARY_LIGHT,
   buttonBackground: CLOUD_NORMAL,
   buttonToggleBackground: PRIMARY_LIGHT,
   buttonBackgroundHover: SECONDARY_NORMAL,

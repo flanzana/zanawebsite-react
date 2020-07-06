@@ -1,100 +1,74 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
-import Particles from "react-particles-js"
+import {
+  StyledBanner,
+  StyledBannerHeading,
+  StyledHamburgerIcon,
+  StyledHeader,
+  StyledNavBar,
+  StyledNavBarMenu,
+  StyledSideBar,
+} from "./style"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
-import Button from "../common/Button"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
+import Particles from "react-particles-js"
 import { PARTICLES_PARAMS_DESKTOP, PARTICLES_PARAMS_MOBILE } from "../../consts"
-import { useWindowSize } from "../../helpers/customHooks"
 
-const bounce = keyframes`
-  0%   { transform: translateY(0); }
-  40%  { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-`
-
-const StyledHeader = styled.div`
-  height: 100vh;
-  width: 100%;
-  position: relative; // because of Particles
-  background-color: ${props => props.theme.backgroundPrimary};
-`
-
-const HeaderWrapper = styled.div`
-  position: absolute; // because of Particles
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  h1 {
-    color: ${props => props.theme.textWhite};
-    text-transform: uppercase;
-    font-size: calc(18px + 10vmin);
-    letter-spacing: 0.1em;
-    margin: 0.7em 30px;
-    text-shadow: 0 2px 4px ${props => props.theme.buttonBoxShadow};
-  }
-`
-
-const ContactButtonsWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: calc(250px + 2vmin);
-`
-
-const ArrowDown = styled.a`
-  position: absolute;
-  bottom: 5px;
-  color: ${props => props.theme.textWhite};
-  font-size: 22px;
-  animation: ${bounce} 1.5s ease infinite;
-  text-decoration: none;
-  cursor: pointer;
-  outline: none;
-`
-
-type Props = {
-  isArrowVisible: boolean
-  onArrowClick: () => void
+type ItemProps = {
+  href: string
+  title: string
+  toggleSideBar?: () => void
 }
 
-const Header: React.FC<Props> = ({ isArrowVisible, onArrowClick }: Props) => {
-  const isMobile = useWindowSize().width < 700
+const Item = ({ href, title, toggleSideBar }: ItemProps) => (
+  <li>
+    <a href={href} onClick={toggleSideBar}>
+      {title}
+    </a>
+  </li>
+)
+
+type Props = {
+  isMobile: boolean
+  toggleSideBar: () => void
+  isScrolledOverHeader: boolean
+  shouldShowSideBar: boolean
+}
+
+const Header: React.FC<Props> = ({
+  isMobile,
+  toggleSideBar,
+  isScrolledOverHeader,
+  shouldShowSideBar,
+}: Props) => {
   return (
     <StyledHeader>
-      <HeaderWrapper id="header">
-        <h1>Žana Flander</h1>
-        <ContactButtonsWrapper>
-          <Button
-            iconName={faLinkedinIn}
-            href="https://www.linkedin.com/in/zanaflander"
-            size="large"
-            type="contact"
-            ariaLabel="LinkedIn"
-          />
-          <Button
-            iconName={faGithub}
-            href="https://github.com/flanzana"
-            size="large"
-            type="contact"
-            ariaLabel="GitHub"
-          />
-        </ContactButtonsWrapper>
-        {isArrowVisible && (
-          <ArrowDown onClick={onArrowClick} aria-label="Scroll to content">
-            <FontAwesomeIcon icon={faArrowDown} aria-hidden="true" />
-          </ArrowDown>
+      <StyledNavBar isScrolledOverHeader={isScrolledOverHeader}>
+        {isScrolledOverHeader ? <h1>Žana Flander</h1> : <div />}
+        {isMobile ? (
+          <StyledHamburgerIcon onClick={toggleSideBar} aria-label="Toggle dropdown menu">
+            <FontAwesomeIcon icon={faBars} aria-hidden="true" />
+          </StyledHamburgerIcon>
+        ) : (
+          <StyledNavBarMenu>
+            <Item href="#aboutme" title="About me" />
+            <Item href="#skills" title="Skills" />
+            <Item href="#projects" title="Projects" />
+          </StyledNavBarMenu>
         )}
-      </HeaderWrapper>
+      </StyledNavBar>
+      {isMobile && shouldShowSideBar && (
+        <StyledSideBar>
+          <Item href="#aboutme" title="About me" toggleSideBar={toggleSideBar} />
+          <Item href="#projects" title="Projects" toggleSideBar={toggleSideBar} />
+          <Item href="#skills" title="Skills" toggleSideBar={toggleSideBar} />
+        </StyledSideBar>
+      )}
+      <StyledBanner>
+        <StyledBannerHeading>Žana Flander</StyledBannerHeading>
+      </StyledBanner>
       <Particles
         width="100%"
-        height="100vh"
+        height="50vh"
         params={isMobile ? PARTICLES_PARAMS_MOBILE : PARTICLES_PARAMS_DESKTOP}
       />
     </StyledHeader>

@@ -1,8 +1,6 @@
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import styled, { ThemeProvider } from "styled-components"
 import Header from "./components/Header/Header"
-import NavBar from "./components/NavBar/NavBar"
-import SideBar from "./components/NavBar/SideBar"
 import AboutMe from "./components/AboutMe/AboutMe"
 import Skills from "./components/Skills/Skills"
 import Projects from "./components/Projects/Projects"
@@ -26,7 +24,6 @@ const MainContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: ${NAVBAR_HEIGHT}px;
   background-color: ${props => props.theme.backgroundNormal};
 `
 
@@ -35,13 +32,11 @@ const App: React.FC = () => {
   const windowScrollYPosition = useWindowScrollYPosition()
   const [theme, setTheme] = useState(THEME_LIGHT_MODE)
   const [shouldShowSideBar, setShouldShowSideBar] = useState(false)
-  const navBarRef = useRef<HTMLHeadingElement>(null)
 
   const isMobile = windowSize.width < MEDIA_QUERY_BREAKPOINT.TABLET
   const isToggleThemeModeVisible = windowScrollYPosition > NAVBAR_HEIGHT
-  const isNavbarFixed = windowScrollYPosition > windowSize.height
-  const isArrowVisible = windowScrollYPosition < 40
   const isCurrentDarkMode = theme.type === "dark"
+  const isScrolledOverHeader = windowScrollYPosition > windowSize.height / 2 - NAVBAR_HEIGHT
 
   const toggleSideBar = () => {
     setShouldShowSideBar(!shouldShowSideBar)
@@ -50,22 +45,17 @@ const App: React.FC = () => {
     setTheme(isCurrentDarkMode ? THEME_LIGHT_MODE : THEME_DARK_MODE)
     setShouldShowSideBar(false)
   }
-  const scrollIntoNavBar = () => {
-    navBarRef.current && navBarRef.current.scrollIntoView({ behavior: "smooth" })
-  }
 
   return (
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <Header isArrowVisible={isArrowVisible} onArrowClick={scrollIntoNavBar} />
-        <NavBar
-          isNavbarFixed={isNavbarFixed}
+        <Header
           isMobile={isMobile}
           toggleSideBar={toggleSideBar}
-          ref={navBarRef}
+          isScrolledOverHeader={isScrolledOverHeader}
+          shouldShowSideBar={shouldShowSideBar}
         />
-        {isMobile && shouldShowSideBar && <SideBar isNavbarFixed={isNavbarFixed} />}
         <MainContentWrapper>
           <AboutMe />
           {isMobile ? (
