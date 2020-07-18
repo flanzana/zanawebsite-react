@@ -34,7 +34,6 @@ const App: React.FC = () => {
   const [shouldShowSideBar, setShouldShowSideBar] = useState(false)
 
   const isMobile = windowSize.width < MEDIA_QUERY_BREAKPOINT.TABLET
-  const isToggleThemeModeVisible = windowScrollYPosition > NAVBAR_HEIGHT
   const isCurrentDarkMode = theme.type === "dark"
   const isScrolledOverHeader = windowScrollYPosition > windowSize.height / 2 - NAVBAR_HEIGHT
 
@@ -71,15 +70,13 @@ const App: React.FC = () => {
           )}
         </MainContentWrapper>
         <Footer />
-        {isToggleThemeModeVisible && (
-          <Button
-            type="theme"
-            size="small"
-            onClick={toggleThemeMode}
-            iconName={isCurrentDarkMode ? faSun : faMoon}
-            ariaLabel={`Switch to ${isCurrentDarkMode ? "light" : "dark"} mode`}
-          />
-        )}
+        <Button
+          type="theme"
+          size="small"
+          onClick={toggleThemeMode}
+          iconName={isCurrentDarkMode ? faSun : faMoon}
+          ariaLabel={`Switch to ${isCurrentDarkMode ? "light" : "dark"} mode`}
+        />
       </>
     </ThemeProvider>
   )
