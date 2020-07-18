@@ -4,17 +4,24 @@ import SkillBullets from "./SkillBullets"
 import type { SkillList } from "../../types"
 
 const StyledSkillCard = styled.div`
-  padding: 15px 20px;
+  width: 230px;
+  height: fit-content;
+  padding: 20px;
+  text-decoration: none;
+  color: ${props => props.theme.textNormal};
+  border: 0.5px solid ${props => props.theme.backgroundNormalHover};
+  border-radius: 10px;
+  box-shadow: 1px 2px 6px 0 ${props => props.theme.projectBoxShadow};
 `
 
 const StyledSkillTitle = styled.h2`
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: ${props => props.theme.textPrimary};
-  margin: 0 0 0.7em 0;
+  margin: 0 0 10px 0;
 `
 
 const StyledSkillList = styled.ul`
-  width: 225px;
+  width: 100%;
   font-size: 0.95em;
   list-style: none;
   margin: 0;

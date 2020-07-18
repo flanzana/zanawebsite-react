@@ -21,6 +21,7 @@ export default {
       list: [
         { name: "CSS", level: 5 },
         { name: "Cypress", level: 4 },
+        { name: "Gherkin", level: 4 },
         { name: "Git", level: 3 },
         { name: "HTML", level: 5 },
         { name: "JavaScript", level: 4 },
@@ -39,14 +40,6 @@ export default {
         { name: "MATLAB", level: 3 },
         { name: "OCAD", level: 5 },
         { name: "SketchUp", level: 2 },
-      ],
-    },
-    {
-      type: "design",
-      title: "Design",
-      list: [
-        { name: "Adobe Photoshop", level: 4 },
-        { name: "Inkscape", level: 2 },
       ],
     },
   ],
