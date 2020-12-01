@@ -59,8 +59,8 @@ const Header: React.FC<Props> = ({
       {isMobile && shouldShowSideBar && (
         <StyledSideBar>
           <Item href="#aboutme" title="About me" toggleSideBar={toggleSideBar} />
-          <Item href="#projects" title="Projects" toggleSideBar={toggleSideBar} />
           <Item href="#skills" title="Skills" toggleSideBar={toggleSideBar} />
+          <Item href="#projects" title="Projects" toggleSideBar={toggleSideBar} />
         </StyledSideBar>
       )}
       <StyledBanner>

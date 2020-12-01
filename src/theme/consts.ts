@@ -6,7 +6,7 @@ const SECONDARY_NORMAL = "#61c0bf"
 const INK_LIGHT = "#505568"
 const INK_NORMAL = "#363b4e"
 const CLOUD_NORMAL = "#eff2f5"
-const CLOUD_DARK = "#e8edf1"
+const CLOUD_DARK = "#e2e6ea"
 const SHADOW_COLOR_DARK = "rgba(0, 0, 0, 0.3)"
 const SHADOW_COLOR_DARKER = "rgba(0, 0, 0, 0.6)"
 

@@ -1,10 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import SkillBullets from "./SkillBullets"
 import type { SkillList } from "../../types"
 
 const StyledSkillCard = styled.div`
-  width: 230px;
+  width: 200px;
   height: fit-content;
   padding: 20px;
   text-decoration: none;
@@ -20,7 +19,7 @@ const StyledSkillTitle = styled.h2`
   margin: 0 0 10px 0;
 `
 
-const StyledSkillList = styled.ul`
+const StyledSkillListWithLevels = styled.ul`
   width: 100%;
   font-size: 0.95em;
   list-style: none;
@@ -33,25 +32,42 @@ const StyledSkillItem = styled.li`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  transition: all 0.3s ease-out;
 
   &:hover {
-    span {
-      font-weight: bold;
-    }
-
-    svg {
-      padding: 0 3.5px;
-    }
-
-    svg:last-of-type {
-      padding-right: 0;
-    }
+    font-weight: bold;
+    letter-spacing: 0.05em;
   }
 `
 
 const StyledSkillLevel = styled.span`
-  color: ${props => props.theme.textSecondary};
+  color: ${props => props.theme.textPrimary};
   font-weight: bold;
+`
+
+const StyledSkillListWithTags = styled.div`
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+`
+
+const StyledSkillTag = styled.div`
+  font-size: 0.9em;
+  letter-spacing: 0.03em;
+  padding: 3px 5px;
+  margin: 3px;
+  border-radius: 5px;
+  color: ${props => props.theme.textNormal};
+  background: ${props => props.theme.backgroundNormalHover};
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    font-weight: bold;
+    letter-spacing: 0.06em;
+  }
 `
 
 type Props = {
@@ -59,22 +75,29 @@ type Props = {
   list: SkillList[]
 }
 
-const SkillCard: React.FC<Props> = ({ title, list }: Props) => (
-  <StyledSkillCard>
-    <StyledSkillTitle>{title}</StyledSkillTitle>
-    <StyledSkillList>
-      {list.map(item => (
-        <StyledSkillItem key={item.name}>
-          <span>{item.name}</span>
-          {typeof item.level === "number" ? (
-            <SkillBullets level={item.level} />
-          ) : (
-            <StyledSkillLevel>{item.level}</StyledSkillLevel>
-          )}
-        </StyledSkillItem>
-      ))}
-    </StyledSkillList>
-  </StyledSkillCard>
-)
+const SkillCard: React.FC<Props> = ({ title, list }: Props) => {
+  const isSkillListWithLevels = list.some(item => Boolean(item.level))
+  return (
+    <StyledSkillCard>
+      <StyledSkillTitle>{title}</StyledSkillTitle>
+      {isSkillListWithLevels ? (
+        <StyledSkillListWithLevels>
+          {list.map(item => (
+            <StyledSkillItem key={item.name}>
+              <span>{item.name}</span>
+              <StyledSkillLevel>{item.level}</StyledSkillLevel>
+            </StyledSkillItem>
+          ))}
+        </StyledSkillListWithLevels>
+      ) : (
+        <StyledSkillListWithTags>
+          {list.map(item => (
+            <StyledSkillTag key={item.name}>{item.name}</StyledSkillTag>
+          ))}
+        </StyledSkillListWithTags>
+      )}
+    </StyledSkillCard>
+  )
+}
 
 export default SkillCard

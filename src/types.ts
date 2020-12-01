@@ -4,11 +4,10 @@ export type ThemeType = typeof THEME_DARK_MODE | typeof THEME_LIGHT_MODE
 
 export type SkillList = {
   name: string
-  level: string | number
+  level?: string
 }
 
 export type SkillType = {
-  type: string
   title: string
   list: SkillList[]
 }

@@ -7,7 +7,6 @@ import imgworkshop from "../data/img/project-workshop.png"
 export default {
   skills: [
     {
-      type: "languages",
       title: "Languages",
       list: [
         { name: "Slovenian", level: "Native" },
@@ -16,31 +15,27 @@ export default {
       ],
     },
     {
-      type: "webdev",
       title: "Web development",
       list: [
-        { name: "CSS", level: 5 },
-        { name: "Cypress", level: 4 },
-        { name: "Gherkin", level: 4 },
-        { name: "Git", level: 3 },
-        { name: "HTML", level: 5 },
-        { name: "JavaScript", level: 4 },
-        { name: "Jest", level: 4 },
-        { name: "ReactJS", level: 4 },
-        { name: "Redux", level: 2 },
-        { name: "TypeScript", level: 2 },
+        { name: "CSS" },
+        { name: "Cypress" },
+        { name: "ESLint" },
+        { name: "Flow" },
+        { name: "Gherkin" },
+        { name: "Git" },
+        { name: "HTML" },
+        { name: "JavaScript" },
+        { name: "Jest" },
+        { name: "React" },
+        { name: "Redux" },
+        { name: "styled-components" },
+        { name: "Testing Library" },
+        { name: "TypeScript" },
       ],
     },
     {
-      type: "engineering",
-      title: "Engineering",
-      list: [
-        { name: "ArcGIS", level: 5 },
-        { name: "AutoCAD", level: 3 },
-        { name: "MATLAB", level: 3 },
-        { name: "OCAD", level: 5 },
-        { name: "SketchUp", level: 2 },
-      ],
+      title: "Design",
+      list: [{ name: "Adobe Photoshop" }, { name: "Figma" }, { name: "Inkscape" }],
     },
   ],
   projects: [

@@ -31,7 +31,7 @@ const Skills: React.FC<Props> = ({ skills }: Props) => (
   <SectionLayout id="skills" title="Skills">
     <SkillsWrapper>
       {skills.map((skill: SkillType) => (
-        <SkillCard key={skill.type} title={skill.title} list={skill.list} />
+        <SkillCard key={skill.title} title={skill.title} list={skill.list} />
       ))}
     </SkillsWrapper>
   </SectionLayout>

@@ -57,17 +57,8 @@ const App: React.FC = () => {
         />
         <MainContentWrapper>
           <AboutMe />
-          {isMobile ? (
-            <>
-              <Projects projects={data.projects} />
-              <Skills skills={data.skills} />
-            </>
-          ) : (
-            <>
-              <Skills skills={data.skills} />
-              <Projects projects={data.projects} />
-            </>
-          )}
+          <Skills skills={data.skills} />
+          <Projects projects={data.projects} />
         </MainContentWrapper>
         <Footer />
         <Button
