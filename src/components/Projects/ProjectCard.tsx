@@ -37,7 +37,7 @@ const StyledDescription = styled.p`
 `
 
 const StyledTech = styled.p`
-  font-size: 0.9em;
+  font-size: 0.8em;
   margin: 10px 0;
 `
 
@@ -46,6 +46,12 @@ const TextLinksWrapper = styled.div`
   flex-direction: row;
   justify-content: space-around;
   margin: 14px 0 0 0;
+`
+
+const StyledHorizontalLine = styled.hr`
+  height: 0.5px;
+  border: 0;
+  background-color: ${props => props.theme.backgroundNormalHover};
 `
 
 type Props = {
@@ -64,9 +70,9 @@ const ProjectCard: React.FC<Props> = ({ name, img, urlWeb, urlCode, description,
       {img}
     </StyledImageLink>
     <StyledDescription>{description}</StyledDescription>
-    <StyledTech>
-      <strong>Using:</strong> {tech.join(", ")}
-    </StyledTech>
+    <StyledHorizontalLine />
+    <StyledTech>{tech.join(", ")}</StyledTech>
+    <StyledHorizontalLine />
     <TextLinksWrapper>
       <TextLink
         href={urlWeb}

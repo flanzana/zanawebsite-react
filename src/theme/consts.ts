@@ -32,7 +32,6 @@ export const THEME_LIGHT_MODE = {
   backgroundNormalHover: CLOUD_DARK,
   textNormal: INK_NORMAL,
   textPrimary: PRIMARY_NORMAL,
-  projectBackground: CLOUD_DARK,
   ...COMMON_COLORS,
 }
 export const THEME_DARK_MODE = {
@@ -41,7 +40,6 @@ export const THEME_DARK_MODE = {
   backgroundNormalHover: INK_LIGHT,
   textNormal: CLOUD_DARK,
   textPrimary: PRIMARY_LIGHTER,
-  projectBackground: INK_LIGHT,
   ...COMMON_COLORS,
 }
 

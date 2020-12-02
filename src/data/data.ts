@@ -46,7 +46,15 @@ export default {
       urlCode: "https://github.com/flanzana/travel-packing-list",
       description:
         "An extensive travel packing checklist for your next trip in English, Spanish and Slovenian language.",
-      tech: ["React", "JavaScript", "i18next", "Design system Orbit"],
+      tech: [
+        "React",
+        "JavaScript",
+        "i18next",
+        "design system Orbit",
+        "Flow",
+        "Jest",
+        "Testing Library",
+      ],
     },
     {
       name: "Portfolio website",
@@ -54,7 +62,7 @@ export default {
       urlWeb: "https://flanzana.github.io",
       urlCode: "https://github.com/flanzana/flanzana.github.io",
       description: "Portfolio website displaying my skills, interesting projects and contacts.",
-      tech: ["React", "TypeScript", "Styled components"],
+      tech: ["React", "TypeScript", "styled-components"],
     },
     {
       name: "Workshop",
@@ -63,7 +71,7 @@ export default {
       urlCode: "https://github.com/flanzana/portfolio-orbit",
       description:
         'Example of portfolio from my workshop "Perks of using a design system in frontend development" at conference "Women in Tech".',
-      tech: ["React", "Design system Orbit"],
+      tech: ["React", "design system Orbit"],
     },
     {
       name: "Almería map",
