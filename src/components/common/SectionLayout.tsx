@@ -9,26 +9,29 @@ const StyledTitle = styled.h1`
   margin-bottom: 20px;
   line-height: 1.75em;
   border-bottom: 1px solid ${props => props.theme.textNormal};
-  width: 280px;
-
-  @media ${CSS_MEDIA_QUERY.MIN_TABLET} {
-    margin-bottom: 30px;
-  }
+  width: 260px;
 `
 
-const StyledSection = styled.div`
+const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 50px 0 20px 0;
+  width: calc(100%-20px);
+  padding: 30px 10px 20px 10px;
+  scroll-margin-top: 30px;
+
   &:last-of-type {
-    padding-bottom: 50px;
+    padding-bottom: 30px;
   }
 
   @media ${CSS_MEDIA_QUERY.MIN_TABLET} {
-    padding: 65px 0 50px 0;
+    width: calc(100%-40px);
+    padding: 40px 20px 30px 20px;
+
+    &:last-of-type {
+      padding-bottom: 50px;
+    }
   }
 `
 

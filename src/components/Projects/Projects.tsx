@@ -12,13 +12,10 @@ const ProjectsWrapper = styled.div`
   max-width: 1200px;
 
   & > div {
-    margin: 0 15px 30px 15px;
-    &:last-of-type {
-      margin-bottom: 0;
-    }
+    margin: 10px;
 
     @media ${CSS_MEDIA_QUERY.MIN_TABLET} {
-      margin: 0 30px 60px 30px;
+      margin: 20px;
     }
   }
 `

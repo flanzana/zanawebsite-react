@@ -5,7 +5,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import Button from "../common/Button"
 import { CSS_MEDIA_QUERY } from "../../theme/consts"
 
-const FooterWrapper = styled.div`
+const FooterWrapper = styled.footer`
   background-color: ${props => props.theme.backgroundPrimary};
   color: ${props => props.theme.textWhite};
   height: calc(120px + 2vmin);

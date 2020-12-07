@@ -2,6 +2,7 @@
 import styled, { css, keyframes } from "styled-components"
 import { NAVBAR_HEIGHT } from "../../consts"
 import { ThemeType } from "../../types"
+import { CSS_MEDIA_QUERY } from "../../theme/consts"
 
 type StyledProps = {
   theme: ThemeType
@@ -21,23 +22,23 @@ const moveSideBar = keyframes`
     }
 `
 
-export const StyledHeader = styled.div`
+export const StyledHeader = styled.header`
   position: relative; // because of Particles
   height: 50vh;
   width: 100%;
   background-color: ${(props: StyledProps) => props.theme.backgroundPrimary};
 `
 
-export const StyledNavBar = styled.div`
+export const StyledNavBar = styled.nav`
   height: ${NAVBAR_HEIGHT}px;
-  width: calc(100% - 20px);
+  width: calc(100% - 30px);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   position: relative;
   top: 0;
-  padding-left: 20px;
+  padding: 0 10px 0 20px;
   position: fixed;
   z-index: 900;
   ${(props: StyledPropsWithIsScrolledOverHeader) =>
@@ -52,6 +53,11 @@ export const StyledNavBar = styled.div`
     letter-spacing: 0.1em;
     font-size: 1.6em;
     margin: 0;
+  }
+
+  @media ${CSS_MEDIA_QUERY.MIN_TABLET} {
+    width: calc(100% - 20px);
+    padding: 0 0 0 20px;
   }
 `
 
@@ -91,7 +97,6 @@ export const StyledHamburgerIcon = styled.button`
   border-radius: 5px;
   font-size: 30px;
   cursor: pointer;
-  margin-right: 20px;
   outline: none;
 
   &:hover,
