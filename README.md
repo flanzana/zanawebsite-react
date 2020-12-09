@@ -13,4 +13,4 @@ Website is not finished yet, because I am always adding new features or editing 
 - Purple color palette from [Color Hunt](https://colorhunt.co/palette/5272)
 - Inspiration for light and dark theme mode from [`styled-components`](https://styled-components.com/docs/advanced#theming)
 - `useWindowSize()` hook from [useHooks](https://usehooks.com/useWindowSize/)
-- Inspiration for how to set common components (i.e. `<Button />` and `<TextLink />`) from [design system Orbit](https://github.com/kiwicom/orbit-components)
+- `useOnClickOutside()` hook from [useHooks.ts](https://usehooks-typescript.com/react-hook/use-on-click-outside)

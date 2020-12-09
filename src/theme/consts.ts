@@ -13,7 +13,7 @@ const SHADOW_COLOR_DARKER = "rgba(0, 0, 0, 0.6)"
 const COMMON_COLORS = {
   backgroundPrimary: PRIMARY_NORMAL,
   backgroundPrimaryHover: SECONDARY_NORMAL,
-  backgroundSideBar: PRIMARY_LIGHT,
+  backgroundSidebar: PRIMARY_LIGHT,
   buttonBackground: CLOUD_NORMAL,
   buttonToggleBackground: PRIMARY_LIGHT,
   buttonBackgroundHover: SECONDARY_NORMAL,
@@ -27,7 +27,6 @@ const COMMON_COLORS = {
 }
 
 export const THEME_LIGHT_MODE = {
-  type: "light",
   backgroundNormal: CLOUD_NORMAL,
   backgroundNormalHover: CLOUD_DARK,
   textNormal: INK_NORMAL,
@@ -35,7 +34,6 @@ export const THEME_LIGHT_MODE = {
   ...COMMON_COLORS,
 }
 export const THEME_DARK_MODE = {
-  type: "dark",
   backgroundNormal: INK_NORMAL,
   backgroundNormalHover: INK_LIGHT,
   textNormal: CLOUD_DARK,

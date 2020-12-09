@@ -13,12 +13,21 @@ type StyledPropsWithIsScrolledOverHeader = {
   isScrolledOverHeader: boolean
 }
 
-const moveSideBar = keyframes`
+const moveSidebarDesktop = keyframes`
     0% {
         width: 0px;
     }
     100% {
-        width: 200px;
+        width: 300px;
+    }
+`
+
+const moveSidebarMobile = keyframes`
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 100%;
     }
 `
 
@@ -29,7 +38,7 @@ export const StyledHeader = styled.header`
   background-color: ${(props: StyledProps) => props.theme.backgroundPrimary};
 `
 
-export const StyledNavBar = styled.nav`
+export const StyledNavbar = styled.nav`
   height: ${NAVBAR_HEIGHT}px;
   width: calc(100% - 30px);
   display: flex;
@@ -61,7 +70,7 @@ export const StyledNavBar = styled.nav`
   }
 `
 
-export const StyledNavBarMenu = styled.ul`
+export const StyledNavbarMenu = styled.ul`
   list-style: none;
   display: flex;
   margin: 0;
@@ -107,20 +116,51 @@ export const StyledHamburgerIcon = styled.button`
   }
 `
 
-export const StyledSideBar = styled.ul`
-  background-color: ${(props: StyledProps) => props.theme.backgroundSideBar};
-  margin: ${NAVBAR_HEIGHT}px 0 0 0;
-  padding: 0;
-  width: 200px;
-  list-style: none;
+export const StyledCloseSidebarIcon = styled.button`
+  color: ${(props: StyledProps) => props.theme.textWhite};
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  font-size: 30px;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: ${(props: StyledProps) => props.theme.buttonBackgroundHover};
+    transition: 0.4s;
+  }
+`
+
+export const StyledSidebar = styled.aside`
+  background-color: ${(props: StyledProps) => props.theme.backgroundSidebar};
+  margin: 0;
+  padding: ${NAVBAR_HEIGHT}px 0 0 0;
+  width: 100%;
+  height: 100vh;
   position: absolute;
   right: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  animation: ${moveSideBar} 0.6s ease;
+  justify-content: start;
+  animation: ${moveSidebarMobile} 0.6s ease;
   position: fixed;
-  z-index: 800;
+  z-index: 910;
+
+  @media ${CSS_MEDIA_QUERY.MIN_MOBILE_L} {
+    animation: ${moveSidebarDesktop} 0.6s ease;
+    width: 300px;
+  }
+
+  ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+  }
 
   a {
     color: ${(props: StyledProps) => props.theme.textWhite};
@@ -130,7 +170,6 @@ export const StyledSideBar = styled.ul`
     letter-spacing: -0.05em;
     display: block;
     width: 100%;
-    height: 100%;
     padding: 16px 0;
     cursor: pointer;
     transition: 0.4s;
