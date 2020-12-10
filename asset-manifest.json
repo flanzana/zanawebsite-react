@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.2e06f357.chunk.js",
-    "main.js.map": "/static/js/main.2e06f357.chunk.js.map",
+    "main.js": "/static/js/main.9e93a47d.chunk.js",
+    "main.js.map": "/static/js/main.9e93a47d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7069cdd1.js",
     "runtime-main.js.map": "/static/js/runtime-main.7069cdd1.js.map",
-    "static/js/2.8d6febb3.chunk.js": "/static/js/2.8d6febb3.chunk.js",
-    "static/js/2.8d6febb3.chunk.js.map": "/static/js/2.8d6febb3.chunk.js.map",
+    "static/js/2.a1b984e1.chunk.js": "/static/js/2.a1b984e1.chunk.js",
+    "static/js/2.a1b984e1.chunk.js.map": "/static/js/2.a1b984e1.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.93ee239d4b590819cc3747080da3ec63.js": "/precache-manifest.93ee239d4b590819cc3747080da3ec63.js",
+    "precache-manifest.d6494a4d89f61522c7df8c738912f3f6.js": "/precache-manifest.d6494a4d89f61522c7df8c738912f3f6.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.8d6febb3.chunk.js.LICENSE.txt": "/static/js/2.8d6febb3.chunk.js.LICENSE.txt",
+    "static/js/2.a1b984e1.chunk.js.LICENSE.txt": "/static/js/2.a1b984e1.chunk.js.LICENSE.txt",
     "static/media/project-almeria.png": "/static/media/project-almeria.aa6f8766.png",
     "static/media/project-memory.png": "/static/media/project-memory.57272889.png",
     "static/media/project-travel-list.png": "/static/media/project-travel-list.dbd628c2.png",
@@ -18,7 +18,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7069cdd1.js",
-    "static/js/2.8d6febb3.chunk.js",
-    "static/js/main.2e06f357.chunk.js"
+    "static/js/2.a1b984e1.chunk.js",
+    "static/js/main.9e93a47d.chunk.js"
   ]
 }
