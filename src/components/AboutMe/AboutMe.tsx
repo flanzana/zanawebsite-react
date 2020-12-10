@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import SectionLayout from "../common/SectionLayout"
+import { Section } from "../../consts"
 
 const AboutMeWrapper = styled.div`
   max-width: 700px;
@@ -12,7 +13,7 @@ const StyledText = styled.p`
 `
 
 const AboutMe: React.FC = () => (
-  <SectionLayout id="aboutme" title="About me">
+  <SectionLayout id={Section.AboutMe} title="About me">
     <AboutMeWrapper>
       <StyledText>
         Hi! My name is Žana Flander and I am a frontend developer. I changed my career from geodesy

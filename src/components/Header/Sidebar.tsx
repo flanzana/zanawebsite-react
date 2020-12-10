@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 import { Item } from "./Header"
 import { useOnClickOutside } from "../../helpers/customHooks"
+import { Section } from "../../consts"
 
 type Props = {
   toggleSidebar: () => void
@@ -18,9 +19,9 @@ const Sidebar: React.FC<Props> = ({ toggleSidebar }: Props) => {
         <FontAwesomeIcon icon={faTimes} aria-hidden="true" />
       </StyledCloseSidebarIcon>
       <ul>
-        <Item href="#aboutme" title="About me" onClick={toggleSidebar} />
-        <Item href="#skills" title="Skills" onClick={toggleSidebar} />
-        <Item href="#projects" title="Projects" onClick={toggleSidebar} />
+        <Item href={`#${Section.AboutMe}`} title="About me" onClick={toggleSidebar} />
+        <Item href={`#${Section.Skills}`} title="Skills" onClick={toggleSidebar} />
+        <Item href={`#${Section.Projects}`} title="Projects" onClick={toggleSidebar} />
       </ul>
     </StyledSidebar>
   )

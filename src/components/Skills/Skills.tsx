@@ -2,8 +2,10 @@ import React from "react"
 import styled from "styled-components"
 import SectionLayout from "../common/SectionLayout"
 import SkillCard from "./SkillCard"
-import type { SkillsType, SkillType } from "../../types"
+import type { SkillType } from "../../types"
 import { CSS_MEDIA_QUERY } from "../../theme/consts"
+import { Section } from "../../consts"
+import { skills } from "../../data/data"
 
 const SkillsWrapper = styled.div`
   display: flex;
@@ -20,15 +22,11 @@ const SkillsWrapper = styled.div`
   }
 `
 
-type Props = {
-  skills: SkillsType
-}
-
-const Skills: React.FC<Props> = ({ skills }: Props) => (
-  <SectionLayout id="skills" title="Skills">
+const Skills: React.FC = () => (
+  <SectionLayout id={Section.Skills} title="Skills">
     <SkillsWrapper>
       {skills.map((skill: SkillType) => (
-        <SkillCard key={skill.title} title={skill.title} list={skill.list} />
+        <SkillCard key={skill.title} {...skill} />
       ))}
     </SkillsWrapper>
   </SectionLayout>

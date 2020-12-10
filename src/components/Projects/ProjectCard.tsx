@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import TextLink from "../common/TextLink"
 import { faCode, faLink } from "@fortawesome/free-solid-svg-icons"
+import { ProjectType } from "../../types"
 
 const StyledProjectCard = styled.div`
   width: 230px;
@@ -54,20 +55,18 @@ const StyledHorizontalLine = styled.hr`
   background-color: ${props => props.theme.backgroundNormalHover};
 `
 
-type Props = {
-  name: string
-  img: React.ReactElement
-  urlWeb: string
-  urlCode: string
-  description: string
-  tech: string[]
-}
-
-const ProjectCard: React.FC<Props> = ({ name, img, urlWeb, urlCode, description, tech }: Props) => (
+const ProjectCard: React.FC<ProjectType> = ({
+  name,
+  img,
+  urlWeb,
+  urlCode,
+  description,
+  tech,
+}: ProjectType) => (
   <StyledProjectCard>
     <StyledHeading>{name}</StyledHeading>
     <StyledImageLink href={urlWeb} tabIndex={-1} target="_blank" rel="noopener noreferrer">
-      {img}
+      <img src={img} alt={`Screenshot of ${name}`} />
     </StyledImageLink>
     <StyledDescription>{description}</StyledDescription>
     <StyledHorizontalLine />

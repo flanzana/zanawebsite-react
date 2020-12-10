@@ -10,7 +10,12 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import Particles from "react-particles-js"
-import { NAVBAR_HEIGHT, PARTICLES_PARAMS_DESKTOP, PARTICLES_PARAMS_MOBILE } from "../../consts"
+import {
+  NAVBAR_HEIGHT,
+  PARTICLES_PARAMS_DESKTOP,
+  PARTICLES_PARAMS_MOBILE,
+  Section,
+} from "../../consts"
 import Sidebar from "./Sidebar"
 import { useWindowScrollYPosition, useWindowSize } from "../../helpers/customHooks"
 import { MEDIA_QUERY_BREAKPOINT } from "../../theme/consts"
@@ -51,9 +56,9 @@ const Header: React.FC = () => {
           </StyledHamburgerIcon>
         ) : (
           <StyledNavbarMenu>
-            <Item href="#aboutme" title="About me" />
-            <Item href="#skills" title="Skills" />
-            <Item href="#projects" title="Projects" />
+            <Item href={`#${Section.AboutMe}`} title="About me" />
+            <Item href={`#${Section.Skills}`} title="Skills" />
+            <Item href={`#${Section.Projects}`} title="Projects" />
           </StyledNavbarMenu>
         )}
       </StyledNavbar>

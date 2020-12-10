@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import type { SkillList } from "../../types"
+import type { SkillType } from "../../types"
 
 const StyledSkillCard = styled.div`
   width: 200px;
@@ -70,12 +70,7 @@ const StyledSkillTag = styled.div`
   }
 `
 
-type Props = {
-  title: string
-  list: SkillList[]
-}
-
-const SkillCard: React.FC<Props> = ({ title, list }: Props) => {
+const SkillCard: React.FC<SkillType> = ({ title, list }: SkillType) => {
   const isSkillListWithLevels = list.some(item => Boolean(item.level))
   return (
     <StyledSkillCard>

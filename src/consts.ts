@@ -57,3 +57,29 @@ export const PARTICLES_PARAMS_MOBILE: IParticlesParams = {
     },
   },
 }
+
+export enum Section {
+  AboutMe = "aboutme",
+  Skills = "skills",
+  Projects = "projects",
+}
+
+export enum Tech {
+  CSS = "CSS",
+  Cypress = "Cypress",
+  ESLint = "ESLint",
+  Flow = "Flow",
+  Gherkin = "Gherkin",
+  Git = "Git",
+  HTML = "HTML",
+  JavaScript = "JavaScript",
+  Jest = "Jest",
+  React = "React",
+  Redux = "Redux",
+  styledComponents = "styled-components",
+  TestingLibrary = "Testing Library",
+  TypeScript = "TypeScript",
+  jQuery = "jQuery",
+  Orbit = "design system Orbit",
+  i18next = "i18next",
+}

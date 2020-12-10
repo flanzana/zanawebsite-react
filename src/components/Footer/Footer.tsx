@@ -47,7 +47,7 @@ const ContactButtonsWrapper = styled.div`
 `
 
 const Footer: React.FC = () => (
-  <FooterWrapper id="contact">
+  <FooterWrapper>
     <ContactButtonsWrapper>
       <Button
         iconName={faLinkedinIn}

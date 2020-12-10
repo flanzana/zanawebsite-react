@@ -6,7 +6,6 @@ import Skills from "./components/Skills/Skills"
 import Projects from "./components/Projects/Projects"
 import Footer from "./components/Footer/Footer"
 import Button from "./components/common/Button"
-import data from "./data/data"
 import GlobalStyle from "./theme/GlobalStyle"
 import { THEME_DARK_MODE, THEME_LIGHT_MODE } from "./theme/consts"
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
@@ -35,8 +34,8 @@ const App: React.FC = () => {
         <Header />
         <StyledMain>
           <AboutMe />
-          <Skills skills={data.skills} />
-          <Projects projects={data.projects} />
+          <Skills />
+          <Projects />
         </StyledMain>
         <Footer />
         <Button
