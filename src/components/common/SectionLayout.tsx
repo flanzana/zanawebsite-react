@@ -2,14 +2,26 @@ import React from "react"
 import styled from "styled-components"
 import { CSS_MEDIA_QUERY } from "../../theme/consts"
 
-const StyledTitle = styled.h1`
+const StyledTitle = styled.h2`
   color: ${props => props.theme.textPrimary};
   text-transform: uppercase;
-  font-size: 2em;
-  margin-bottom: 20px;
-  line-height: 1.75em;
-  border-bottom: 1px solid ${props => props.theme.textNormal};
-  width: 260px;
+  font-size: 36px;
+  margin-bottom: 24px;
+
+  &:before,
+  &:after {
+    display: inline-block;
+    content: "• • •";
+    color: ${props => props.theme.backgroundNormalHover};
+  }
+
+  &:before {
+    margin-right: 20px;
+  }
+
+  &:after {
+    margin-left: 20px;
+  }
 `
 
 const StyledSection = styled.section`

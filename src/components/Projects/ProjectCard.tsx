@@ -25,9 +25,9 @@ const StyledImageLink = styled.a`
   margin: 0;
 `
 
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h3`
   color: ${props => props.theme.textPrimary};
-  font-size: 1.1em;
+  font-size: 18px;
   text-align: center;
   margin: 0 0 10px 0;
 `

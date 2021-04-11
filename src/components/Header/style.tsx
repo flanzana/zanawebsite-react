@@ -59,8 +59,8 @@ export const StyledNavbar = styled.nav`
 
   h1 {
     color: ${(props: StyledPropsWithIsScrolledOverHeader) => props.theme.textWhite};
-    letter-spacing: 0.1em;
-    font-size: 1.6em;
+    letter-spacing: 2px;
+    font-size: 28px;
     margin: 0;
   }
 
@@ -195,8 +195,19 @@ export const StyledBanner = styled.div`
 export const StyledBannerHeading = styled.h1`
   color: ${(props: StyledProps) => props.theme.textWhite};
   text-transform: uppercase;
-  font-size: calc(8px + 10vmin);
-  letter-spacing: 0.1em;
-  margin: 0.7em 30px;
+  font-size: 60px;
+  letter-spacing: 4px;
+  margin: 0 40px;
   text-shadow: 0 2px 4px ${(props: StyledProps) => props.theme.buttonBoxShadow};
+
+  @media ${CSS_MEDIA_QUERY.MIN_MOBILE_L} {
+    font-size: 80px;
+    letter-spacing: 6px;
+    margin: 0 60px;
+  }
+
+  @media ${CSS_MEDIA_QUERY.MIN_TABLET} {
+    font-size: 100px;
+    letter-spacing: 8px;
+  }
 `

@@ -16,11 +16,17 @@ export default createGlobalStyle`
 	}
 
 	h1, h2 {
-		font-family: Coda, sans-serif;
-		font-weight: 900;
+		font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
 		text-align: center;
 		margin: 0;
 	}
+
+  h3 {
+    font-family: Barlow, sans-serif;
+    text-align: center;
+    margin: 0;
+  }
 
 	p {
 	  margin: 0;

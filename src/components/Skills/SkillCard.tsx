@@ -13,8 +13,8 @@ const StyledSkillCard = styled.div`
   box-shadow: 1px 2px 6px 0 ${props => props.theme.projectBoxShadow};
 `
 
-const StyledSkillTitle = styled.h2`
-  font-size: 1.1em;
+const StyledSkillTitle = styled.h3`
+  font-size: 18px;
   color: ${props => props.theme.textPrimary};
   margin: 0 0 10px 0;
 `
