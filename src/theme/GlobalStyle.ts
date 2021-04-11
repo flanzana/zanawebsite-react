@@ -31,4 +31,8 @@ export default createGlobalStyle`
 	p {
 	  margin: 0;
 	}
+
+  button, a {
+    cursor: pointer;
+  }
 `

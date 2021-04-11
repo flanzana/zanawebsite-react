@@ -88,7 +88,6 @@ const StyledButton = styled.a`
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  cursor: pointer;
   transition: 0.4s;
   box-shadow: ${props => getButtonStyles("boxShadowButton", props.type, props.theme)};
   outline: none;

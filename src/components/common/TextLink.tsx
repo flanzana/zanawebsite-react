@@ -34,7 +34,6 @@ const StyledTextLink = styled.a`
   font-size: 14px;
   font-weight: 900;
   color: ${(props: StyledProps) => getTextLinkStyles("content", props.type, props.theme)};
-  cursor: pointer;
   outline: none;
   text-decoration: none;
   transition: 0.4s;

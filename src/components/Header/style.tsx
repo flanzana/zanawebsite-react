@@ -15,7 +15,7 @@ type StyledPropsWithIsScrolledOverHeader = {
 
 const moveSidebarDesktop = keyframes`
     0% {
-        width: 0px;
+        width: 0;
     }
     100% {
         width: 300px;
@@ -24,7 +24,7 @@ const moveSidebarDesktop = keyframes`
 
 const moveSidebarMobile = keyframes`
     0% {
-        width: 0px;
+        width: 0;
     }
     100% {
         width: 100%;
@@ -45,7 +45,6 @@ export const StyledNavbar = styled.nav`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: relative;
   top: 0;
   padding: 0 10px 0 20px;
   position: fixed;
@@ -70,32 +69,36 @@ export const StyledNavbar = styled.nav`
   }
 `
 
+export const StyledItem = styled.a`
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: ${(props: StyledProps) => props.theme.textWhite};
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: 0.4s;
+  outline: none;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    background-color: ${(props: StyledProps) => props.theme.backgroundPrimaryHover};
+  }
+}
+`
+
 export const StyledNavbarMenu = styled.ul`
   list-style: none;
   display: flex;
   margin: 0;
   height: 100%;
 
-  li {
-    height: 100%;
-  }
-
-  a {
-    color: ${(props: StyledProps) => props.theme.textWhite};
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
+  ${StyledItem} {
     height: 100%;
     padding: 0 20px;
     display: flex;
     align-items: center;
-    transition: 0.4s;
-    outline: none;
-
-    &:hover,
-    &:focus {
-      background-color: ${(props: StyledProps) => props.theme.backgroundPrimaryHover};
-    }
   }
 `
 
@@ -105,7 +108,6 @@ export const StyledHamburgerIcon = styled.button`
   border: none;
   border-radius: 5px;
   font-size: 30px;
-  cursor: pointer;
   outline: none;
 
   &:hover,
@@ -122,7 +124,6 @@ export const StyledCloseSidebarIcon = styled.button`
   border: none;
   border-radius: 5px;
   font-size: 30px;
-  cursor: pointer;
   outline: none;
   position: absolute;
   top: 15px;
@@ -142,7 +143,6 @@ export const StyledSidebar = styled.aside`
   padding: ${NAVBAR_HEIGHT}px 0 0 0;
   width: 100%;
   height: 100vh;
-  position: absolute;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -155,31 +155,17 @@ export const StyledSidebar = styled.aside`
     animation: ${moveSidebarDesktop} 0.6s ease;
     width: 300px;
   }
+`
 
-  ul {
-    list-style: none;
-    width: 100%;
-    padding: 0;
-  }
+export const StyledSidebarMenu = styled.ul`
+  list-style: none;
+  width: 100%;
+  padding: 0;
 
-  a {
-    color: ${(props: StyledProps) => props.theme.textWhite};
-    white-space: nowrap;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
+  ${StyledItem} {
     display: block;
     width: 100%;
     padding: 16px 0;
-    cursor: pointer;
-    transition: 0.4s;
-    cursor: pointer;
-    outline: none;
-
-    &:hover,
-    &:focus {
-      background-color: ${(props: StyledProps) => props.theme.backgroundPrimaryHover};
-    }
   }
 `
 
