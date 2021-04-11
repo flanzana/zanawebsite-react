@@ -21,18 +21,6 @@ const StyledDescription = styled.p`
   font-size: 12px;
   margin: 0 auto;
   padding: 0 20px;
-
-  a {
-    color: inherit;
-    font-weight: 900;
-    outline: none;
-    transition: 0.4s;
-
-    &:hover,
-    &:focus {
-      color: ${props => props.theme.textSecondary};
-    }
-  }
 `
 
 const ContactButtonsWrapper = styled.div`
@@ -82,10 +70,7 @@ const Footer: React.FC = () => {
           size={buttonSize}
         />
       </ContactButtonsWrapper>
-      <StyledDescription>
-        Coded and designed with ❤ by <a href="https://flanzana.github.io">Žana Flander</a> ©
-        2018-2020
-      </StyledDescription>
+      <StyledDescription>Designed and coded with ❤ by Žana Flander © 2021</StyledDescription>
     </FooterWrapper>
   )
 }
