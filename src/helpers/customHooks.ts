@@ -1,4 +1,5 @@
 import { useState, useEffect, RefObject } from "react"
+import { MEDIA_QUERY_BREAKPOINT } from "../theme/consts"
 
 type WindowSizeType = { width: number; height: number }
 
@@ -24,6 +25,15 @@ export function useWindowSize(): WindowSizeType {
   }, []) // Empty array ensures that effect is only run on mount and unmount
 
   return windowSize
+}
+
+export function useMediaQuery(): { isMobile: boolean; isTablet: boolean } {
+  const { width } = useWindowSize()
+
+  return {
+    isMobile: width < MEDIA_QUERY_BREAKPOINT.MOBILE_L,
+    isTablet: width < MEDIA_QUERY_BREAKPOINT.TABLET,
+  }
 }
 
 export function useWindowScrollYPosition(): number {

@@ -18,19 +18,19 @@ type ButtonStyle =
 const getButtonSizes = (name: "fontSize" | "buttonSize" | "buttonPadding", size: ButtonSize) => {
   const tokens = {
     fontSize: {
-      small: "calc(10px + 2vmin)",
-      normal: "calc(16px + 2vmin)",
-      large: "calc(24px + 2vmin)",
+      small: "16px",
+      normal: "24px",
+      large: "32px",
     },
     buttonSize: {
-      small: "calc(10px + 2vmin)",
-      normal: "calc(16px + 2vmin)",
-      large: "calc(24px + 2vmin)",
+      small: "16px",
+      normal: "24px",
+      large: "32px",
     },
     buttonPadding: {
-      small: "calc(10px / 3 + 0.5vmin)",
-      normal: "calc(16px / 3 + 0.5vmin)",
-      large: "calc(24px / 3 + 0.5vmin)",
+      small: "6px",
+      normal: "8px",
+      large: "10px",
     },
   }
   return tokens[name][size]

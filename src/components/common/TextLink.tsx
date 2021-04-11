@@ -5,24 +5,7 @@ import { IconDefinition } from "@fortawesome/fontawesome-common-types"
 import { ThemeType } from "../../types"
 
 type TextLinkType = "primary" | "secondary"
-type TextLinkSize = "small" | "normal" | "large"
 type TextLinkStyle = "content" | "contentHover" | "backgroundActive"
-
-const getTextLinkSizes = (name: "fontSize" | "iconSize", size: TextLinkSize) => {
-  const tokens = {
-    fontSize: {
-      small: "0.9em",
-      normal: "1em",
-      large: "1.2em",
-    },
-    iconSize: {
-      small: "0.7em",
-      normal: "0.9em",
-      large: "1.1em",
-    },
-  }
-  return tokens[name][size]
-}
 
 const getTextLinkStyles = (name: TextLinkStyle, type: TextLinkType, theme: ThemeType) => {
   const tokens = {
@@ -44,21 +27,20 @@ const getTextLinkStyles = (name: TextLinkStyle, type: TextLinkType, theme: Theme
 
 type StyledProps = {
   type: TextLinkType
-  size: TextLinkSize
   theme: ThemeType
 }
 
 const StyledTextLink = styled.a`
-  font-size: ${(props: StyledProps) => getTextLinkSizes("fontSize", props.size)};
+  font-size: 14px;
   font-weight: 900;
-  color: ${props => getTextLinkStyles("content", props.type, props.theme)};
+  color: ${(props: StyledProps) => getTextLinkStyles("content", props.type, props.theme)};
   cursor: pointer;
   outline: none;
-  text-decoration: underline;
+  text-decoration: none;
   transition: 0.4s;
 
   svg {
-    font-size: ${(props: StyledProps) => getTextLinkSizes("iconSize", props.size)};
+    font-size: 10px;
     padding-right: 4px;
   }
 
@@ -75,34 +57,24 @@ const StyledTextLink = styled.a`
 `
 
 const StyledContent = styled.div`
-  display: inline;
+  display: inline-flex;
   align-items: center;
-  padding: 4px;
 `
 
 type Props = {
   type: TextLinkType
   href?: string
   iconName?: IconDefinition
-  size?: TextLinkSize
   ariaLabel?: string
   children: string
 }
 
-const TextLink: React.FC<Props> = ({
-  type,
-  href,
-  iconName,
-  size = "normal",
-  ariaLabel,
-  children,
-}: Props) => (
+const TextLink: React.FC<Props> = ({ type, href, iconName, ariaLabel, children }: Props) => (
   <StyledTextLink
     type={type}
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    size={size}
     aria-label={ariaLabel}
   >
     {iconName ? (

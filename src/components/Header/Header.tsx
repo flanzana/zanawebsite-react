@@ -17,8 +17,7 @@ import {
   Section,
 } from "../../consts"
 import Sidebar from "./Sidebar"
-import { useWindowScrollYPosition, useWindowSize } from "../../helpers/customHooks"
-import { MEDIA_QUERY_BREAKPOINT } from "../../theme/consts"
+import { useMediaQuery, useWindowScrollYPosition, useWindowSize } from "../../helpers/customHooks"
 
 type ItemProps = {
   href: string
@@ -35,11 +34,11 @@ export const Item: React.FC<ItemProps> = ({ href, title, onClick }: ItemProps) =
 )
 
 const Header: React.FC = () => {
+  const { isTablet } = useMediaQuery()
   const windowSize = useWindowSize()
   const windowScrollYPosition = useWindowScrollYPosition()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
-  const isMobile = windowSize.width < MEDIA_QUERY_BREAKPOINT.TABLET
   const isScrolledOverHeader = windowScrollYPosition > windowSize.height / 2 - NAVBAR_HEIGHT
 
   const toggleSidebar = () => {
@@ -50,7 +49,7 @@ const Header: React.FC = () => {
     <StyledHeader>
       <StyledNavbar isScrolledOverHeader={isScrolledOverHeader}>
         {isScrolledOverHeader ? <h1>Žana Flander</h1> : <div />}
-        {isMobile ? (
+        {isTablet ? (
           <StyledHamburgerIcon onClick={toggleSidebar} aria-label="Open sidebar menu">
             <FontAwesomeIcon icon={faBars} aria-hidden="true" />
           </StyledHamburgerIcon>
@@ -62,14 +61,14 @@ const Header: React.FC = () => {
           </StyledNavbarMenu>
         )}
       </StyledNavbar>
-      {isMobile && isSidebarOpen && <Sidebar toggleSidebar={toggleSidebar} />}
+      {isTablet && isSidebarOpen && <Sidebar toggleSidebar={toggleSidebar} />}
       <StyledBanner>
         <StyledBannerHeading>Žana Flander</StyledBannerHeading>
       </StyledBanner>
       <Particles
         width="100%"
         height="50vh"
-        params={isMobile ? PARTICLES_PARAMS_MOBILE : PARTICLES_PARAMS_DESKTOP}
+        params={isTablet ? PARTICLES_PARAMS_MOBILE : PARTICLES_PARAMS_DESKTOP}
       />
     </StyledHeader>
   )

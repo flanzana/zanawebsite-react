@@ -10,6 +10,7 @@ import GlobalStyle from "./theme/GlobalStyle"
 import { THEME_DARK_MODE, THEME_LIGHT_MODE } from "./theme/consts"
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
 import { ThemeType } from "./types"
+import { useMediaQuery } from "./helpers/customHooks"
 
 type StyledProps = {
   theme: ThemeType
@@ -26,6 +27,7 @@ const StyledMain = styled.main`
 
 const App: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const { isMobile } = useMediaQuery()
 
   return (
     <ThemeProvider theme={isDarkMode ? THEME_DARK_MODE : THEME_LIGHT_MODE}>
@@ -40,7 +42,7 @@ const App: React.FC = () => {
         <Footer />
         <Button
           type="theme"
-          size="small"
+          size={isMobile ? "small" : "normal"}
           onClick={() => setIsDarkMode(!isDarkMode)}
           iconName={isDarkMode ? faSun : faMoon}
           ariaLabel={`Switch to ${isDarkMode ? "light" : "dark"} mode`}

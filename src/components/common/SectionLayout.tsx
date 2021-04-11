@@ -29,7 +29,7 @@ const StyledSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: calc(100%-20px);
+  width: calc(100% - 20px);
   padding: 30px 10px 20px 10px;
   scroll-margin-top: 30px;
 
@@ -38,7 +38,7 @@ const StyledSection = styled.section`
   }
 
   @media ${CSS_MEDIA_QUERY.MIN_TABLET} {
-    width: calc(100%-40px);
+    width: calc(100% - 40px);
     padding: 40px 20px 30px 20px;
 
     &:last-of-type {

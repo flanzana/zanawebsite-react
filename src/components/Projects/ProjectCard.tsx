@@ -33,12 +33,12 @@ const StyledHeading = styled.h3`
 `
 
 const StyledDescription = styled.p`
-  font-size: 0.9em;
+  font-size: 14px;
   margin: 10px 0;
 `
 
 const StyledTech = styled.p`
-  font-size: 0.8em;
+  font-size: 12px;
   margin: 10px 0;
 `
 
@@ -77,7 +77,6 @@ const ProjectCard: React.FC<ProjectType> = ({
         href={urlWeb}
         iconName={faLink}
         type="secondary"
-        size="small"
         ariaLabel={`Go to ${name} website`}
       >
         Web
@@ -86,7 +85,6 @@ const ProjectCard: React.FC<ProjectType> = ({
         href={urlCode}
         iconName={faCode}
         type="secondary"
-        size="small"
         ariaLabel={`Go to ${name} GitHub code`}
       >
         Code

@@ -9,7 +9,7 @@ const AboutMeWrapper = styled.div`
 `
 
 const StyledText = styled.p`
-  line-height: 1.5em;
+  line-height: 24px;
 `
 
 const AboutMe: React.FC = () => (

@@ -4,11 +4,12 @@ import { faGithub, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import Button from "../common/Button"
 import { CSS_MEDIA_QUERY } from "../../theme/consts"
+import { useMediaQuery } from "../../helpers/customHooks"
 
 const FooterWrapper = styled.footer`
   background-color: ${props => props.theme.backgroundPrimary};
   color: ${props => props.theme.textWhite};
-  height: calc(120px + 2vmin);
+  height: 135px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,46 +40,54 @@ const ContactButtonsWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 250px;
+  width: 270px;
 
   @media ${CSS_MEDIA_QUERY.MIN_MOBILE_L} {
-    width: calc(280px + 2vmin);
+    width: 350px;
   }
 `
 
-const Footer: React.FC = () => (
-  <FooterWrapper>
-    <ContactButtonsWrapper>
-      <Button
-        iconName={faLinkedinIn}
-        href="https://www.linkedin.com/in/zanaflander"
-        type="contact"
-        ariaLabel="LinkedIn"
-      />
-      <Button
-        iconName={faGithub}
-        href="https://github.com/flanzana"
-        type="contact"
-        ariaLabel="GitHub"
-      />
-      <Button
-        iconName={faTwitter}
-        href="https://twitter.com/flanzana"
-        type="contact"
-        ariaLabel="Twitter"
-      />
-      <Button
-        iconName={faEnvelope}
-        href="mailto:zana.flander@gmail.com"
-        type="contact"
-        ariaLabel="E-mail"
-      />
-    </ContactButtonsWrapper>
-    <StyledDescription>
-      Coded and designed with ❤ by <a href="https://flanzana.github.io">Žana Flander</a>. ©
-      2018-2020
-    </StyledDescription>
-  </FooterWrapper>
-)
+const Footer: React.FC = () => {
+  const { isMobile } = useMediaQuery()
+  const buttonSize = isMobile ? "normal" : "large"
+  return (
+    <FooterWrapper>
+      <ContactButtonsWrapper>
+        <Button
+          iconName={faLinkedinIn}
+          href="https://www.linkedin.com/in/zanaflander"
+          type="contact"
+          ariaLabel="LinkedIn"
+          size={buttonSize}
+        />
+        <Button
+          iconName={faGithub}
+          href="https://github.com/flanzana"
+          type="contact"
+          ariaLabel="GitHub"
+          size={buttonSize}
+        />
+        <Button
+          iconName={faTwitter}
+          href="https://twitter.com/flanzana"
+          type="contact"
+          ariaLabel="Twitter"
+          size={buttonSize}
+        />
+        <Button
+          iconName={faEnvelope}
+          href="mailto:zana.flander@gmail.com"
+          type="contact"
+          ariaLabel="E-mail"
+          size={buttonSize}
+        />
+      </ContactButtonsWrapper>
+      <StyledDescription>
+        Coded and designed with ❤ by <a href="https://flanzana.github.io">Žana Flander</a> ©
+        2018-2020
+      </StyledDescription>
+    </FooterWrapper>
+  )
+}
 
 export default Footer

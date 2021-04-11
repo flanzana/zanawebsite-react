@@ -21,7 +21,7 @@ const StyledSkillTitle = styled.h3`
 
 const StyledSkillListWithLevels = styled.ul`
   width: 100%;
-  font-size: 0.95em;
+  font-size: 14px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -36,7 +36,7 @@ const StyledSkillItem = styled.li`
 
   &:hover {
     font-weight: bold;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.5px;
   }
 `
 
@@ -55,8 +55,8 @@ const StyledSkillListWithTags = styled.div`
 `
 
 const StyledSkillTag = styled.div`
-  font-size: 0.9em;
-  letter-spacing: 0.03em;
+  font-size: 14px;
+  letter-spacing: 0.3px;
   padding: 3px 5px;
   margin: 3px;
   border-radius: 5px;
@@ -66,7 +66,7 @@ const StyledSkillTag = styled.div`
 
   &:hover {
     font-weight: bold;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.5px;
   }
 `
 
